@@ -198,7 +198,7 @@ export async function readQueueFile(
     throw new Error("대기열 경로가 파일이 아닙니다.");
   }
 
-  if (!body.content || !body.sha) {
+  if (typeof body.content !== "string" || !body.sha) {
     throw new Error("대기열 파일 내용을 읽지 못했습니다.");
   }
 
