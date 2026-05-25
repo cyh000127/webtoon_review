@@ -337,6 +337,138 @@ h1 {
   font-weight: 900;
 }
 
+.stats-dashboard {
+  margin: 0 0 24px;
+  border: 1px solid #303747;
+  border-radius: 8px;
+  padding: 16px;
+  background: #171b27;
+}
+
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.metric-strip div {
+  min-width: 0;
+  border: 1px solid #303747;
+  border-radius: 8px;
+  padding: 13px 14px;
+  background: #202635;
+}
+
+.metric-strip span,
+.metric-strip small {
+  display: block;
+  overflow: hidden;
+  color: #aeb7c6;
+  font-size: 13px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metric-strip strong {
+  display: block;
+  margin: 4px 0 3px;
+  color: #ffffff;
+  font-size: 27px;
+  line-height: 1.1;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.chart-panel {
+  min-width: 0;
+  border: 1px solid #303747;
+  border-radius: 8px;
+  padding: 14px;
+  background: #151925;
+}
+
+.chart-panel h2 {
+  margin: 0 0 12px;
+  color: #eef2f7;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.bar-list {
+  display: grid;
+  gap: 10px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(58px, 86px) 1fr 28px;
+  gap: 9px;
+  align-items: center;
+}
+
+.bar-row span {
+  min-width: 0;
+  overflow: hidden;
+  color: #cfd6e3;
+  font-size: 13px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-row strong {
+  color: #ffffff;
+  font-size: 13px;
+  text-align: right;
+}
+
+.bar-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #2a3140;
+}
+
+.bar-track i {
+  width: var(--bar-size);
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  background: #ff4050;
+}
+
+.bar-track.reading i {
+  background: #ffcf5a;
+}
+
+.bar-track.finished i {
+  background: #20c461;
+}
+
+.bar-track.dropped i,
+.bar-track.rating-unrated i {
+  background: #7f8792;
+}
+
+.bar-track.genre i {
+  background: #73d3ff;
+}
+
+.bar-track.rating-excellent i,
+.bar-track.rating-great i {
+  background: #ffcf5a;
+}
+
+.bar-track.rating-good i {
+  background: #d69bf7;
+}
+
 .webtoon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
@@ -862,6 +994,11 @@ h1 {
   .result-bar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .metric-strip,
+  .chart-grid {
+    grid-template-columns: 1fr;
   }
 
   .webtoon-grid {

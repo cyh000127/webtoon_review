@@ -23,6 +23,11 @@ type ReadingFilter = "all" | UserReadingStatus;
 type RatingFilter = "all" | "rated" | "gte45" | "gte40";
 type SortKey = "id" | "episode" | "title" | "creatorRating";
 type ReaderRatings = Record<string, number>;
+type BarDatum = {
+  id: string;
+  label: string;
+  value: number;
+};
 
 type WebtoonViewModel = ArchiveWebtoonRecord & {
   coverUrl: string;
@@ -189,6 +194,16 @@ function readReaderRatings(): ReaderRatings {
   }
 }
 
+function getBarStyle(value: number, maxValue: number): CSSProperties {
+  return {
+    "--bar-size": `${maxValue > 0 ? (value / maxValue) * 100 : 0}%`
+  } as CSSProperties;
+}
+
+function formatAverageScore(score: number) {
+  return score > 0 ? score.toFixed(1) : "미평가";
+}
+
 function App() {
   const [serialization, setSerialization] =
     useState<SerializationStatus>("ongoing");
@@ -231,6 +246,85 @@ function App() {
       count: ratings.length
     };
   }, []);
+
+  const archiveStats = useMemo(() => {
+    const statusBars = readingTabs
+      .filter((tab) => tab.id !== "all")
+      .map<BarDatum>((tab) => ({
+        id: tab.id,
+        label: tab.label,
+        value: webtoons.filter((item) => item.userReadingStatus === tab.id).length
+      }));
+
+    const genreCounts = new Map<string, number>();
+    webtoons.forEach((item) => {
+      item.genres.forEach((itemGenre) => {
+        genreCounts.set(itemGenre, (genreCounts.get(itemGenre) ?? 0) + 1);
+      });
+    });
+
+    const genreBars = Array.from(genreCounts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ko"))
+      .slice(0, 5)
+      .map<BarDatum>(([label, value]) => ({
+        id: label,
+        label,
+        value
+      }));
+
+    const ratingBars: BarDatum[] = [
+      {
+        id: "excellent",
+        label: "4.5 이상",
+        value: webtoons.filter((item) => (item.userRating ?? 0) >= 4.5).length
+      },
+      {
+        id: "great",
+        label: "4.0 이상",
+        value: webtoons.filter(
+          (item) => (item.userRating ?? 0) >= 4 && (item.userRating ?? 0) < 4.5
+        ).length
+      },
+      {
+        id: "good",
+        label: "3점대",
+        value: webtoons.filter(
+          (item) => (item.userRating ?? 0) >= 3 && (item.userRating ?? 0) < 4
+        ).length
+      },
+      {
+        id: "unrated",
+        label: "미기록",
+        value: webtoons.filter((item) => typeof item.userRating !== "number").length
+      }
+    ];
+
+    const readerRatingValues = Object.values(readerRatings).filter(
+      (rating) => rating >= 1 && rating <= 5
+    );
+    const readerRatingTotal = readerRatingValues.reduce(
+      (total, rating) => total + rating,
+      0
+    );
+    const finishedCount = webtoons.filter(
+      (item) => item.userReadingStatus === "finished"
+    ).length;
+
+    return {
+      statusBars,
+      statusMax: Math.max(1, ...statusBars.map((bar) => bar.value)),
+      genreBars,
+      genreMax: Math.max(1, ...genreBars.map((bar) => bar.value)),
+      ratingBars,
+      ratingMax: Math.max(1, ...ratingBars.map((bar) => bar.value)),
+      readerAverage:
+        readerRatingValues.length > 0
+          ? readerRatingTotal / readerRatingValues.length
+          : 0,
+      readerCount: readerRatingValues.length,
+      finishedRate: Math.round((finishedCount / webtoons.length) * 100)
+    };
+  }, [readerRatings]);
 
   const serializationScoped = useMemo(() => {
     return webtoons.filter((item) => item.serializationStatus === serialization);
@@ -463,6 +557,73 @@ function App() {
           <span>{sortOptions.find((option) => option.id === sortBy)?.label}</span>
         </div>
         <p>{visibleWebtoons.length}개 기록</p>
+      </section>
+
+      <section className="stats-dashboard" aria-label="통계 대시보드">
+        <div className="metric-strip">
+          <div>
+            <span>제작자 평균</span>
+            <strong>{formatAverageScore(creatorRatingSummary.average)}</strong>
+            <small>{creatorRatingSummary.count}개 기록</small>
+          </div>
+          <div>
+            <span>독자 평균</span>
+            <strong>{formatAverageScore(archiveStats.readerAverage)}</strong>
+            <small>{archiveStats.readerCount}개 평가</small>
+          </div>
+          <div>
+            <span>완주율</span>
+            <strong>{archiveStats.finishedRate}%</strong>
+            <small>전체 {webtoons.length}개 기준</small>
+          </div>
+        </div>
+
+        <div className="chart-grid">
+          <article className="chart-panel">
+            <h2>감상 상태</h2>
+            <div className="bar-list">
+              {archiveStats.statusBars.map((bar) => (
+                <div className="bar-row" key={bar.id}>
+                  <span>{bar.label}</span>
+                  <div className={`bar-track ${bar.id}`}>
+                    <i style={getBarStyle(bar.value, archiveStats.statusMax)} />
+                  </div>
+                  <strong>{bar.value}</strong>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="chart-panel">
+            <h2>장르 TOP 5</h2>
+            <div className="bar-list">
+              {archiveStats.genreBars.map((bar) => (
+                <div className="bar-row" key={bar.id}>
+                  <span>{bar.label}</span>
+                  <div className="bar-track genre">
+                    <i style={getBarStyle(bar.value, archiveStats.genreMax)} />
+                  </div>
+                  <strong>{bar.value}</strong>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="chart-panel">
+            <h2>제작자 평점 분포</h2>
+            <div className="bar-list">
+              {archiveStats.ratingBars.map((bar) => (
+                <div className="bar-row" key={bar.id}>
+                  <span>{bar.label}</span>
+                  <div className={`bar-track rating-${bar.id}`}>
+                    <i style={getBarStyle(bar.value, archiveStats.ratingMax)} />
+                  </div>
+                  <strong>{bar.value}</strong>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
       </section>
 
       {visibleWebtoons.length > 0 ? (
