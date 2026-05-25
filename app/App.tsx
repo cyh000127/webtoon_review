@@ -33,10 +33,32 @@ const defaultSettings: GitHubQueueSettings = {
   queuePath: "queue/pending-webtoons.jsonl"
 };
 
+function parseRatingInput(value: string) {
+  const normalized = value.replace(",", ".").trim();
+
+  if (!/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(normalized)) {
+    return null;
+  }
+
+  const parsed = Number(normalized);
+
+  if (!Number.isFinite(parsed) || parsed < 0 || parsed > 5) {
+    return null;
+  }
+
+  return parsed;
+}
+
+function formatRating(value: number) {
+  const rounded = Math.round(value * 100) / 100;
+
+  return Number.isInteger(rounded) ? rounded.toFixed(1) : String(rounded);
+}
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>("entry");
   const [title, setTitle] = useState("");
-  const [rating, setRating] = useState(4);
+  const [ratingInput, setRatingInput] = useState("4.0");
   const [review, setReview] = useState("");
   const [settings, setSettings] = useState<GitHubQueueSettings>(defaultSettings);
   const [tokenInput, setTokenInput] = useState("");
@@ -99,9 +121,16 @@ export default function App() {
     };
   }, []);
 
+  const parsedRating = useMemo(() => parseRatingInput(ratingInput), [ratingInput]);
+  const isRatingValid = parsedRating !== null;
+
   const validationMessage = useMemo(() => {
     if (title.trim().length === 0) {
       return "제목을 입력하면 대기열 항목을 만들 수 있어요.";
+    }
+
+    if (!isRatingValid) {
+      return "별점은 0부터 5 사이 숫자로 입력해 주세요.";
     }
 
     if (review.trim().length === 0) {
@@ -109,9 +138,10 @@ export default function App() {
     }
 
     return "입력 준비 완료. GitHub 연결은 다음 티켓에서 붙입니다.";
-  }, [review, title]);
+  }, [isRatingValid, review, title]);
 
-  const isReady = title.trim().length > 0 && review.trim().length > 0;
+  const isReady =
+    title.trim().length > 0 && review.trim().length > 0 && isRatingValid;
   const isSettingsReady =
     settings.owner.trim().length > 0 &&
     settings.repo.trim().length > 0 &&
@@ -223,6 +253,11 @@ export default function App() {
       return;
     }
 
+    if (parsedRating === null) {
+      setSubmitMessage("별점은 0부터 5 사이 숫자로 입력해 주세요.");
+      return;
+    }
+
     if (!isSettingsReady) {
       setSubmitMessage("설정 탭에서 GitHub 저장소와 토큰을 먼저 저장해 주세요.");
       return;
@@ -264,7 +299,7 @@ export default function App() {
       }
 
       const entry = createQueueEntry({
-        rating,
+        rating: parsedRating,
         review: trimmedReview,
         title: trimmedTitle
       });
@@ -278,7 +313,7 @@ export default function App() {
 
       await saveRecentSubmissions([entry, ...recentSubmissions]);
       setTitle("");
-      setRating(4);
+      setRatingInput("4.0");
       setReview("");
       setSubmitMessage(`${entry.title}을(를) 대기열에 추가했습니다.`);
     } catch (error) {
@@ -382,22 +417,37 @@ export default function App() {
               />
 
               <Text style={styles.label}>개인 별점</Text>
+              <TextInput
+                value={ratingInput}
+                onChangeText={setRatingInput}
+                keyboardType="decimal-pad"
+                placeholder="예: 4.7"
+                placeholderTextColor="#7f8792"
+                style={[
+                  styles.input,
+                  styles.ratingInput,
+                  !isRatingValid && styles.inputError
+                ]}
+              />
+              <Text style={styles.ratingHelper}>
+                0부터 5 사이 숫자를 직접 입력하거나 빠른 선택을 눌러요.
+              </Text>
               <View style={styles.ratingGrid}>
                 {ratingSteps.map((ratingValue) => (
                   <Pressable
                     key={ratingValue}
                     accessibilityRole="button"
-                    accessibilityState={{ selected: rating === ratingValue }}
+                    accessibilityState={{ selected: parsedRating === ratingValue }}
                     style={[
                       styles.ratingButton,
-                      rating === ratingValue && styles.ratingButtonActive
+                      parsedRating === ratingValue && styles.ratingButtonActive
                     ]}
-                    onPress={() => setRating(ratingValue)}
+                    onPress={() => setRatingInput(ratingValue.toFixed(1))}
                   >
                     <Text
                       style={[
                         styles.ratingText,
-                        rating === ratingValue && styles.ratingTextActive
+                        parsedRating === ratingValue && styles.ratingTextActive
                       ]}
                     >
                       {ratingValue}
@@ -420,7 +470,9 @@ export default function App() {
               <View style={styles.previewBox}>
                 <Text style={styles.previewTitle}>대기열 미리보기</Text>
                 <Text style={styles.previewLine}>제목: {title.trim() || "-"}</Text>
-                <Text style={styles.previewLine}>평점: {rating.toFixed(1)}</Text>
+                <Text style={styles.previewLine}>
+                  평점: {parsedRating === null ? "-" : formatRating(parsedRating)}
+                </Text>
                 <Text style={styles.previewLine}>
                   후기: {review.trim() || "-"}
                 </Text>
@@ -673,10 +725,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700"
   },
+  inputError: {
+    borderColor: "#ff6b7a"
+  },
   textarea: {
     minHeight: 112,
     paddingTop: 12,
     lineHeight: 22
+  },
+  ratingInput: {
+    marginBottom: 8
+  },
+  ratingHelper: {
+    marginBottom: 10,
+    color: "#9aa3b2",
+    fontSize: 12,
+    fontWeight: "700",
+    lineHeight: 17
   },
   ratingGrid: {
     flexDirection: "row",
