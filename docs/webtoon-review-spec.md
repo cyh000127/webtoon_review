@@ -36,8 +36,8 @@
 ## 구현 범위
 
 - TypeScript 프론트엔드 앱을 구성한다.
-- 데이터베이스는 사용하지 않고 JSON 파일을 데이터 소스로 사용한다.
-- 초기 샘플 데이터는 임시로 넣고, 사용자가 실제 기록을 보내주면 JSON에 추가한다.
+- 데이터베이스는 사용하지 않고 `webtoons/webtoons.json`을 데이터 소스로 사용한다.
+- `webtoons/webtoons.xml`은 보존용 원본으로 두고, 앱은 변환이 쉬운 보조 JSON을 읽는다.
 - 입력 컨벤션은 별도 문서에 정리한다.
 - 화면은 웹툰 사이트의 목록 탐색 느낌을 참고하되, 개인 기록용 서비스로 표현한다.
 
@@ -56,18 +56,22 @@ docs/
   webtoon-review-spec.md
   webtoon-data-convention.md
 src/
-  data/
-    webtoons.json
   types/
     webtoon.ts
   App.tsx
   App.css
+webtoons/
+  webtoons.xml
+  webtoons.json
+  covers/
+  description/
 ```
 
 ## 완료 기준
 
 - 문서에 정의된 상태값과 JSON 컨벤션이 구현에 반영되어 있다.
-- `연재`/`완결`과 `완주`/`중도 포기` 탭으로 목록이 필터링된다.
-- 완주 카드에는 리뷰가 표시된다.
-- 중도 포기 카드에는 포기 사유가 표시된다.
-- 웹툰 추가는 `src/data/webtoons.json` 수정만으로 가능하다.
+- `연재중`/`완결` 탭으로 목록이 필터링된다.
+- 감상 상태 탭으로 `읽는 중`, `완주`, `중도 포기`, `확인 필요` 기록이 필터링된다.
+- 카드에는 실제 표지, 제목, 작가, 플랫폼, 장르, 진행도, 작품 소개가 표시된다.
+- 상세 패널에는 작품 소개, 보정 note, 장르 전체가 표시된다.
+- 웹툰 추가는 `webtoons/webtoons.json`, `webtoons/webtoons.xml`, `webtoons/covers`, `webtoons/description` 갱신으로 가능하다.

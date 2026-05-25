@@ -1,33 +1,33 @@
 export type SerializationStatus = "ongoing" | "completed";
 
-export type ReadingStatus = "finished" | "dropped";
+export type UserReadingStatus =
+  | "reading"
+  | "finished"
+  | "dropped"
+  | "ambiguous";
 
-export type PlatformId =
-  | "naver"
-  | "kakao"
-  | "kakao-page"
-  | "ridibooks"
-  | "lezhin"
-  | "bomtoon"
-  | "peanutoon"
-  | "other";
-
-export interface WebtoonRecord {
+export interface ArchiveWebtoonRecord {
   id: string;
+  inputTitle: string;
   title: string;
   author: string;
-  platform: PlatformId;
-  serializationStatus: SerializationStatus;
-  readingStatus: ReadingStatus;
+  platform: string;
+  contentType: string;
+  platformId?: string;
   genres: string[];
+  description: string;
+  serializationStatus: SerializationStatus;
+  serializationLabel: string;
+  episodeCount: number;
+  userReadingStatus: UserReadingStatus;
+  userProgress: string;
+  group: string;
   coverImage: string;
-  episodeProgress: string;
-  rating?: number;
-  review: string;
-  dropReason: string;
-  startedAt?: string;
-  finishedAt?: string;
-  updatedAt: string;
-  isFavorite?: boolean;
-  tags?: string[];
+  descriptionFile: string;
+  note: string;
+}
+
+export interface WebtoonArchive {
+  collectedAt: string;
+  items: ArchiveWebtoonRecord[];
 }
