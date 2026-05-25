@@ -303,7 +303,9 @@ h1 {
   background: #171b27;
 }
 
-.result-bar div {
+.result-filter-summary,
+.result-actions,
+.view-toggle {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -335,6 +337,31 @@ h1 {
   margin: 0;
   color: #cfd6e3;
   font-weight: 900;
+}
+
+.view-toggle {
+  flex-wrap: nowrap;
+  border: 1px solid #3f485a;
+  border-radius: 999px;
+  padding: 3px;
+  background: #222837;
+}
+
+.view-toggle button {
+  width: 34px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  color: #cfd6e3;
+  background: transparent;
+}
+
+.view-toggle button.active {
+  color: #151924;
+  background: #ffcf5a;
 }
 
 .stats-dashboard {
@@ -473,6 +500,105 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
   gap: 14px;
+}
+
+.webtoon-list {
+  display: grid;
+  gap: 12px;
+}
+
+.webtoon-list-item {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) minmax(220px, 300px);
+  gap: 14px;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #303747;
+  border-radius: 8px;
+  padding: 10px;
+  background: #151924;
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.18);
+}
+
+.list-cover {
+  width: 92px;
+  height: 128px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #111520;
+}
+
+.list-main {
+  min-width: 0;
+  padding: 3px 0;
+}
+
+.list-status {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: #ffffff;
+  background: #ff4050;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.list-status.reading {
+  color: #151924;
+  background: #ffcf5a;
+}
+
+.list-status.finished {
+  background: #168c4a;
+}
+
+.list-status.dropped {
+  background: #7f8792;
+}
+
+.list-meta {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.list-copy {
+  display: -webkit-box;
+  margin: 10px 0 0;
+  overflow: hidden;
+  color: #d5dbe6;
+  font-size: 14px;
+  line-height: 1.48;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.list-tags {
+  min-height: 0;
+  margin-top: 10px;
+}
+
+.list-side {
+  min-width: 0;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  border-left: 1px solid #303747;
+  padding-left: 14px;
+}
+
+.list-side .score-row {
+  margin-top: 0;
+}
+
+.list-progress {
+  margin-top: 0;
+}
+
+.list-side .detail-button {
+  margin-top: 0;
 }
 
 .webtoon-card {
@@ -1003,6 +1129,22 @@ h1 {
 
   .webtoon-grid {
     grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  }
+
+  .webtoon-list-item {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .list-cover {
+    width: 76px;
+    height: 106px;
+  }
+
+  .list-side {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid #303747;
+    padding: 10px 0 0;
   }
 
   .detail-sheet {

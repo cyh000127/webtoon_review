@@ -5,7 +5,9 @@ import {
   BookmarkX,
   ChevronRight,
   Clock3,
+  LayoutGrid,
   Library,
+  List,
   Search,
   SlidersHorizontal,
   Star,
@@ -22,6 +24,7 @@ import type {
 type ReadingFilter = "all" | UserReadingStatus;
 type RatingFilter = "all" | "rated" | "gte45" | "gte40";
 type SortKey = "id" | "episode" | "title" | "creatorRating";
+type ViewMode = "card" | "list";
 type ReaderRatings = Record<string, number>;
 type BarDatum = {
   id: string;
@@ -204,6 +207,44 @@ function formatAverageScore(score: number) {
   return score > 0 ? score.toFixed(1) : "미평가";
 }
 
+function ScorePills({
+  webtoon,
+  readerRating
+}: {
+  webtoon: WebtoonViewModel;
+  readerRating?: number;
+}) {
+  return (
+    <div className="score-row">
+      {webtoon.userRating && (
+        <div
+          className="rating-row creator-rating"
+          aria-label={`제작자 점수 ${webtoon.userRating}점`}
+        >
+          <span>제작자</span>
+          <Star size={15} fill="currentColor" aria-hidden="true" />
+          <strong>{webtoon.userRating.toFixed(1)}</strong>
+        </div>
+      )}
+
+      <div
+        className={`rating-row reader-rating ${readerRating ? "" : "empty"}`}
+        aria-label={
+          readerRating ? `독자 점수 ${readerRating}점` : "독자 점수 미평가"
+        }
+      >
+        <span>독자</span>
+        <Star
+          size={15}
+          fill={readerRating ? "currentColor" : "none"}
+          aria-hidden="true"
+        />
+        <strong>{readerRating ? readerRating.toFixed(1) : "미평가"}</strong>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [serialization, setSerialization] =
     useState<SerializationStatus>("ongoing");
@@ -212,6 +253,7 @@ function App() {
   const [genre, setGenre] = useState<string>("전체");
   const [ratingFilter, setRatingFilter] = useState<RatingFilter>("all");
   const [sortBy, setSortBy] = useState<SortKey>("id");
+  const [viewMode, setViewMode] = useState<ViewMode>("card");
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [readerRatings, setReaderRatings] =
@@ -548,7 +590,7 @@ function App() {
       </section>
 
       <section className="result-bar" aria-label="현재 선택">
-        <div>
+        <div className="result-filter-summary">
           <strong>{getSerializationLabel(serialization)}</strong>
           <span>{readingTabs.find((tab) => tab.id === reading)?.label}</span>
           <span>{platform}</span>
@@ -556,7 +598,29 @@ function App() {
           <span>{ratingFilters.find((filter) => filter.id === ratingFilter)?.label}</span>
           <span>{sortOptions.find((option) => option.id === sortBy)?.label}</span>
         </div>
-        <p>{visibleWebtoons.length}개 기록</p>
+        <div className="result-actions">
+          <p>{visibleWebtoons.length}개 기록</p>
+          <div className="view-toggle" aria-label="목록 보기 방식">
+            <button
+              className={viewMode === "card" ? "active" : ""}
+              type="button"
+              title="카드 보기"
+              aria-label="카드 보기"
+              onClick={() => setViewMode("card")}
+            >
+              <LayoutGrid size={17} aria-hidden="true" />
+            </button>
+            <button
+              className={viewMode === "list" ? "active" : ""}
+              type="button"
+              title="목록 보기"
+              aria-label="목록 보기"
+              onClick={() => setViewMode("list")}
+            >
+              <List size={17} aria-hidden="true" />
+            </button>
+          </div>
+        </div>
       </section>
 
       <section className="stats-dashboard" aria-label="통계 대시보드">
@@ -626,7 +690,7 @@ function App() {
         </div>
       </section>
 
-      {visibleWebtoons.length > 0 ? (
+      {visibleWebtoons.length > 0 && viewMode === "card" ? (
         <section className="webtoon-grid" aria-label="웹툰 목록">
           {visibleWebtoons.map((webtoon) => (
             <article className="webtoon-card" key={webtoon.id}>
@@ -662,41 +726,10 @@ function App() {
                   <span>{webtoon.episodeCount}화</span>
                 </div>
 
-                <div className="score-row">
-                  {webtoon.userRating && (
-                    <div
-                      className="rating-row creator-rating"
-                      aria-label={`제작자 점수 ${webtoon.userRating}점`}
-                    >
-                      <span>제작자</span>
-                      <Star size={15} fill="currentColor" aria-hidden="true" />
-                      <strong>{webtoon.userRating.toFixed(1)}</strong>
-                    </div>
-                  )}
-
-                  <div
-                    className={`rating-row reader-rating ${
-                      readerRatings[webtoon.id] ? "" : "empty"
-                    }`}
-                    aria-label={
-                      readerRatings[webtoon.id]
-                        ? `독자 점수 ${readerRatings[webtoon.id]}점`
-                        : "독자 점수 미평가"
-                    }
-                  >
-                    <span>독자</span>
-                    <Star
-                      size={15}
-                      fill={readerRatings[webtoon.id] ? "currentColor" : "none"}
-                      aria-hidden="true"
-                    />
-                    <strong>
-                      {readerRatings[webtoon.id]
-                        ? readerRatings[webtoon.id].toFixed(1)
-                        : "미평가"}
-                    </strong>
-                  </div>
-                </div>
+                <ScorePills
+                  webtoon={webtoon}
+                  readerRating={readerRatings[webtoon.id]}
+                />
 
                 <p className="review-copy">{getCardCopy(webtoon)}</p>
 
@@ -706,6 +739,62 @@ function App() {
                   ))}
                 </div>
 
+                <button
+                  className="detail-button"
+                  type="button"
+                  onClick={() => setSelectedId(webtoon.id)}
+                >
+                  <span>상세</span>
+                  <ChevronRight size={17} aria-hidden="true" />
+                </button>
+              </div>
+            </article>
+          ))}
+        </section>
+      ) : visibleWebtoons.length > 0 ? (
+        <section className="webtoon-list" aria-label="웹툰 목록">
+          {visibleWebtoons.map((webtoon) => (
+            <article className="webtoon-list-item" key={webtoon.id}>
+              <img
+                className="list-cover"
+                src={webtoon.coverUrl}
+                alt={`${webtoon.title} 표지`}
+              />
+
+              <div className="list-main">
+                <div className="title-row">
+                  <h2 title={webtoon.title}>{webtoon.title}</h2>
+                  <span className={`list-status ${webtoon.userReadingStatus}`}>
+                    {getReadingLabel(webtoon.userReadingStatus)}
+                  </span>
+                </div>
+
+                <div className="meta-row list-meta">
+                  <span>{webtoon.platform}</span>
+                  <span>{webtoon.author}</span>
+                  <span>{webtoon.episodeCount}화</span>
+                </div>
+
+                <p className="list-copy">{getCardCopy(webtoon)}</p>
+
+                <div className="tag-row list-tags">
+                  {webtoon.genres.slice(0, 5).map((itemGenre) => (
+                    <span key={itemGenre}>{itemGenre}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="list-side">
+                <ScorePills
+                  webtoon={webtoon}
+                  readerRating={readerRatings[webtoon.id]}
+                />
+                <div className="progress-row list-progress">
+                  <span>
+                    <Clock3 size={15} aria-hidden="true" />
+                    {webtoon.userProgress}
+                  </span>
+                </div>
                 <button
                   className="detail-button"
                   type="button"
