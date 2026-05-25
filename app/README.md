@@ -1,6 +1,6 @@
 # Webtoon Queue App
 
-핸드폰에서 웹툰 제목, 개인 별점, 한줄평을 입력해 GitHub 대기열 파일에 커밋하는 React Native 앱입니다.
+핸드폰에서 웹툰 제목, 개인 별점, 읽은 위치, 감상 상태, 한줄평 또는 중도 이탈 사유를 입력해 GitHub 대기열 파일에 커밋하는 React Native 앱입니다.
 
 Expo 기반으로 동작하며, 서버나 LLM API를 사용하지 않습니다.
 
@@ -28,7 +28,8 @@ npx eas-cli@latest build -p android --profile preview
 
 ## 앱 화면
 
-- `입력`: 웹툰 제목, 별점, 한줄평 입력 및 GitHub 대기열 제출
+- `입력`: 웹툰 제목, 별점, 읽은 위치, 감상 상태 입력 및 GitHub 대기열 제출
+- `최근`: pending 대기열의 최근 제출 확인 및 같은 `id` 항목 수정
 - `설정`: GitHub owner, repo, branch, queue path, fine-grained PAT 저장
 - `안내`: 앱의 동작 방식 확인
 
@@ -54,6 +55,12 @@ queue/pending-webtoons.jsonl
 
 ```text
 chore: 웹툰 대기열 추가
+```
+
+최근 제출을 수정하면 같은 JSON Lines 항목을 교체하고 아래 커밋 메시지를 사용합니다.
+
+```text
+chore: 웹툰 대기열 수정
 ```
 
 ## 검증

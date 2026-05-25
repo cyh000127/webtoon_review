@@ -2,7 +2,7 @@
 
 ## 목적
 
-모바일 입력 앱은 웹툰 제목, 별점, 한줄평만 받아 대기열 파일에 커밋한다.  
+모바일 입력 앱은 웹툰 제목, 별점, 읽은 위치, 감상 상태, 한줄평 또는 중도 이탈 사유를 받아 대기열 파일에 커밋한다.  
 대기열 항목은 나중에 Codex가 공식/공개 정보를 확인한 뒤 정식 아카이브 데이터로 승격한다.
 
 ## 파일
@@ -21,7 +21,7 @@ queue/
 ## Pending 항목 형식
 
 ```json
-{"id":"wq_20260525_000001","title":"웹툰 제목","rating":4.5,"review":"사용자 한줄평","createdAt":"2026-05-25T15:00:00.000+09:00","source":"mobile-queue-app","status":"pending"}
+{"id":"wq_20260525_000001","title":"웹툰 제목","rating":4.5,"readProgress":"151화","readingStatus":"completed","review":"사용자 한줄평","createdAt":"2026-05-25T15:00:00.000+09:00","source":"mobile-queue-app","status":"pending"}
 ```
 
 필드:
@@ -31,15 +31,22 @@ queue/
 | `id` | 예 | 대기열 항목 ID. `wq_YYYYMMDD_HHmmss` 형식 권장 |
 | `title` | 예 | 사용자가 입력한 웹툰 제목 |
 | `rating` | 예 | 사용자 개인 별점. 0부터 5까지 숫자 |
-| `review` | 예 | 사용자 한줄평 |
+| `readProgress` | 예 | 사용자가 어디까지 봤는지 적은 문자열. 예: `151화`, `완결까지`, `34화` |
+| `readingStatus` | 예 | `reading`, `completed`, `dropped` 중 하나 |
+| `review` | 조건부 | 완주 항목의 한줄평. `reading` 상태에서는 비워둘 수 있음 |
+| `dropReason` | 조건부 | `dropped` 상태일 때 필요한 중도 이탈 사유 |
 | `createdAt` | 예 | 입력 시각. ISO 8601 문자열 |
+| `updatedAt` | 아니오 | 앱에서 최근 제출을 수정한 시각. ISO 8601 문자열 |
 | `source` | 예 | `mobile-queue-app` |
 | `status` | 예 | `pending` |
+
+기존 모바일 앱에서 이미 제출된 legacy 항목은 `readProgress`, `readingStatus`가 없을 수 있다.  
+Codex는 legacy 항목을 처리할 때 기존 `review`를 유지하고, 필요한 경우 사용자에게 읽은 위치와 감상 상태를 확인한다.
 
 ## Processed 항목 형식
 
 ```json
-{"id":"wq_20260525_000001","title":"웹툰 제목","rating":4.5,"review":"사용자 한줄평","createdAt":"2026-05-25T15:00:00.000+09:00","source":"mobile-queue-app","status":"processed","processedAt":"2026-05-25T16:00:00.000+09:00","archiveId":"044","archiveTitle":"공식 웹툰 제목","commitSha":"abcdef1"}
+{"id":"wq_20260525_000001","title":"웹툰 제목","rating":4.5,"readProgress":"151화","readingStatus":"completed","review":"사용자 한줄평","createdAt":"2026-05-25T15:00:00.000+09:00","source":"mobile-queue-app","status":"processed","processedAt":"2026-05-25T16:00:00.000+09:00","archiveId":"044","archiveTitle":"공식 웹툰 제목","commitSha":"abcdef1"}
 ```
 
 추가 필드:
@@ -56,10 +63,13 @@ queue/
 - 앱은 `pending-webtoons.jsonl`만 수정한다.
 - 앱은 `webtoons.json`, `webtoons.xml`, `covers`, `description`을 수정하지 않는다.
 - 입력값 앞뒤 공백은 제거한다.
-- 제목과 한줄평은 빈 문자열이면 제출하지 않는다.
+- 제목과 읽은 위치는 빈 문자열이면 제출하지 않는다.
 - 평점은 숫자이며 0 이상 5 이하만 허용한다.
+- `readingStatus`가 `completed`이면 `review`가 필요하다.
+- `readingStatus`가 `dropped`이면 `dropReason`이 필요하다.
 - 같은 브라우저에서 제출 중에는 버튼을 비활성화해 중복 커밋을 막는다.
 - 커밋 메시지는 `chore: 웹툰 대기열 추가`를 사용한다.
+- 최근 제출 수정은 같은 `id`의 JSON Lines 한 줄을 교체하고, 커밋 메시지는 `chore: 웹툰 대기열 수정`을 사용한다.
 
 ## GitHub API 규칙
 

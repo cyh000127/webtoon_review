@@ -19,7 +19,8 @@
       },
       "package": "com.cyh000127.webtoonqueue",
       "predictiveBackGestureEnabled": false,
-      "versionCode": 2
+      "softwareKeyboardLayoutMode": "resize",
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"

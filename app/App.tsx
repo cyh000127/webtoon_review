@@ -15,14 +15,33 @@ import {
 } from "react-native";
 import {
   appendQueueLine,
+  readPendingQueueEntries,
   testGitHubConnection,
+  updateQueueLine,
   type GitHubQueueSettings
 } from "./src/githubClient";
-import { createQueueEntry, serializeQueueEntry } from "./src/queueEntry";
+import {
+  createQueueEntry,
+  normalizeQueueEntry,
+  serializeQueueEntry,
+  updateQueueEntry,
+  type PendingWebtoonQueueEntry,
+  type ReadingStatus
+} from "./src/queueEntry";
 
-type Screen = "entry" | "settings" | "guide";
+type Screen = "entry" | "recent" | "settings" | "guide";
 
 const ratingSteps = [0, 1, 2, 3, 4, 5];
+const readingStatusOptions: Array<{ label: string; value: ReadingStatus }> = [
+  { label: "읽는 중", value: "reading" },
+  { label: "완주", value: "completed" },
+  { label: "중도 이탈", value: "dropped" }
+];
+const readingStatusLabels: Record<ReadingStatus, string> = {
+  completed: "완주",
+  dropped: "중도 이탈",
+  reading: "읽는 중"
+};
 const settingsStorageKey = "webtoon-queue-github-settings-v1";
 const tokenStorageKey = "webtoon-queue-github-token-v1";
 const recentSubmissionsStorageKey = "webtoon-queue-recent-submissions-v1";
@@ -59,21 +78,22 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>("entry");
   const [title, setTitle] = useState("");
   const [ratingInput, setRatingInput] = useState("4.0");
+  const [readProgress, setReadProgress] = useState("");
+  const [readingStatus, setReadingStatus] = useState<ReadingStatus>("reading");
   const [review, setReview] = useState("");
   const [settings, setSettings] = useState<GitHubQueueSettings>(defaultSettings);
   const [tokenInput, setTokenInput] = useState("");
   const [hasToken, setHasToken] = useState(false);
   const [isTestingConnection, setIsTestingConnection] = useState(false);
+  const [isRefreshingRecent, setIsRefreshingRecent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [recentMessage, setRecentMessage] = useState("");
+  const [editingEntry, setEditingEntry] = useState<PendingWebtoonQueueEntry | null>(
+    null
+  );
   const [recentSubmissions, setRecentSubmissions] = useState<
-    Array<{
-      createdAt: string;
-      id: string;
-      rating: number;
-      review: string;
-      title: string;
-    }>
+    PendingWebtoonQueueEntry[]
   >([]);
   const [settingsMessage, setSettingsMessage] = useState("설정을 불러오는 중입니다.");
 
@@ -105,7 +125,15 @@ export default function App() {
         );
 
         if (storedRecent) {
-          setRecentSubmissions(JSON.parse(storedRecent));
+          const parsedRecent = JSON.parse(storedRecent);
+
+          if (Array.isArray(parsedRecent)) {
+            setRecentSubmissions(
+              parsedRecent
+                .map((entry) => normalizeQueueEntry(entry))
+                .filter((entry): entry is PendingWebtoonQueueEntry => Boolean(entry))
+            );
+          }
         }
       } catch {
         if (mounted) {
@@ -123,6 +151,13 @@ export default function App() {
 
   const parsedRating = useMemo(() => parseRatingInput(ratingInput), [ratingInput]);
   const isRatingValid = parsedRating !== null;
+  const isFinalState = readingStatus === "completed" || readingStatus === "dropped";
+  const noteLabel =
+    readingStatus === "dropped"
+      ? "중도 이탈 사유"
+      : readingStatus === "completed"
+        ? "완주 한줄평"
+        : "메모";
 
   const validationMessage = useMemo(() => {
     if (title.trim().length === 0) {
@@ -133,21 +168,41 @@ export default function App() {
       return "별점은 0부터 5 사이 숫자로 입력해 주세요.";
     }
 
-    if (review.trim().length === 0) {
-      return "한줄평을 입력하면 다음 단계에서 GitHub에 올릴 수 있어요.";
+    if (readProgress.trim().length === 0) {
+      return "어디까지 봤는지 입력해 주세요.";
     }
 
-    return "입력 준비 완료. GitHub 연결은 다음 티켓에서 붙입니다.";
-  }, [isRatingValid, review, title]);
+    if (isFinalState && review.trim().length === 0) {
+      return readingStatus === "dropped"
+        ? "중도 이탈 사유를 입력해 주세요."
+        : "완주 한줄평을 입력해 주세요.";
+    }
+
+    return editingEntry
+      ? "수정 준비 완료. 기존 대기열 항목을 갱신할 수 있어요."
+      : "입력 준비 완료. GitHub 대기열에 올릴 수 있어요.";
+  }, [editingEntry, isFinalState, isRatingValid, readProgress, readingStatus, review, title]);
 
   const isReady =
-    title.trim().length > 0 && review.trim().length > 0 && isRatingValid;
+    title.trim().length > 0 &&
+    readProgress.trim().length > 0 &&
+    (!isFinalState || review.trim().length > 0) &&
+    isRatingValid;
   const isSettingsReady =
     settings.owner.trim().length > 0 &&
     settings.repo.trim().length > 0 &&
     settings.branch.trim().length > 0 &&
     settings.queuePath.trim().length > 0 &&
     hasToken;
+  const sortedRecentSubmissions = useMemo(
+    () =>
+      [...recentSubmissions].sort(
+        (first, second) =>
+          Date.parse(second.updatedAt ?? second.createdAt) -
+          Date.parse(first.updatedAt ?? first.createdAt)
+      ),
+    [recentSubmissions]
+  );
 
   const saveSettings = async () => {
     const trimmedSettings = {
@@ -236,7 +291,11 @@ export default function App() {
   const saveRecentSubmissions = async (
     submissions: typeof recentSubmissions
   ) => {
-    const nextSubmissions = submissions.slice(0, 5);
+    const uniqueSubmissions = submissions.filter(
+      (submission, index, self) =>
+        self.findIndex((item) => item.id === submission.id) === index
+    );
+    const nextSubmissions = uniqueSubmissions.slice(0, 10);
     setRecentSubmissions(nextSubmissions);
     await SecureStore.setItemAsync(
       recentSubmissionsStorageKey,
@@ -244,12 +303,81 @@ export default function App() {
     );
   };
 
+  const resetEntryForm = () => {
+    setTitle("");
+    setRatingInput("4.0");
+    setReadProgress("");
+    setReadingStatus("reading");
+    setReview("");
+    setEditingEntry(null);
+  };
+
+  const startEditingSubmission = (submission: PendingWebtoonQueueEntry) => {
+    setEditingEntry(submission);
+    setTitle(submission.title);
+    setRatingInput(formatRating(submission.rating));
+    setReadProgress(submission.readProgress);
+    setReadingStatus(submission.readingStatus);
+    setReview(
+      submission.readingStatus === "dropped"
+        ? submission.dropReason ?? submission.review
+        : submission.review
+    );
+    setSubmitMessage(`${submission.title} 수정 모드입니다.`);
+    setScreen("entry");
+  };
+
+  const refreshRecentSubmissions = async () => {
+    if (!isSettingsReady) {
+      setRecentMessage("설정 탭에서 저장소 정보와 토큰을 먼저 저장해 주세요.");
+      return;
+    }
+
+    setIsRefreshingRecent(true);
+    setRecentMessage("GitHub 대기열에서 최근 제출을 불러오는 중입니다.");
+
+    try {
+      const token = await SecureStore.getItemAsync(tokenStorageKey);
+
+      if (!token) {
+        setHasToken(false);
+        setRecentMessage("저장된 토큰이 없습니다. 설정 탭에서 토큰을 저장해 주세요.");
+        return;
+      }
+
+      const entries = await readPendingQueueEntries(settings, token);
+      const latestEntries = entries
+        .sort(
+          (first, second) =>
+            Date.parse(second.updatedAt ?? second.createdAt) -
+            Date.parse(first.updatedAt ?? first.createdAt)
+        )
+        .slice(0, 10);
+
+      await saveRecentSubmissions(latestEntries);
+      setRecentMessage(
+        latestEntries.length > 0
+          ? `최근 제출 ${latestEntries.length}개를 불러왔습니다.`
+          : "아직 pending 대기열에 제출된 항목이 없습니다."
+      );
+    } catch (error) {
+      setRecentMessage(
+        error instanceof Error
+          ? error.message
+          : "최근 제출을 불러오지 못했습니다."
+      );
+    } finally {
+      setIsRefreshingRecent(false);
+    }
+  };
+
   const submitQueueEntry = async (allowDuplicateTitle = false) => {
     const trimmedTitle = title.trim();
+    const trimmedReadProgress = readProgress.trim();
     const trimmedReview = review.trim();
 
-    if (!trimmedTitle || !trimmedReview) {
-      setSubmitMessage("제목과 한줄평을 모두 입력해 주세요.");
+    if (!trimmedTitle) {
+      setSubmitMessage("제목을 입력해 주세요.");
       return;
     }
 
@@ -258,14 +386,29 @@ export default function App() {
       return;
     }
 
+    if (!trimmedReadProgress) {
+      setSubmitMessage("어디까지 봤는지 입력해 주세요.");
+      return;
+    }
+
+    if (isFinalState && !trimmedReview) {
+      setSubmitMessage(
+        readingStatus === "dropped"
+          ? "중도 이탈 사유를 입력해 주세요."
+          : "완주 한줄평을 입력해 주세요."
+      );
+      return;
+    }
+
     if (!isSettingsReady) {
       setSubmitMessage("설정 탭에서 GitHub 저장소와 토큰을 먼저 저장해 주세요.");
       return;
     }
 
-    const lastSubmission = recentSubmissions[0];
+    const lastSubmission = sortedRecentSubmissions[0];
 
     if (
+      !editingEntry &&
       !allowDuplicateTitle &&
       lastSubmission?.title.trim().toLowerCase() === trimmedTitle.toLowerCase()
     ) {
@@ -298,24 +441,53 @@ export default function App() {
         return;
       }
 
-      const entry = createQueueEntry({
-        rating: parsedRating,
-        review: trimmedReview,
-        title: trimmedTitle
-      });
+      const entry = editingEntry
+        ? updateQueueEntry(editingEntry, {
+            dropReason:
+              readingStatus === "dropped" ? trimmedReview : undefined,
+            rating: parsedRating,
+            readProgress: trimmedReadProgress,
+            readingStatus,
+            review: trimmedReview,
+            title: trimmedTitle
+          })
+        : createQueueEntry({
+            dropReason:
+              readingStatus === "dropped" ? trimmedReview : undefined,
+            rating: parsedRating,
+            readProgress: trimmedReadProgress,
+            readingStatus,
+            review: trimmedReview,
+            title: trimmedTitle
+          });
 
-      await appendQueueLine({
-        line: serializeQueueEntry(entry),
-        message: "chore: 웹툰 대기열 추가",
-        settings,
-        token
-      });
+      if (editingEntry) {
+        await updateQueueLine({
+          id: editingEntry.id,
+          line: serializeQueueEntry(entry),
+          message: "chore: 웹툰 대기열 수정",
+          settings,
+          token
+        });
+      } else {
+        await appendQueueLine({
+          line: serializeQueueEntry(entry),
+          message: "chore: 웹툰 대기열 추가",
+          settings,
+          token
+        });
+      }
 
-      await saveRecentSubmissions([entry, ...recentSubmissions]);
-      setTitle("");
-      setRatingInput("4.0");
-      setReview("");
-      setSubmitMessage(`${entry.title}을(를) 대기열에 추가했습니다.`);
+      await saveRecentSubmissions([
+        entry,
+        ...recentSubmissions.filter((submission) => submission.id !== entry.id)
+      ]);
+      resetEntryForm();
+      setSubmitMessage(
+        editingEntry
+          ? `${entry.title}을(를) 수정했습니다.`
+          : `${entry.title}을(를) 대기열에 추가했습니다.`
+      );
     } catch (error) {
       setSubmitMessage(
         error instanceof Error
@@ -329,13 +501,16 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar style="light" />
+      <StatusBar hidden />
       <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.keyboardView}
       >
         <ScrollView
+          automaticallyAdjustKeyboardInsets
           contentContainerStyle={styles.scrollContent}
+          contentInsetAdjustmentBehavior="automatic"
+          keyboardDismissMode="interactive"
           keyboardShouldPersistTaps="handled"
         >
           <View style={styles.header}>
@@ -386,6 +561,24 @@ export default function App() {
             </Pressable>
             <Pressable
               accessibilityRole="tab"
+              accessibilityState={{ selected: screen === "recent" }}
+              style={[
+                styles.segmentButton,
+                screen === "recent" && styles.segmentButtonActive
+              ]}
+              onPress={() => setScreen("recent")}
+            >
+              <Text
+                style={[
+                  styles.segmentText,
+                  screen === "recent" && styles.segmentTextActive
+                ]}
+              >
+                최근
+              </Text>
+            </Pressable>
+            <Pressable
+              accessibilityRole="tab"
               accessibilityState={{ selected: screen === "guide" }}
               style={[
                 styles.segmentButton,
@@ -406,6 +599,25 @@ export default function App() {
 
           {screen === "entry" ? (
             <View style={styles.panel}>
+              {editingEntry && (
+                <View style={styles.editBanner}>
+                  <View style={styles.editBannerTextGroup}>
+                    <Text style={styles.editBannerTitle}>최근 제출 수정 중</Text>
+                    <Text style={styles.editBannerMeta}>{editingEntry.id}</Text>
+                  </View>
+                  <Pressable
+                    accessibilityRole="button"
+                    style={styles.smallGhostButton}
+                    onPress={() => {
+                      resetEntryForm();
+                      setSubmitMessage("수정을 취소했습니다.");
+                    }}
+                  >
+                    <Text style={styles.smallGhostButtonText}>취소</Text>
+                  </Pressable>
+                </View>
+              )}
+
               <Text style={styles.label}>웹툰 제목</Text>
               <TextInput
                 value={title}
@@ -456,11 +668,51 @@ export default function App() {
                 ))}
               </View>
 
-              <Text style={styles.label}>한줄평</Text>
+              <Text style={styles.label}>어디까지 봤나요?</Text>
+              <TextInput
+                value={readProgress}
+                onChangeText={setReadProgress}
+                placeholder="예: 151화 / 완결까지 / 34화"
+                placeholderTextColor="#7f8792"
+                style={styles.input}
+              />
+
+              <Text style={styles.label}>감상 상태</Text>
+              <View style={styles.statusGrid}>
+                {readingStatusOptions.map((option) => (
+                  <Pressable
+                    key={option.value}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: readingStatus === option.value }}
+                    style={[
+                      styles.statusButton,
+                      readingStatus === option.value && styles.statusButtonActive
+                    ]}
+                    onPress={() => setReadingStatus(option.value)}
+                  >
+                    <Text
+                      style={[
+                        styles.statusText,
+                        readingStatus === option.value && styles.statusTextActive
+                      ]}
+                    >
+                      {option.label}
+                    </Text>
+                  </Pressable>
+                ))}
+              </View>
+
+              <Text style={styles.label}>{noteLabel}</Text>
               <TextInput
                 value={review}
                 onChangeText={setReview}
-                placeholder="읽고 난 감상을 짧게 남겨주세요."
+                placeholder={
+                  readingStatus === "dropped"
+                    ? "왜 중도 이탈했는지 남겨주세요."
+                    : readingStatus === "completed"
+                      ? "완주하고 남는 감상을 짧게 적어주세요."
+                      : "지금 감상이나 메모가 있으면 적어주세요."
+                }
                 placeholderTextColor="#7f8792"
                 multiline
                 style={[styles.input, styles.textarea]}
@@ -474,7 +726,13 @@ export default function App() {
                   평점: {parsedRating === null ? "-" : formatRating(parsedRating)}
                 </Text>
                 <Text style={styles.previewLine}>
-                  후기: {review.trim() || "-"}
+                  진도: {readProgress.trim() || "-"}
+                </Text>
+                <Text style={styles.previewLine}>
+                  상태: {readingStatusLabels[readingStatus]}
+                </Text>
+                <Text style={styles.previewLine}>
+                  {noteLabel}: {review.trim() || "-"}
                 </Text>
               </View>
 
@@ -491,9 +749,13 @@ export default function App() {
               >
                 <Text style={styles.submitText}>
                   {isSubmitting
-                    ? "제출 중"
+                    ? editingEntry
+                      ? "수정 중"
+                      : "제출 중"
                     : isSettingsReady
-                      ? "GitHub 대기열에 추가"
+                      ? editingEntry
+                        ? "최근 제출 수정"
+                        : "GitHub 대기열에 추가"
                       : "GitHub 설정 후 제출 가능"}
                 </Text>
               </Pressable>
@@ -508,15 +770,90 @@ export default function App() {
                 </Text>
               )}
 
-              {recentSubmissions.length > 0 && (
+              {sortedRecentSubmissions.length > 0 && (
                 <View style={styles.recentBox}>
                   <Text style={styles.previewTitle}>최근 제출</Text>
-                  {recentSubmissions.map((submission) => (
+                  {sortedRecentSubmissions.slice(0, 3).map((submission) => (
                     <View key={submission.id} style={styles.recentItem}>
                       <Text style={styles.recentTitle}>{submission.title}</Text>
                       <Text style={styles.recentMeta}>
-                        {submission.rating.toFixed(1)}점 · {submission.review}
+                        {formatRating(submission.rating)}점 ·{" "}
+                        {readingStatusLabels[submission.readingStatus]} ·{" "}
+                        {submission.readProgress || "진도 미입력"}
                       </Text>
+                      <Pressable
+                        accessibilityRole="button"
+                        style={styles.inlineEditButton}
+                        onPress={() => startEditingSubmission(submission)}
+                      >
+                        <Text style={styles.inlineEditButtonText}>수정</Text>
+                      </Pressable>
+                    </View>
+                  ))}
+                </View>
+              )}
+            </View>
+          ) : screen === "recent" ? (
+            <View style={styles.panel}>
+              <View style={styles.sectionHeader}>
+                <View>
+                  <Text style={styles.guideTitle}>최근 제출</Text>
+                  <Text style={styles.sectionDescription}>
+                    pending 대기열에 올라간 항목을 불러와 다시 수정합니다.
+                  </Text>
+                </View>
+                <Pressable
+                  accessibilityRole="button"
+                  disabled={!isSettingsReady || isRefreshingRecent}
+                  style={[
+                    styles.refreshButton,
+                    (!isSettingsReady || isRefreshingRecent) &&
+                      styles.submitButtonDisabled
+                  ]}
+                  onPress={refreshRecentSubmissions}
+                >
+                  <Text style={styles.refreshButtonText}>
+                    {isRefreshingRecent ? "불러오는 중" : "새로고침"}
+                  </Text>
+                </Pressable>
+              </View>
+
+              {recentMessage && (
+                <Text style={styles.submitMessage}>{recentMessage}</Text>
+              )}
+
+              {sortedRecentSubmissions.length === 0 ? (
+                <Text style={styles.helperText}>
+                  아직 최근 제출이 없습니다. 제출 후 여기에서 다시 수정할 수 있어요.
+                </Text>
+              ) : (
+                <View style={styles.recentList}>
+                  {sortedRecentSubmissions.map((submission) => (
+                    <View key={submission.id} style={styles.recentCard}>
+                      <Text style={styles.recentTitle}>{submission.title}</Text>
+                      <Text style={styles.recentMeta}>
+                        {formatRating(submission.rating)}점 ·{" "}
+                        {readingStatusLabels[submission.readingStatus]} ·{" "}
+                        {submission.readProgress || "진도 미입력"}
+                      </Text>
+                      <Text style={styles.recentNote}>
+                        {submission.readingStatus === "dropped"
+                          ? submission.dropReason || submission.review || "이탈 사유 없음"
+                          : submission.review || "메모 없음"}
+                      </Text>
+                      <View style={styles.recentFooter}>
+                        <Text style={styles.recentDate}>
+                          {submission.updatedAt ? "수정됨" : "제출됨"} ·{" "}
+                          {(submission.updatedAt ?? submission.createdAt).slice(0, 16)}
+                        </Text>
+                        <Pressable
+                          accessibilityRole="button"
+                          style={styles.inlineEditButton}
+                          onPress={() => startEditingSubmission(submission)}
+                        >
+                          <Text style={styles.inlineEditButtonText}>수정</Text>
+                        </Pressable>
+                      </View>
                     </View>
                   ))}
                 </View>
@@ -624,8 +961,12 @@ export default function App() {
                 JSON Lines 한 줄을 추가합니다.
               </Text>
               <Text style={styles.guideText}>
-                앱은 제목, 평점, 한줄평만 저장하고 표지, 작가, 장르, 소개글은
-                Codex가 후처리합니다.
+                앱은 제목, 평점, 읽은 위치, 감상 상태, 한줄평 또는 이탈 사유를
+                저장하고 표지, 작가, 장르, 소개글은 Codex가 후처리합니다.
+              </Text>
+              <Text style={styles.guideText}>
+                최근 탭은 pending 대기열을 다시 읽어 같은 id의 줄을 교체합니다.
+                이미 처리된 항목은 Codex가 processed로 옮긴 뒤라 수정 대상에서 빠집니다.
               </Text>
               <Text style={styles.guideText}>
                 저장소 설정은 SecureStore에 저장하고, GitHub Contents API로 queue
@@ -676,7 +1017,7 @@ const styles = StyleSheet.create({
   },
   segmentedControl: {
     flexDirection: "row",
-    gap: 8,
+    gap: 6,
     borderRadius: 8,
     marginBottom: 14,
     padding: 4,
@@ -694,7 +1035,7 @@ const styles = StyleSheet.create({
   },
   segmentText: {
     color: "#b8c1d0",
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: "900"
   },
   segmentTextActive: {
@@ -706,6 +1047,48 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 16,
     backgroundColor: "#171b27"
+  },
+  editBanner: {
+    minHeight: 58,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+    borderColor: "#ffcf5a",
+    borderRadius: 8,
+    borderWidth: 1,
+    marginBottom: 16,
+    padding: 12,
+    backgroundColor: "#262331"
+  },
+  editBannerTextGroup: {
+    flex: 1,
+    gap: 3
+  },
+  editBannerTitle: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "900"
+  },
+  editBannerMeta: {
+    color: "#ffcf5a",
+    fontSize: 12,
+    fontWeight: "800"
+  },
+  smallGhostButton: {
+    minHeight: 36,
+    minWidth: 58,
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#7f8792",
+    borderRadius: 8,
+    borderWidth: 1,
+    paddingHorizontal: 10
+  },
+  smallGhostButtonText: {
+    color: "#d5dbe6",
+    fontSize: 13,
+    fontWeight: "900"
   },
   label: {
     marginBottom: 8,
@@ -769,6 +1152,35 @@ const styles = StyleSheet.create({
   },
   ratingTextActive: {
     color: "#151924"
+  },
+  statusGrid: {
+    flexDirection: "row",
+    gap: 8,
+    marginBottom: 18
+  },
+  statusButton: {
+    minHeight: 44,
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#566071",
+    borderRadius: 8,
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    backgroundColor: "#202635"
+  },
+  statusButtonActive: {
+    borderColor: "#ff4050",
+    backgroundColor: "#e93449"
+  },
+  statusText: {
+    color: "#dce1ea",
+    fontSize: 13,
+    fontWeight: "900",
+    textAlign: "center"
+  },
+  statusTextActive: {
+    color: "#ffffff"
   },
   previewBox: {
     gap: 6,
@@ -885,6 +1297,80 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "700",
     lineHeight: 18
+  },
+  inlineEditButton: {
+    minHeight: 34,
+    alignSelf: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#566071",
+    borderRadius: 8,
+    borderWidth: 1,
+    marginTop: 6,
+    paddingHorizontal: 12,
+    backgroundColor: "#202635"
+  },
+  inlineEditButtonText: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "900"
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    gap: 12,
+    marginBottom: 12
+  },
+  sectionDescription: {
+    maxWidth: 210,
+    color: "#aeb7c6",
+    fontSize: 13,
+    fontWeight: "700",
+    lineHeight: 19
+  },
+  refreshButton: {
+    minHeight: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    backgroundColor: "#e93449"
+  },
+  refreshButtonText: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "900"
+  },
+  recentList: {
+    gap: 12,
+    marginTop: 12
+  },
+  recentCard: {
+    gap: 6,
+    borderColor: "#303747",
+    borderRadius: 8,
+    borderWidth: 1,
+    padding: 12,
+    backgroundColor: "#202635"
+  },
+  recentNote: {
+    color: "#d5dbe6",
+    fontSize: 13,
+    fontWeight: "700",
+    lineHeight: 19
+  },
+  recentFooter: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10
+  },
+  recentDate: {
+    flex: 1,
+    color: "#7f8792",
+    fontSize: 12,
+    fontWeight: "800"
   },
   guideTitle: {
     marginBottom: 10,

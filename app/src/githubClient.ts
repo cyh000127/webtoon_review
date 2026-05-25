@@ -1,3 +1,5 @@
+import { normalizeQueueEntry } from "./queueEntry";
+
 export type GitHubQueueSettings = {
   owner: string;
   repo: string;
@@ -281,6 +283,121 @@ export async function appendQueueLine({
 
     throw error;
   }
+}
+
+function replaceQueueLineContent({
+  content,
+  id,
+  line
+}: {
+  content: string;
+  id: string;
+  line: string;
+}) {
+  const lines = content.split(/\r?\n/).filter((currentLine) => currentLine.trim());
+  let replaced = false;
+  const nextLines = lines.map((currentLine) => {
+    try {
+      const entry = JSON.parse(currentLine) as { id?: unknown };
+
+      if (entry.id === id) {
+        replaced = true;
+        return line;
+      }
+    } catch {
+      return currentLine;
+    }
+
+    return currentLine;
+  });
+
+  if (!replaced) {
+    throw new Error("수정할 최근 제출 항목을 대기열에서 찾지 못했습니다.");
+  }
+
+  return nextLines.length > 0 ? `${nextLines.join("\n")}\n` : "";
+}
+
+export async function updateQueueLine({
+  id,
+  line,
+  message,
+  settings,
+  token
+}: {
+  id: string;
+  line: string;
+  message: string;
+  settings: GitHubQueueSettings;
+  token: string;
+}) {
+  const current = await readQueueFile(settings, token);
+  const nextContent = replaceQueueLineContent({
+    content: current.content,
+    id,
+    line
+  });
+
+  try {
+    return await writeQueueFile({
+      content: nextContent,
+      message,
+      settings,
+      sha: current.sha,
+      token
+    });
+  } catch (error) {
+    if (error instanceof Error && error.message.includes("409")) {
+      const latest = await readQueueFile(settings, token);
+
+      return writeQueueFile({
+        content: replaceQueueLineContent({
+          content: latest.content,
+          id,
+          line
+        }),
+        message,
+        settings,
+        sha: latest.sha,
+        token
+      });
+    }
+
+    throw error;
+  }
+}
+
+export async function readPendingQueueEntries(
+  settings: GitHubQueueSettings,
+  token: string
+) {
+  const queueFile = await readQueueFile(settings, token);
+  const entries = [];
+  const lines = queueFile.content.split(/\r?\n/);
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+
+    if (!line.trim()) {
+      continue;
+    }
+
+    let parsed: unknown;
+
+    try {
+      parsed = JSON.parse(line);
+    } catch {
+      throw new Error(`대기열 ${index + 1}번째 줄의 JSON 형식이 올바르지 않습니다.`);
+    }
+
+    const entry = normalizeQueueEntry(parsed);
+
+    if (entry) {
+      entries.push(entry);
+    }
+  }
+
+  return entries;
 }
 
 export async function testGitHubConnection(

@@ -5,7 +5,14 @@ const queueFiles = [
   {
     path: "queue/pending-webtoons.jsonl",
     status: "pending",
-    requiredFields: ["id", "title", "rating", "review", "createdAt", "source", "status"]
+    requiredFields: [
+      "id",
+      "title",
+      "rating",
+      "createdAt",
+      "source",
+      "status"
+    ]
   },
   {
     path: "queue/processed-webtoons.jsonl",
@@ -14,7 +21,6 @@ const queueFiles = [
       "id",
       "title",
       "rating",
-      "review",
       "createdAt",
       "source",
       "status",
@@ -47,7 +53,13 @@ function validateEntry(entry, fileConfig, lineNumber) {
     }
   }
 
-  for (const field of ["id", "title", "review", "createdAt", "source", "status"]) {
+  for (const field of [
+    "id",
+    "title",
+    "createdAt",
+    "source",
+    "status"
+  ]) {
     validateRequiredString(entry, field, filePath, lineNumber);
   }
 
@@ -59,6 +71,41 @@ function validateEntry(entry, fileConfig, lineNumber) {
 
   if (typeof entry.rating !== "number" || entry.rating < 0 || entry.rating > 5) {
     errors.push(`${filePath}:${lineNumber} rating은 0부터 5까지의 숫자여야 합니다.`);
+  }
+
+  const hasReadingSchema =
+    "readProgress" in entry || "readingStatus" in entry || "dropReason" in entry;
+
+  if (hasReadingSchema) {
+    validateRequiredString(entry, "readProgress", filePath, lineNumber);
+
+    if (!["reading", "completed", "dropped"].includes(entry.readingStatus)) {
+      errors.push(
+        `${filePath}:${lineNumber} readingStatus는 reading, completed, dropped 중 하나여야 합니다.`
+      );
+    }
+
+    if (
+      entry.readingStatus === "completed" &&
+      (typeof entry.review !== "string" || entry.review.trim().length === 0)
+    ) {
+      errors.push(`${filePath}:${lineNumber} 완주 항목은 review가 필요합니다.`);
+    }
+
+    if (
+      entry.readingStatus === "dropped" &&
+      (typeof entry.dropReason !== "string" ||
+        entry.dropReason.trim().length === 0)
+    ) {
+      errors.push(
+        `${filePath}:${lineNumber} 중도 이탈 항목은 dropReason이 필요합니다.`
+      );
+    }
+  } else if (
+    typeof entry.review !== "string" ||
+    entry.review.trim().length === 0
+  ) {
+    errors.push(`${filePath}:${lineNumber} 기존 형식 항목은 review가 필요합니다.`);
   }
 
   if (!isValidDate(entry.createdAt)) {

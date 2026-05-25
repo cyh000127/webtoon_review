@@ -1,9 +1,15 @@
+export type ReadingStatus = "reading" | "completed" | "dropped";
+
 export type PendingWebtoonQueueEntry = {
   id: string;
   title: string;
   rating: number;
   review: string;
+  readProgress: string;
+  readingStatus: ReadingStatus;
+  dropReason?: string;
   createdAt: string;
+  updatedAt?: string;
   source: "mobile-queue-app";
   status: "pending";
 };
@@ -29,11 +35,17 @@ export function formatLocalIso(date: Date) {
 }
 
 export function createQueueEntry({
+  dropReason,
   rating,
+  readProgress,
+  readingStatus,
   review,
   title
 }: {
+  dropReason?: string;
   rating: number;
+  readProgress: string;
+  readingStatus: ReadingStatus;
   review: string;
   title: string;
 }): PendingWebtoonQueueEntry {
@@ -50,9 +62,87 @@ export function createQueueEntry({
     title: title.trim(),
     rating,
     review: review.trim(),
+    readProgress: readProgress.trim(),
+    readingStatus,
+    ...(dropReason?.trim() ? { dropReason: dropReason.trim() } : {}),
     createdAt: formatLocalIso(now),
     source: "mobile-queue-app",
     status: "pending"
+  };
+}
+
+export function updateQueueEntry(
+  current: PendingWebtoonQueueEntry,
+  {
+    dropReason,
+    rating,
+    readProgress,
+    readingStatus,
+    review,
+    title
+  }: {
+    dropReason?: string;
+    rating: number;
+    readProgress: string;
+    readingStatus: ReadingStatus;
+    review: string;
+    title: string;
+  }
+): PendingWebtoonQueueEntry {
+  return {
+    ...current,
+    title: title.trim(),
+    rating,
+    review: review.trim(),
+    readProgress: readProgress.trim(),
+    readingStatus,
+    dropReason: dropReason?.trim() || undefined,
+    updatedAt: formatLocalIso(new Date())
+  };
+}
+
+export function normalizeQueueEntry(value: unknown) {
+  if (typeof value !== "object" || value === null) {
+    return null;
+  }
+
+  const candidate = value as Partial<PendingWebtoonQueueEntry>;
+
+  if (
+    typeof candidate.id !== "string" ||
+    typeof candidate.title !== "string" ||
+    typeof candidate.rating !== "number" ||
+    typeof candidate.createdAt !== "string" ||
+    candidate.source !== "mobile-queue-app" ||
+    candidate.status !== "pending"
+  ) {
+    return null;
+  }
+
+  const readingStatus: ReadingStatus =
+    candidate.readingStatus === "completed" ||
+    candidate.readingStatus === "dropped" ||
+    candidate.readingStatus === "reading"
+      ? candidate.readingStatus
+      : "reading";
+
+  return {
+    id: candidate.id,
+    title: candidate.title,
+    rating: candidate.rating,
+    review: typeof candidate.review === "string" ? candidate.review : "",
+    readProgress:
+      typeof candidate.readProgress === "string" ? candidate.readProgress : "",
+    readingStatus,
+    ...(typeof candidate.dropReason === "string" && candidate.dropReason.trim()
+      ? { dropReason: candidate.dropReason }
+      : {}),
+    createdAt: candidate.createdAt,
+    ...(typeof candidate.updatedAt === "string"
+      ? { updatedAt: candidate.updatedAt }
+      : {}),
+    source: "mobile-queue-app" as const,
+    status: "pending" as const
   };
 }
 
