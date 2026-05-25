@@ -12,7 +12,12 @@ import {
   TextInput,
   View
 } from "react-native";
-import { testGitHubConnection, type GitHubQueueSettings } from "./src/githubClient";
+import {
+  appendQueueLine,
+  testGitHubConnection,
+  type GitHubQueueSettings
+} from "./src/githubClient";
+import { createQueueEntry, serializeQueueEntry } from "./src/queueEntry";
 
 type Screen = "entry" | "settings" | "guide";
 
@@ -35,6 +40,8 @@ export default function App() {
   const [tokenInput, setTokenInput] = useState("");
   const [hasToken, setHasToken] = useState(false);
   const [isTestingConnection, setIsTestingConnection] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
   const [settingsMessage, setSettingsMessage] = useState("설정을 불러오는 중입니다.");
 
   useEffect(() => {
@@ -177,6 +184,60 @@ export default function App() {
     setSettingsMessage("저장소 설정과 토큰을 모두 준비해 주세요.");
   };
 
+  const submitQueueEntry = async () => {
+    const trimmedTitle = title.trim();
+    const trimmedReview = review.trim();
+
+    if (!trimmedTitle || !trimmedReview) {
+      setSubmitMessage("제목과 한줄평을 모두 입력해 주세요.");
+      return;
+    }
+
+    if (!isSettingsReady) {
+      setSubmitMessage("설정 탭에서 GitHub 저장소와 토큰을 먼저 저장해 주세요.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitMessage("GitHub 대기열에 올리는 중입니다.");
+
+    try {
+      const token = await SecureStore.getItemAsync(tokenStorageKey);
+
+      if (!token) {
+        setHasToken(false);
+        setSubmitMessage("저장된 토큰이 없습니다. 설정 탭에서 토큰을 저장해 주세요.");
+        return;
+      }
+
+      const entry = createQueueEntry({
+        rating,
+        review: trimmedReview,
+        title: trimmedTitle
+      });
+
+      await appendQueueLine({
+        line: serializeQueueEntry(entry),
+        message: "chore: 웹툰 대기열 추가",
+        settings,
+        token
+      });
+
+      setTitle("");
+      setRating(4);
+      setReview("");
+      setSubmitMessage(`${entry.title}을(를) 대기열에 추가했습니다.`);
+    } catch (error) {
+      setSubmitMessage(
+        error instanceof Error
+          ? error.message
+          : "대기열 제출 중 오류가 발생했습니다."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="light" />
@@ -313,19 +374,28 @@ export default function App() {
 
               <Pressable
                 accessibilityRole="button"
-                disabled
+                disabled={!isReady || !isSettingsReady || isSubmitting}
                 style={[
                   styles.submitButton,
                   isReady && isSettingsReady && styles.submitButtonReady,
-                  styles.submitButtonDisabled
+                  (!isReady || !isSettingsReady || isSubmitting) &&
+                    styles.submitButtonDisabled
                 ]}
+                onPress={submitQueueEntry}
               >
                 <Text style={styles.submitText}>
-                  {isSettingsReady ? "제출 기능 연결 대기" : "GitHub 설정 후 제출 가능"}
+                  {isSubmitting
+                    ? "제출 중"
+                    : isSettingsReady
+                      ? "GitHub 대기열에 추가"
+                      : "GitHub 설정 후 제출 가능"}
                 </Text>
               </Pressable>
 
               <Text style={styles.helperText}>{validationMessage}</Text>
+              {submitMessage && (
+                <Text style={styles.submitMessage}>{submitMessage}</Text>
+              )}
               {!isSettingsReady && (
                 <Text style={styles.helperText}>
                   설정 탭에서 저장소 정보와 토큰을 먼저 저장해 주세요.
@@ -648,6 +718,13 @@ const styles = StyleSheet.create({
     color: "#aeb7c6",
     fontSize: 13,
     fontWeight: "800",
+    lineHeight: 19
+  },
+  submitMessage: {
+    marginTop: 10,
+    color: "#ffcf5a",
+    fontSize: 13,
+    fontWeight: "900",
     lineHeight: 19
   },
   guideTitle: {
