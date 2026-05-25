@@ -257,7 +257,8 @@ h1 {
   gap: 7px;
 }
 
-.genre-row button {
+.genre-row button,
+.rating-filter-row button {
   min-height: 36px;
   border: 2px solid #657081;
   border-radius: 5px;
@@ -267,10 +268,27 @@ h1 {
   font-weight: 900;
 }
 
-.genre-row button.active {
+.genre-row button.active,
+.rating-filter-row button.active {
   border-color: #ff4050;
   color: #ffffff;
   background: #e93449;
+}
+
+.rating-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.rating-filter-row button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
 }
 
 .result-bar {
@@ -481,6 +499,10 @@ h1 {
   font-weight: 900;
 }
 
+.rating-row span {
+  color: #f8dd90;
+}
+
 .rating-row strong {
   color: #ffffff;
 }
@@ -671,6 +693,10 @@ h1 {
   gap: 6px;
   color: #ffcf5a;
   font-weight: 900;
+}
+
+.detail-review div span {
+  color: #f8dd90;
 }
 
 .detail-review strong {
