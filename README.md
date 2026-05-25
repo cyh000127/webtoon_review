@@ -99,6 +99,7 @@ npm run validate:webtoons
 - [웹툰 데이터 입력 컨벤션](docs/webtoon-data-convention.md)
 - [모바일 큐 앱 구현 계획](docs/mobile-queue-app-plan.md)
 - [웹툰 대기열 컨벤션](docs/webtoon-queue-convention.md)
+- [Codex 대기열 처리 워크플로우](docs/codex-queue-processing-workflow.md)
 - [커밋 메시지 컨벤션](docs/commit-convention.md)
 - [웹툰 아카이브 안내](webtoons/README.md)
 

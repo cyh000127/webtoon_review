@@ -208,7 +208,7 @@ GitHub 공식 문서 기준으로 파일 업데이트 시 새 파일 content는 
 
 완료 기준:
 
-- Codex가 문서만 보고 pending 항목을 정식 아카이브로 옮길 수 있다.
+- Codex가 `docs/codex-queue-processing-workflow.md`만 보고 pending 항목을 정식 아카이브로 옮길 수 있다.
 
 ### WTQ-009 대기열 항목을 정식 아카이브로 반영
 
