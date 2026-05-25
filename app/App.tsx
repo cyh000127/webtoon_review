@@ -12,20 +12,14 @@ import {
   TextInput,
   View
 } from "react-native";
+import { testGitHubConnection, type GitHubQueueSettings } from "./src/githubClient";
 
 type Screen = "entry" | "settings" | "guide";
-
-type GitHubSettings = {
-  owner: string;
-  repo: string;
-  branch: string;
-  queuePath: string;
-};
 
 const ratingSteps = [0, 1, 2, 3, 4, 5];
 const settingsStorageKey = "webtoon-queue-github-settings-v1";
 const tokenStorageKey = "webtoon-queue-github-token-v1";
-const defaultSettings: GitHubSettings = {
+const defaultSettings: GitHubQueueSettings = {
   owner: "cyh000127",
   repo: "webtoon_review",
   branch: "main",
@@ -37,9 +31,10 @@ export default function App() {
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState(4);
   const [review, setReview] = useState("");
-  const [settings, setSettings] = useState<GitHubSettings>(defaultSettings);
+  const [settings, setSettings] = useState<GitHubQueueSettings>(defaultSettings);
   const [tokenInput, setTokenInput] = useState("");
   const [hasToken, setHasToken] = useState(false);
+  const [isTestingConnection, setIsTestingConnection] = useState(false);
   const [settingsMessage, setSettingsMessage] = useState("설정을 불러오는 중입니다.");
 
   useEffect(() => {
@@ -152,9 +147,30 @@ export default function App() {
     }
   };
 
-  const checkLocalSettings = () => {
+  const checkConnection = async () => {
     if (isSettingsReady) {
-      setSettingsMessage("필수 설정과 토큰이 저장되어 있습니다.");
+      setIsTestingConnection(true);
+      setSettingsMessage("GitHub 연결을 확인하는 중입니다.");
+
+      try {
+        const token = await SecureStore.getItemAsync(tokenStorageKey);
+
+        if (!token) {
+          setHasToken(false);
+          setSettingsMessage("저장된 토큰이 없습니다.");
+          return;
+        }
+
+        const message = await testGitHubConnection(settings, token);
+        setSettingsMessage(message);
+      } catch (error) {
+        setSettingsMessage(
+          error instanceof Error ? error.message : "GitHub 연결에 실패했습니다."
+        );
+      } finally {
+        setIsTestingConnection(false);
+      }
+
       return;
     }
 
@@ -387,9 +403,12 @@ export default function App() {
                 <Pressable
                   accessibilityRole="button"
                   style={styles.actionButton}
-                  onPress={checkLocalSettings}
+                  disabled={isTestingConnection}
+                  onPress={checkConnection}
                 >
-                  <Text style={styles.actionButtonText}>설정 확인</Text>
+                  <Text style={styles.actionButtonText}>
+                    {isTestingConnection ? "확인 중" : "연결 테스트"}
+                  </Text>
                 </Pressable>
               </View>
 
@@ -419,8 +438,8 @@ export default function App() {
                 Codex가 후처리합니다.
               </Text>
               <Text style={styles.guideText}>
-                저장소 설정은 SecureStore에 저장하고, 다음 단계에서는 실제 GitHub
-                Contents API 클라이언트를 붙입니다.
+                저장소 설정은 SecureStore에 저장하고, GitHub Contents API로 queue
+                파일을 읽고 갱신합니다.
               </Text>
             </View>
           )}
