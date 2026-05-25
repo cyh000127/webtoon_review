@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" count="43">
+<webtoons collectedAt="2026-05-25" count="44">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -753,5 +753,24 @@
     <coverImage>webtoons/covers/043.jpg</coverImage>
     <descriptionFile>webtoons/description/043.txt</descriptionFile>
     <note>공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.</note>
+  </webtoon>
+  <webtoon id="044">
+    <title>나 혼자만 레벨업</title>
+    <author>현군, 장성락(REDICE STUDIO), 추공</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션</genre>
+      <genre>현대판타지</genre>
+      <genre>헌터</genre>
+    </genres>
+    <description>최약체 E급 헌터 성진우가 죽음의 위기에서 시스템을 얻고 혼자만 레벨업하며 그림자 군주로 성장하는 현대 판타지 액션이다.</description>
+    <serialization status="completed" label="완결(200편)" episodeCount="200"/>
+    <userReading status="finished" progress="200편 완독" group="completed-section"/>
+    <userReview rating="4.5">멋있는 그림체 괜찮은 마무리 술술읽히는 전개</userReview>
+    <coverImage>webtoons/covers/044.png</coverImage>
+    <descriptionFile>webtoons/description/044.txt</descriptionFile>
+    <note>공식 카카오페이지 정보로 작가, 장르, 완결 상태, 표지를 보정했습니다. 회차 수는 카카오페이지 완결 이벤트의 1편부터 200편까지 완독 안내 기준으로 기록했습니다.</note>
   </webtoon>
 </webtoons>
