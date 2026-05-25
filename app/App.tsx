@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import * as SecureStore from "expo-secure-store";
 import { useEffect, useMemo, useState } from "react";
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -24,6 +25,7 @@ type Screen = "entry" | "settings" | "guide";
 const ratingSteps = [0, 1, 2, 3, 4, 5];
 const settingsStorageKey = "webtoon-queue-github-settings-v1";
 const tokenStorageKey = "webtoon-queue-github-token-v1";
+const recentSubmissionsStorageKey = "webtoon-queue-recent-submissions-v1";
 const defaultSettings: GitHubQueueSettings = {
   owner: "cyh000127",
   repo: "webtoon_review",
@@ -42,6 +44,15 @@ export default function App() {
   const [isTestingConnection, setIsTestingConnection] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [recentSubmissions, setRecentSubmissions] = useState<
+    Array<{
+      createdAt: string;
+      id: string;
+      rating: number;
+      review: string;
+      title: string;
+    }>
+  >([]);
   const [settingsMessage, setSettingsMessage] = useState("설정을 불러오는 중입니다.");
 
   useEffect(() => {
@@ -66,6 +77,14 @@ export default function App() {
             ? "GitHub 토큰이 저장되어 있습니다."
             : "GitHub 토큰을 저장해야 제출할 수 있습니다."
         );
+
+        const storedRecent = await SecureStore.getItemAsync(
+          recentSubmissionsStorageKey
+        );
+
+        if (storedRecent) {
+          setRecentSubmissions(JSON.parse(storedRecent));
+        }
       } catch {
         if (mounted) {
           setSettingsMessage("설정을 불러오지 못했습니다. 다시 저장해 주세요.");
@@ -184,7 +203,18 @@ export default function App() {
     setSettingsMessage("저장소 설정과 토큰을 모두 준비해 주세요.");
   };
 
-  const submitQueueEntry = async () => {
+  const saveRecentSubmissions = async (
+    submissions: typeof recentSubmissions
+  ) => {
+    const nextSubmissions = submissions.slice(0, 5);
+    setRecentSubmissions(nextSubmissions);
+    await SecureStore.setItemAsync(
+      recentSubmissionsStorageKey,
+      JSON.stringify(nextSubmissions)
+    );
+  };
+
+  const submitQueueEntry = async (allowDuplicateTitle = false) => {
     const trimmedTitle = title.trim();
     const trimmedReview = review.trim();
 
@@ -195,6 +225,29 @@ export default function App() {
 
     if (!isSettingsReady) {
       setSubmitMessage("설정 탭에서 GitHub 저장소와 토큰을 먼저 저장해 주세요.");
+      return;
+    }
+
+    const lastSubmission = recentSubmissions[0];
+
+    if (
+      !allowDuplicateTitle &&
+      lastSubmission?.title.trim().toLowerCase() === trimmedTitle.toLowerCase()
+    ) {
+      Alert.alert(
+        "같은 제목을 방금 제출했어요",
+        "그래도 한 번 더 대기열에 추가할까요?",
+        [
+          {
+            style: "cancel",
+            text: "취소"
+          },
+          {
+            onPress: () => submitQueueEntry(true),
+            text: "제출"
+          }
+        ]
+      );
       return;
     }
 
@@ -223,6 +276,7 @@ export default function App() {
         token
       });
 
+      await saveRecentSubmissions([entry, ...recentSubmissions]);
       setTitle("");
       setRating(4);
       setReview("");
@@ -381,7 +435,7 @@ export default function App() {
                   (!isReady || !isSettingsReady || isSubmitting) &&
                     styles.submitButtonDisabled
                 ]}
-                onPress={submitQueueEntry}
+                onPress={() => submitQueueEntry()}
               >
                 <Text style={styles.submitText}>
                   {isSubmitting
@@ -400,6 +454,20 @@ export default function App() {
                 <Text style={styles.helperText}>
                   설정 탭에서 저장소 정보와 토큰을 먼저 저장해 주세요.
                 </Text>
+              )}
+
+              {recentSubmissions.length > 0 && (
+                <View style={styles.recentBox}>
+                  <Text style={styles.previewTitle}>최근 제출</Text>
+                  {recentSubmissions.map((submission) => (
+                    <View key={submission.id} style={styles.recentItem}>
+                      <Text style={styles.recentTitle}>{submission.title}</Text>
+                      <Text style={styles.recentMeta}>
+                        {submission.rating.toFixed(1)}점 · {submission.review}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
               )}
             </View>
           ) : screen === "settings" ? (
@@ -726,6 +794,32 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "900",
     lineHeight: 19
+  },
+  recentBox: {
+    gap: 10,
+    borderColor: "#303747",
+    borderRadius: 8,
+    borderWidth: 1,
+    marginTop: 16,
+    padding: 12,
+    backgroundColor: "#151925"
+  },
+  recentItem: {
+    gap: 3,
+    borderTopColor: "#303747",
+    borderTopWidth: 1,
+    paddingTop: 10
+  },
+  recentTitle: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "900"
+  },
+  recentMeta: {
+    color: "#aeb7c6",
+    fontSize: 13,
+    fontWeight: "700",
+    lineHeight: 18
   },
   guideTitle: {
     marginBottom: 10,
