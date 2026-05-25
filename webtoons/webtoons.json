@@ -446,11 +446,12 @@
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
       "episodeCount": 140,
-      "userReadingStatus": "ambiguous",
-      "userProgress": "50화까지",
-      "group": "ambiguous",
+      "userReadingStatus": "dropped",
+      "userProgress": "50화에서 중단",
+      "group": "dropped",
       "coverImage": "webtoons/covers/018.png",
       "descriptionFile": "webtoons/description/018.txt",
+      "dropReason": "재미가 없고 난해해서 주인공에 몰입이 안되서",
       "note": ""
     },
     {

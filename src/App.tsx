@@ -1,6 +1,5 @@
 import { useMemo, useState, type CSSProperties } from "react";
 import {
-  AlertCircle,
   BookOpen,
   BookOpenCheck,
   BookmarkX,
@@ -49,8 +48,7 @@ const readingTabs: Array<{ id: ReadingFilter; label: string }> = [
   { id: "all", label: "전체" },
   { id: "reading", label: "읽는 중" },
   { id: "finished", label: "완주" },
-  { id: "dropped", label: "중도 포기" },
-  { id: "ambiguous", label: "확인 필요" }
+  { id: "dropped", label: "중도 포기" }
 ];
 
 const sortOptions: Array<{ id: SortKey; label: string }> = [
@@ -91,10 +89,6 @@ function getReadingIcon(status: ReadingFilter) {
     return BookmarkX;
   }
 
-  if (status === "ambiguous") {
-    return AlertCircle;
-  }
-
   return Library;
 }
 
@@ -121,6 +115,10 @@ function getPlatformShortLabel(platform: string) {
 }
 
 function getCardCopy(webtoon: WebtoonViewModel) {
+  if (webtoon.userReadingStatus === "dropped" && webtoon.dropReason) {
+    return webtoon.dropReason;
+  }
+
   return webtoon.userReview ?? webtoon.description;
 }
 
@@ -159,7 +157,7 @@ function App() {
         counts[item.userReadingStatus] += 1;
         return counts;
       },
-      { all: 0, reading: 0, finished: 0, dropped: 0, ambiguous: 0 }
+      { all: 0, reading: 0, finished: 0, dropped: 0 }
     );
   }, [serializationScoped]);
 
@@ -468,6 +466,14 @@ function App() {
                   <p>{selectedWebtoon.userReview}</p>
                 </section>
               )}
+
+              {selectedWebtoon.userReadingStatus === "dropped" &&
+                selectedWebtoon.dropReason && (
+                  <section className="detail-drop" aria-label="중도 포기 사유">
+                    <strong>중도 포기 사유</strong>
+                    <p>{selectedWebtoon.dropReason}</p>
+                  </section>
+                )}
 
               <div className="detail-tags">
                 {selectedWebtoon.genres.map((itemGenre) => (

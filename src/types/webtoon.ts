@@ -3,8 +3,7 @@ export type SerializationStatus = "ongoing" | "completed";
 export type UserReadingStatus =
   | "reading"
   | "finished"
-  | "dropped"
-  | "ambiguous";
+  | "dropped";
 
 export interface ArchiveWebtoonRecord {
   id: string;
@@ -26,6 +25,7 @@ export interface ArchiveWebtoonRecord {
   descriptionFile: string;
   userRating?: number;
   userReview?: string;
+  dropReason?: string;
   note: string;
 }
 

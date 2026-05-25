@@ -304,7 +304,8 @@
     </genres>
     <description>끝없이 반복되는 삶 속에서 주인공이 점차 흔들리고 극단적인 선택지에 가까워지는 로맨스 판타지 스릴러다. 회귀물의 피로와 미스터리 분위기가 짙다.</description>
     <serialization status="ongoing" label="연재중" episodeCount="140"/>
-    <userReading status="ambiguous" progress="50화까지" group="ambiguous"/>
+    <userReading status="dropped" progress="50화에서 중단" group="dropped"/>
+    <dropReason>재미가 없고 난해해서 주인공에 몰입이 안되서</dropReason>
     <coverImage>webtoons/covers/018.png</coverImage>
     <descriptionFile>webtoons/description/018.txt</descriptionFile>
   </webtoon>

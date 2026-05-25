@@ -174,11 +174,6 @@ h1 {
   background: #168c4a;
 }
 
-.reading-tabs button.ambiguous.active {
-  border-color: #8fb3ff;
-  background: #4266c9;
-}
-
 .reading-tabs strong {
   font-size: 13px;
   color: inherit;
@@ -404,10 +399,6 @@ h1 {
 
 .reading-badge.dropped {
   background: #7f8792;
-}
-
-.reading-badge.ambiguous {
-  background: #4266c9;
 }
 
 .card-body {
@@ -689,6 +680,26 @@ h1 {
 .detail-review p {
   margin: 10px 0 0;
   color: #e8edf6;
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.detail-drop {
+  margin-top: 18px;
+  border: 1px solid #7f8792;
+  border-radius: 8px;
+  padding: 14px;
+  background: #202635;
+}
+
+.detail-drop strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.detail-drop p {
+  margin: 9px 0 0;
+  color: #d5dbe6;
   font-size: 14px;
   line-height: 1.58;
 }

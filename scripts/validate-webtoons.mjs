@@ -75,7 +75,7 @@ for (const item of items) {
     fail(`${item.id} 항목의 serializationStatus 값이 올바르지 않습니다.`);
   }
 
-  if (!["reading", "finished", "dropped", "ambiguous"].includes(item.userReadingStatus)) {
+  if (!["reading", "finished", "dropped"].includes(item.userReadingStatus)) {
     fail(`${item.id} 항목의 userReadingStatus 값이 올바르지 않습니다.`);
   }
 
