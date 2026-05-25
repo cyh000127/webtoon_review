@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { useMemo, useState } from "react";
+import * as SecureStore from "expo-secure-store";
+import { useEffect, useMemo, useState } from "react";
 import {
   KeyboardAvoidingView,
   Platform,
@@ -12,15 +13,70 @@ import {
   View
 } from "react-native";
 
-type Screen = "entry" | "guide";
+type Screen = "entry" | "settings" | "guide";
+
+type GitHubSettings = {
+  owner: string;
+  repo: string;
+  branch: string;
+  queuePath: string;
+};
 
 const ratingSteps = [0, 1, 2, 3, 4, 5];
+const settingsStorageKey = "webtoon-queue-github-settings-v1";
+const tokenStorageKey = "webtoon-queue-github-token-v1";
+const defaultSettings: GitHubSettings = {
+  owner: "cyh000127",
+  repo: "webtoon_review",
+  branch: "main",
+  queuePath: "queue/pending-webtoons.jsonl"
+};
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>("entry");
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState(4);
   const [review, setReview] = useState("");
+  const [settings, setSettings] = useState<GitHubSettings>(defaultSettings);
+  const [tokenInput, setTokenInput] = useState("");
+  const [hasToken, setHasToken] = useState(false);
+  const [settingsMessage, setSettingsMessage] = useState("설정을 불러오는 중입니다.");
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadSettings() {
+      try {
+        const storedSettings = await SecureStore.getItemAsync(settingsStorageKey);
+        const storedToken = await SecureStore.getItemAsync(tokenStorageKey);
+
+        if (!mounted) {
+          return;
+        }
+
+        if (storedSettings) {
+          setSettings({ ...defaultSettings, ...JSON.parse(storedSettings) });
+        }
+
+        setHasToken(Boolean(storedToken));
+        setSettingsMessage(
+          storedToken
+            ? "GitHub 토큰이 저장되어 있습니다."
+            : "GitHub 토큰을 저장해야 제출할 수 있습니다."
+        );
+      } catch {
+        if (mounted) {
+          setSettingsMessage("설정을 불러오지 못했습니다. 다시 저장해 주세요.");
+        }
+      }
+    }
+
+    loadSettings();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const validationMessage = useMemo(() => {
     if (title.trim().length === 0) {
@@ -35,6 +91,75 @@ export default function App() {
   }, [review, title]);
 
   const isReady = title.trim().length > 0 && review.trim().length > 0;
+  const isSettingsReady =
+    settings.owner.trim().length > 0 &&
+    settings.repo.trim().length > 0 &&
+    settings.branch.trim().length > 0 &&
+    settings.queuePath.trim().length > 0 &&
+    hasToken;
+
+  const saveSettings = async () => {
+    const trimmedSettings = {
+      owner: settings.owner.trim(),
+      repo: settings.repo.trim(),
+      branch: settings.branch.trim(),
+      queuePath: settings.queuePath.trim()
+    };
+
+    if (
+      !trimmedSettings.owner ||
+      !trimmedSettings.repo ||
+      !trimmedSettings.branch ||
+      !trimmedSettings.queuePath
+    ) {
+      setSettingsMessage("owner, repo, branch, queue path를 모두 입력해 주세요.");
+      return;
+    }
+
+    try {
+      await SecureStore.setItemAsync(
+        settingsStorageKey,
+        JSON.stringify(trimmedSettings)
+      );
+
+      if (tokenInput.trim()) {
+        await SecureStore.setItemAsync(tokenStorageKey, tokenInput.trim());
+        setHasToken(true);
+        setTokenInput("");
+      }
+
+      setSettings(trimmedSettings);
+      setSettingsMessage(
+        tokenInput.trim()
+          ? "GitHub 설정과 토큰을 저장했습니다."
+          : hasToken
+            ? "GitHub 설정을 저장했습니다. 기존 토큰을 유지합니다."
+            : "GitHub 설정을 저장했습니다. 토큰은 아직 없습니다."
+      );
+    } catch {
+      setSettingsMessage("설정을 저장하지 못했습니다.");
+    }
+  };
+
+  const deleteToken = async () => {
+    try {
+      await SecureStore.deleteItemAsync(tokenStorageKey);
+      setHasToken(false);
+      setTokenInput("");
+      setSettingsMessage("저장된 GitHub 토큰을 삭제했습니다.");
+    } catch {
+      setSettingsMessage("토큰을 삭제하지 못했습니다.");
+    }
+  };
+
+  const checkLocalSettings = () => {
+    if (isSettingsReady) {
+      setSettingsMessage("필수 설정과 토큰이 저장되어 있습니다.");
+      return;
+    }
+
+    setSettingsMessage("저장소 설정과 토큰을 모두 준비해 주세요.");
+  };
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -73,6 +198,24 @@ export default function App() {
                 ]}
               >
                 입력
+              </Text>
+            </Pressable>
+            <Pressable
+              accessibilityRole="tab"
+              accessibilityState={{ selected: screen === "settings" }}
+              style={[
+                styles.segmentButton,
+                screen === "settings" && styles.segmentButtonActive
+              ]}
+              onPress={() => setScreen("settings")}
+            >
+              <Text
+                style={[
+                  styles.segmentText,
+                  screen === "settings" && styles.segmentTextActive
+                ]}
+              >
+                설정
               </Text>
             </Pressable>
             <Pressable
@@ -157,14 +300,112 @@ export default function App() {
                 disabled
                 style={[
                   styles.submitButton,
-                  isReady && styles.submitButtonReady,
+                  isReady && isSettingsReady && styles.submitButtonReady,
                   styles.submitButtonDisabled
                 ]}
               >
-                <Text style={styles.submitText}>GitHub 연결 후 제출 가능</Text>
+                <Text style={styles.submitText}>
+                  {isSettingsReady ? "제출 기능 연결 대기" : "GitHub 설정 후 제출 가능"}
+                </Text>
               </Pressable>
 
               <Text style={styles.helperText}>{validationMessage}</Text>
+              {!isSettingsReady && (
+                <Text style={styles.helperText}>
+                  설정 탭에서 저장소 정보와 토큰을 먼저 저장해 주세요.
+                </Text>
+              )}
+            </View>
+          ) : screen === "settings" ? (
+            <View style={styles.panel}>
+              <Text style={styles.label}>GitHub owner</Text>
+              <TextInput
+                value={settings.owner}
+                onChangeText={(owner) => setSettings((current) => ({ ...current, owner }))}
+                autoCapitalize="none"
+                placeholder="cyh000127"
+                placeholderTextColor="#7f8792"
+                style={styles.input}
+              />
+
+              <Text style={styles.label}>Repository</Text>
+              <TextInput
+                value={settings.repo}
+                onChangeText={(repo) => setSettings((current) => ({ ...current, repo }))}
+                autoCapitalize="none"
+                placeholder="webtoon_review"
+                placeholderTextColor="#7f8792"
+                style={styles.input}
+              />
+
+              <Text style={styles.label}>Branch</Text>
+              <TextInput
+                value={settings.branch}
+                onChangeText={(branch) =>
+                  setSettings((current) => ({ ...current, branch }))
+                }
+                autoCapitalize="none"
+                placeholder="main"
+                placeholderTextColor="#7f8792"
+                style={styles.input}
+              />
+
+              <Text style={styles.label}>Queue path</Text>
+              <TextInput
+                value={settings.queuePath}
+                onChangeText={(queuePath) =>
+                  setSettings((current) => ({ ...current, queuePath }))
+                }
+                autoCapitalize="none"
+                placeholder="queue/pending-webtoons.jsonl"
+                placeholderTextColor="#7f8792"
+                style={styles.input}
+              />
+
+              <Text style={styles.label}>
+                GitHub token {hasToken ? "(저장됨)" : "(필수)"}
+              </Text>
+              <TextInput
+                value={tokenInput}
+                onChangeText={setTokenInput}
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder={hasToken ? "새 토큰으로 교체하려면 입력" : "fine-grained PAT"}
+                placeholderTextColor="#7f8792"
+                secureTextEntry
+                style={styles.input}
+              />
+
+              <View style={styles.buttonRow}>
+                <Pressable
+                  accessibilityRole="button"
+                  style={[styles.actionButton, styles.primaryActionButton]}
+                  onPress={saveSettings}
+                >
+                  <Text style={styles.actionButtonText}>설정 저장</Text>
+                </Pressable>
+                <Pressable
+                  accessibilityRole="button"
+                  style={styles.actionButton}
+                  onPress={checkLocalSettings}
+                >
+                  <Text style={styles.actionButtonText}>설정 확인</Text>
+                </Pressable>
+              </View>
+
+              <Pressable
+                accessibilityRole="button"
+                disabled={!hasToken}
+                style={[
+                  styles.deleteButton,
+                  !hasToken && styles.submitButtonDisabled
+                ]}
+                onPress={deleteToken}
+              >
+                <Text style={styles.deleteButtonText}>저장된 토큰 삭제</Text>
+              </Pressable>
+
+              <Text style={styles.helperText}>{settingsMessage}</Text>
             </View>
           ) : (
             <View style={styles.panel}>
@@ -178,7 +419,8 @@ export default function App() {
                 Codex가 후처리합니다.
               </Text>
               <Text style={styles.guideText}>
-                다음 단계에서는 GitHub 토큰과 저장소 설정 화면을 붙입니다.
+                저장소 설정은 SecureStore에 저장하고, 다음 단계에서는 실제 GitHub
+                Contents API 클라이언트를 붙입니다.
               </Text>
             </View>
           )}
@@ -342,6 +584,44 @@ const styles = StyleSheet.create({
   submitText: {
     color: "#ffffff",
     fontSize: 16,
+    fontWeight: "900"
+  },
+  buttonRow: {
+    flexDirection: "row",
+    gap: 10,
+    marginBottom: 12
+  },
+  actionButton: {
+    minHeight: 44,
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#566071",
+    borderRadius: 8,
+    borderWidth: 1,
+    backgroundColor: "#242b3a"
+  },
+  primaryActionButton: {
+    borderColor: "#ff4050",
+    backgroundColor: "#e93449"
+  },
+  actionButtonText: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "900"
+  },
+  deleteButton: {
+    minHeight: 44,
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#7f8792",
+    borderRadius: 8,
+    borderWidth: 1,
+    backgroundColor: "#202635"
+  },
+  deleteButtonText: {
+    color: "#d5dbe6",
+    fontSize: 14,
     fontWeight: "900"
   },
   helperText: {
