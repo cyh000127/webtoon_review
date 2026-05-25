@@ -93,6 +93,8 @@ npm run validate:webtoons
 구현 순서와 티켓은 [docs/mobile-queue-app-plan.md](docs/mobile-queue-app-plan.md)를 봅니다.  
 대기열 파일 규칙은 [docs/webtoon-queue-convention.md](docs/webtoon-queue-convention.md)를 봅니다.
 
+React Native 앱 실행 방법은 [app/README.md](app/README.md)를 봅니다.
+
 ## 문서
 
 - [작업 정의](docs/webtoon-review-spec.md)
@@ -100,6 +102,7 @@ npm run validate:webtoons
 - [모바일 큐 앱 구현 계획](docs/mobile-queue-app-plan.md)
 - [웹툰 대기열 컨벤션](docs/webtoon-queue-convention.md)
 - [Codex 대기열 처리 워크플로우](docs/codex-queue-processing-workflow.md)
+- [모바일 큐 앱 QA 체크리스트](docs/mobile-queue-app-qa.md)
 - [커밋 메시지 컨벤션](docs/commit-convention.md)
 - [웹툰 아카이브 안내](webtoons/README.md)
 

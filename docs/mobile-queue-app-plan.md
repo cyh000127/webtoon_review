@@ -241,4 +241,4 @@ GitHub 공식 문서 기준으로 파일 업데이트 시 새 파일 content는 
 완료 기준:
 
 - 핸드폰에서 입력부터 GitHub 커밋 생성까지 완료된다.
-- README에 사용 방법이 정리된다.
+- `app/README.md`와 `docs/mobile-queue-app-qa.md`에 사용 방법과 QA 절차가 정리된다.
