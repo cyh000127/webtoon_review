@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="abstract webtoon cover">
+  <defs>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#143f3b"/>
+      <stop offset="1" stop-color="#7bd389"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="260" fill="url(#g)"/>
+  <rect x="0" y="184" width="420" height="76" fill="#101521" opacity=".74"/>
+  <path d="M34 172 L126 62 L210 172Z" fill="#f8f4dd" opacity=".82"/>
+  <path d="M154 172 L260 34 L386 172Z" fill="#e9c46a" opacity=".72"/>
+  <rect x="82" y="126" width="252" height="12" fill="#ffffff" opacity=".58"/>
+  <rect x="112" y="153" width="196" height="12" fill="#ffffff" opacity=".42"/>
+  <text x="32" y="226" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">WEBTOON</text>
+</svg>

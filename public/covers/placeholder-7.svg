@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="abstract webtoon cover">
+  <defs>
+    <linearGradient id="g" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#151927"/>
+      <stop offset="1" stop-color="#2a9d8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="260" fill="url(#g)"/>
+  <path d="M62 36 H168 L198 116 L144 224 H36 L92 114Z" fill="#f4d35e" opacity=".82"/>
+  <path d="M226 36 H332 L384 224 H278 L196 114Z" fill="#f8f9fa" opacity=".36"/>
+  <path d="M118 70 L160 122 L112 176 L70 122Z" fill="#151927" opacity=".72"/>
+  <path d="M264 74 H334 M276 108 H346 M288 142 H358" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity=".5"/>
+  <text x="32" y="226" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">QUEST</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="abstract webtoon cover">
+  <defs>
+    <linearGradient id="g" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2b46"/>
+      <stop offset="1" stop-color="#f4a261"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="260" fill="url(#g)"/>
+  <path d="M36 36 H384 V224 H36Z" fill="#101521" opacity=".34"/>
+  <path d="M76 70 H196 V190 H76Z" fill="#faf0d6" opacity=".78"/>
+  <path d="M224 70 H344 V190 H224Z" fill="#ffffff" opacity=".28"/>
+  <path d="M108 98 H164 M108 126 H176 M108 154 H150" stroke="#101521" stroke-width="10" stroke-linecap="round" opacity=".58"/>
+  <path d="M250 96 L326 96 L304 164 L226 164Z" fill="#e63946" opacity=".72"/>
+  <text x="32" y="226" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">ARCHIVE</text>
+</svg>

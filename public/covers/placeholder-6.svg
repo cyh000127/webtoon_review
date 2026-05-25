@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="abstract webtoon cover">
+  <defs>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4c1d3d"/>
+      <stop offset="1" stop-color="#f7cad0"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="260" fill="url(#g)"/>
+  <path d="M0 176 C92 140 160 148 230 176 C302 206 360 202 420 176 V260 H0Z" fill="#101521" opacity=".52"/>
+  <rect x="56" y="46" width="132" height="154" rx="8" fill="#fff5e6" opacity=".74"/>
+  <rect x="226" y="46" width="132" height="154" rx="8" fill="#ffffff" opacity=".42"/>
+  <path d="M92 88 H152 M92 120 H142 M92 152 H166" stroke="#4c1d3d" stroke-width="10" stroke-linecap="round" opacity=".62"/>
+  <text x="32" y="226" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">ROMANCE</text>
+</svg>
