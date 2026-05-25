@@ -24,6 +24,8 @@ export interface ArchiveWebtoonRecord {
   group: string;
   coverImage: string;
   descriptionFile: string;
+  userRating?: number;
+  userReview?: string;
   note: string;
 }
 

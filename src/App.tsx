@@ -9,6 +9,7 @@ import {
   Library,
   Search,
   SlidersHorizontal,
+  Star,
   X
 } from "lucide-react";
 import archive from "../webtoons/webtoons.json";
@@ -26,7 +27,7 @@ type WebtoonViewModel = ArchiveWebtoonRecord & {
   coverUrl: string;
 };
 
-const coverModules = import.meta.glob("../webtoons/covers/*.{jpg,png}", {
+const coverModules = import.meta.glob("../webtoons/covers/*.{jpg,png,svg}", {
   eager: true,
   import: "default",
   query: "?url"
@@ -117,6 +118,10 @@ function getPlatformStyle(platform: string): CSSProperties {
 
 function getPlatformShortLabel(platform: string) {
   return platformMeta[platform]?.shortLabel ?? "etc";
+}
+
+function getCardCopy(webtoon: WebtoonViewModel) {
+  return webtoon.userReview ?? webtoon.description;
 }
 
 function App() {
@@ -374,7 +379,14 @@ function App() {
                   <span>{webtoon.episodeCount}화</span>
                 </div>
 
-                <p className="review-copy">{webtoon.description}</p>
+                {webtoon.userRating && (
+                  <div className="rating-row" aria-label={`평점 ${webtoon.userRating}점`}>
+                    <Star size={15} fill="currentColor" aria-hidden="true" />
+                    <strong>{webtoon.userRating.toFixed(1)}</strong>
+                  </div>
+                )}
+
+                <p className="review-copy">{getCardCopy(webtoon)}</p>
 
                 <div className="tag-row">
                   {webtoon.genres.slice(0, 4).map((itemGenre) => (
@@ -446,6 +458,16 @@ function App() {
               </dl>
 
               <p className="detail-description">{selectedWebtoon.description}</p>
+
+              {selectedWebtoon.userRating && selectedWebtoon.userReview && (
+                <section className="detail-review" aria-label="내 후기">
+                  <div>
+                    <Star size={18} fill="currentColor" aria-hidden="true" />
+                    <strong>{selectedWebtoon.userRating.toFixed(1)}</strong>
+                  </div>
+                  <p>{selectedWebtoon.userReview}</p>
+                </section>
+              )}
 
               <div className="detail-tags">
                 {selectedWebtoon.genres.map((itemGenre) => (

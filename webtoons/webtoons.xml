@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" count="34">
+<webtoons collectedAt="2026-05-25" count="43">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -201,6 +201,7 @@
     <description>2000년대 학창 시절의 감성과 서툰 짝사랑을 담은 청춘 드라마다. 친구 관계, 러브코미디, 레트로한 분위기가 부드럽게 이어진다.</description>
     <serialization status="ongoing" label="연재중(휴재)" episodeCount="218"/>
     <userReading status="reading" progress="216화까지(휴재)" group="ongoing"/>
+    <userReview rating="4.8">달달하고 재미있음. 순애의 교과서 같은 느낌</userReview>
     <coverImage>webtoons/covers/012.jpg</coverImage>
     <descriptionFile>webtoons/description/012.txt</descriptionFile>
     <note>입력 제목은 별이샴샵이지만 공식 작품명은 별이삼샵입니다.</note>
@@ -559,7 +560,8 @@
     </genres>
     <description>분신 능력을 얻은 주인공이 자동 사냥처럼 성장 루트를 확장하는 현대판타지다. 상태창, 크리처, 액션 중심의 사냥물이다.</description>
     <serialization status="completed" label="완결(176화)" episodeCount="176"/>
-    <userReading status="dropped" progress="176화에서 중단" group="completed-section"/>
+    <userReading status="finished" progress="176화 완독" group="completed-section"/>
+    <userReview rating="4.5">제목이 진입장벽. 굉장히 양판 같지만 마무리가 잘된 웹툰</userReview>
     <coverImage>webtoons/covers/033.jpg</coverImage>
     <descriptionFile>webtoons/description/033.txt</descriptionFile>
   </webtoon>
@@ -576,8 +578,179 @@
     </genres>
     <description>평범한 남학생이 옆자리 친구의 뜻밖의 비밀을 알게 되며 관계가 흔들리기 시작한다. 학원 러브코미디와 미스터리한 매력이 함께 있는 작품이다.</description>
     <serialization status="completed" label="완결(141화)" episodeCount="141"/>
-    <userReading status="dropped" progress="140화에서 중단" group="completed-section"/>
+    <userReading status="finished" progress="140화 완독" group="completed-section"/>
     <coverImage>webtoons/covers/034.jpg</coverImage>
     <descriptionFile>webtoons/description/034.txt</descriptionFile>
+  </webtoon>
+  <webtoon id="035" inputTitle="하루만 네가 되고싶어">
+    <title>하루만 네가 되고 싶어</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>드라마</genre>
+      <genre>복수</genre>
+      <genre>관계</genre>
+    </genres>
+    <description>뒤엉킨 권력 관계와 각 인물의 사정을 따라가며 몰입하게 되는 드라마형 로맨스 판타지다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="151"/>
+    <userReading status="reading" progress="151화까지" group="ongoing"/>
+    <userReview rating="4">살짝 어지러운 스토리긴하데 모두의 입장이 이해가 되서 몰입이 되는 스토리.</userReview>
+    <coverImage>webtoons/covers/035.svg</coverImage>
+    <descriptionFile>webtoons/description/035.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="036">
+    <title>플레이어</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션</genre>
+      <genre>성장</genre>
+      <genre>게임판타지</genre>
+    </genres>
+    <description>다채로운 색감과 빠른 전개가 강점인 판타지 액션 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="257"/>
+    <userReading status="reading" progress="257화까지" group="ongoing"/>
+    <userReview rating="4.6">볼만한 판타지 웹툰 없을 때 추천. 색감과 그림체가 굉장히 다채로워서 보는 맛이 있음. 스토리 전개도 빠른 편이지만 뇌빼고 보는 사람들에게는 약가의 집중이 필요함</userReview>
+    <coverImage>webtoons/covers/036.svg</coverImage>
+    <descriptionFile>webtoons/description/036.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="037">
+    <title>우리 길드 아이돌</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스</genre>
+      <genre>게임</genre>
+      <genre>RPG</genre>
+      <genre>아이돌</genre>
+    </genres>
+    <description>RPG 게임 감성과 로맨스 서사를 함께 다루는 게임 로맨스 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="34"/>
+    <userReading status="reading" progress="34화까지" group="ongoing"/>
+    <userReview rating="4.8">rpg 게임 + 로맨스 물이라 게임을 좋아하는 사람들한테는 굉장히 흥미롭게 다가올 거같음</userReview>
+    <coverImage>webtoons/covers/037.svg</coverImage>
+    <descriptionFile>webtoons/description/037.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="038">
+    <title>스쿨 오브 스트릿</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>드라마</genre>
+      <genre>스포츠</genre>
+      <genre>댄스</genre>
+      <genre>청춘</genre>
+    </genres>
+    <description>스트릿 댄스를 중심 소재로 삼아 성장과 경쟁을 그리는 청춘 드라마다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="89"/>
+    <userReading status="reading" progress="89화까지" group="ongoing"/>
+    <userReview rating="4">춤을 모르는 사람 들도 볼만은 함. 포인트가 춤에 맞춰져 있어서 춤을 모르는 입장에서 아쉬웠음</userReview>
+    <coverImage>webtoons/covers/038.svg</coverImage>
+    <descriptionFile>webtoons/description/038.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="039" inputTitle="별과 사슬이 뜨는 섭">
+    <title>별과 사슬이 뜨는 섬</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>드라마</genre>
+      <genre>미스터리</genre>
+      <genre>액션</genre>
+    </genres>
+    <description>섬을 배경으로 판타지적 사건과 인물 관계가 전개되는 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="50"/>
+    <userReading status="reading" progress="50화까지" group="ongoing"/>
+    <userReview rating="4">볼만한 판타지 웹툰. 재미 있음</userReview>
+    <coverImage>webtoons/covers/039.svg</coverImage>
+    <descriptionFile>webtoons/description/039.txt</descriptionFile>
+    <note>입력에는 섭으로 적혔지만 화면 기준 별과 사슬이 뜨는 섬으로 기록했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="040">
+    <title>역대급 영지 설계사</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>개그/코미디</genre>
+      <genre>영지</genre>
+      <genre>건설</genre>
+    </genres>
+    <description>영지 개발과 생존 전략을 유쾌하게 풀어낸 판타지 코미디 웹툰이다.</description>
+    <serialization status="completed" label="완결(228화)" episodeCount="228"/>
+    <userReading status="finished" progress="228화 완독" group="completed-section"/>
+    <userReview rating="4.9">용두용미. 깔끔하게 재미가 없어지기 전에 후루룩 전개하고 마무리한 재미있는 웹툰</userReview>
+    <coverImage>webtoons/covers/040.svg</coverImage>
+    <descriptionFile>webtoons/description/040.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="041">
+    <title>미드우트</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>드라마</genre>
+      <genre>군상극</genre>
+      <genre>성장</genre>
+    </genres>
+    <description>여러 캐릭터의 서사와 빌드업을 중심으로 전개되는 판타지 드라마다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="191"/>
+    <userReading status="reading" progress="191화까지" group="ongoing"/>
+    <userReview rating="3.8">볼만한 판타지 웹툰. 빌드업은 재미있고 각 캐릭별 서사는 너무 즐겁지만 뭐랄까 너무 매끄럽게 진행되서 고구마에 비해 사이다가 부족한 느낌</userReview>
+    <coverImage>webtoons/covers/041.svg</coverImage>
+    <descriptionFile>webtoons/description/041.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="042">
+    <title>대마법사 커리큘럼</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>마법</genre>
+      <genre>아카데미</genre>
+      <genre>성장</genre>
+    </genres>
+    <description>마법 교육과 인물별 서사가 궁금해지는 신선한 소재의 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="19"/>
+    <userReading status="reading" progress="19화까지" group="ongoing"/>
+    <userReview rating="4.3">소재가 신선하고, 각 인물별 서사가 궁금한 웹툰. 굉장히 재미있음. 단 하나 아쉬운건 너무 일찍 발견해버린것</userReview>
+    <coverImage>webtoons/covers/042.svg</coverImage>
+    <descriptionFile>webtoons/description/042.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
+  </webtoon>
+  <webtoon id="043">
+    <title>심검의 용사</title>
+    <author>작가 확인 필요</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>용사</genre>
+      <genre>액션</genre>
+      <genre>능력</genre>
+    </genres>
+    <description>각기 다른 용사와 능력을 중심으로 흥미를 끌어가는 판타지 액션 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="42"/>
+    <userReading status="reading" progress="42화까지" group="ongoing"/>
+    <userReview rating="4">볼만한 웹툰. 각 캐릭터들이 신선하고 용사들의 능력이 궁금해지는 판타지 웹툰</userReview>
+    <coverImage>webtoons/covers/043.svg</coverImage>
+    <descriptionFile>webtoons/description/043.txt</descriptionFile>
+    <note>사용자 최근 본 화면과 후기 기준으로 추가했습니다. 작가와 공식 회차는 추후 확인이 필요합니다.</note>
   </webtoon>
 </webtoons>

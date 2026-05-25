@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1030" role="img" aria-label="대마법사 커리큘럼 cover placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14213d"/>
+      <stop offset="1" stop-color="#f77f00"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1030" fill="url(#g)"/>
+  <circle cx="536" cy="178" r="126" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 735 C170 656 296 704 438 642 C558 590 636 494 720 522 L720 1030 L0 1030 Z" fill="#0f1320" opacity="0.72"/>
+  <rect x="36" y="54" width="116" height="48" rx="12" fill="#ffffff" opacity="0.88"/>
+  <text x="55" y="88" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#151924">N</text>
+  <text x="36" y="675" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#ffffff">대마법사 커리큘럼</text>
+  <text x="36" y="800" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffcf5a">4.3 / 5.0</text>
+</svg>

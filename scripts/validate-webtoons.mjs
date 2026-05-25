@@ -79,6 +79,13 @@ for (const item of items) {
     fail(`${item.id} 항목의 userReadingStatus 값이 올바르지 않습니다.`);
   }
 
+  if (
+    item.userRating !== undefined &&
+    (typeof item.userRating !== "number" || item.userRating < 0 || item.userRating > 5)
+  ) {
+    fail(`${item.id} 항목의 userRating 값이 올바르지 않습니다.`);
+  }
+
   if (!existsSync(item.coverImage)) {
     fail(`${item.id} 항목의 표지 파일이 없습니다: ${item.coverImage}`);
   }
