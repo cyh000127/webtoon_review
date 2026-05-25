@@ -14,6 +14,18 @@ npm start
 
 Expo 개발 서버가 뜨면 핸드폰의 Expo Go 앱으로 QR 코드를 스캔합니다.
 
+## 설치형 Android 앱 빌드
+
+Expo Go 없이 핸드폰에 APK를 설치하려면 EAS preview build를 사용합니다.
+
+```bash
+cd app
+npx eas-cli@latest login
+npx eas-cli@latest build -p android --profile preview
+```
+
+빌드가 끝나면 Expo가 APK 다운로드 링크를 제공합니다. 자세한 절차는 [../docs/mobile-app-build.md](../docs/mobile-app-build.md)를 봅니다.
+
 ## 앱 화면
 
 - `입력`: 웹툰 제목, 별점, 한줄평 입력 및 GitHub 대기열 제출

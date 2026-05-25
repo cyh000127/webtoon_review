@@ -7,6 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
+      "bundleIdentifier": "com.cyh000127.webtoonqueue",
       "supportsTablet": true
     },
     "android": {
@@ -16,6 +17,7 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "package": "com.cyh000127.webtoonqueue",
       "predictiveBackGestureEnabled": false
     },
     "web": {

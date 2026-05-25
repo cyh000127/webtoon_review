@@ -43,3 +43,14 @@ Expo Go로 확인한다.
 - React Native 앱 TypeScript 검사 통과
 
 실제 핸드폰 QR 실행과 GitHub 토큰 제출 테스트는 사용자 기기와 토큰이 필요하다.
+
+## 설치형 APK 확인
+
+Expo Go 없이 실제 설치 앱으로 확인할 때는 아래 절차를 따른다.
+
+```bash
+cd app
+npx eas-cli@latest build -p android --profile preview
+```
+
+빌드 완료 후 APK 링크를 Android 기기에서 열어 설치한다. 설치 뒤에는 Expo Go 확인 절차와 같은 방식으로 GitHub 설정, 연결 테스트, 제출을 확인한다.
