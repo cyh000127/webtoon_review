@@ -22,6 +22,7 @@
 - Vite
 - lucide-react
 - JSON 기반 정적 데이터
+- GitHub REST API 기반 모바일 대기열 계획
 
 ## 실행
 
@@ -81,10 +82,23 @@ npm run validate:webtoons
 
 자세한 입력 규칙은 [docs/webtoon-data-convention.md](docs/webtoon-data-convention.md)를 봅니다.
 
+## 모바일 입력 앱 계획
+
+핸드폰에서 제목, 별점, 한줄평만 빠르게 입력한 뒤 GitHub 저장소의 대기열 파일에 커밋하는 앱을 계획하고 있습니다.
+
+- 입력 앱은 `queue/pending-webtoons.jsonl`만 수정합니다.
+- 정식 표지, 작가, 장르, 소개글 보강은 나중에 Codex가 처리합니다.
+- 서버와 LLM API 없이 GitHub REST API로 queue 파일 수정 커밋을 만듭니다.
+
+구현 순서와 티켓은 [docs/mobile-queue-app-plan.md](docs/mobile-queue-app-plan.md)를 봅니다.  
+대기열 파일 규칙은 [docs/webtoon-queue-convention.md](docs/webtoon-queue-convention.md)를 봅니다.
+
 ## 문서
 
 - [작업 정의](docs/webtoon-review-spec.md)
 - [웹툰 데이터 입력 컨벤션](docs/webtoon-data-convention.md)
+- [모바일 큐 앱 구현 계획](docs/mobile-queue-app-plan.md)
+- [웹툰 대기열 컨벤션](docs/webtoon-queue-convention.md)
 - [커밋 메시지 컨벤션](docs/commit-convention.md)
 - [웹툰 아카이브 안내](webtoons/README.md)
 
