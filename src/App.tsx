@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import {
   BookOpen,
   BookOpenCheck,
@@ -22,6 +22,7 @@ import type {
 type ReadingFilter = "all" | UserReadingStatus;
 type RatingFilter = "all" | "rated" | "gte45" | "gte40";
 type SortKey = "id" | "episode" | "title" | "creatorRating";
+type ReaderRatings = Record<string, number>;
 
 type WebtoonViewModel = ArchiveWebtoonRecord & {
   coverUrl: string;
@@ -65,6 +66,9 @@ const ratingFilters: Array<{ id: RatingFilter; label: string }> = [
   { id: "gte45", label: "4.5 이상" },
   { id: "gte40", label: "4.0 이상" }
 ];
+
+const readerRatingStorageKey = "webtoon-review-reader-ratings-v1";
+const readerRatingSteps = [1, 2, 3, 4, 5];
 
 const platformMeta: Record<string, { shortLabel: string; color: string }> = {
   네이버웹툰: { shortLabel: "N", color: "#20c461" },
@@ -157,6 +161,34 @@ function matchesRatingFilter(webtoon: WebtoonViewModel, filter: RatingFilter) {
   return true;
 }
 
+function readReaderRatings(): ReaderRatings {
+  if (typeof window === "undefined") {
+    return {};
+  }
+
+  try {
+    const stored = window.localStorage.getItem(readerRatingStorageKey);
+
+    if (!stored) {
+      return {};
+    }
+
+    const parsed = JSON.parse(stored) as ReaderRatings;
+
+    return Object.fromEntries(
+      Object.entries(parsed).filter(
+        ([, rating]) =>
+          typeof rating === "number" &&
+          Number.isFinite(rating) &&
+          rating >= 1 &&
+          rating <= 5
+      )
+    );
+  } catch {
+    return {};
+  }
+}
+
 function App() {
   const [serialization, setSerialization] =
     useState<SerializationStatus>("ongoing");
@@ -167,6 +199,26 @@ function App() {
   const [sortBy, setSortBy] = useState<SortKey>("id");
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [readerRatings, setReaderRatings] =
+    useState<ReaderRatings>(() => readReaderRatings());
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        readerRatingStorageKey,
+        JSON.stringify(readerRatings)
+      );
+    } catch {
+      // 저장소 접근이 막힌 브라우저에서도 화면은 계속 사용할 수 있게 둔다.
+    }
+  }, [readerRatings]);
+
+  const saveReaderRating = (webtoonId: string, rating: number) => {
+    setReaderRatings((currentRatings) => ({
+      ...currentRatings,
+      [webtoonId]: rating
+    }));
+  };
 
   const creatorRatingSummary = useMemo(() => {
     const ratings = webtoons
@@ -261,6 +313,9 @@ function App() {
   const selectedWebtoon = selectedId
     ? webtoons.find((item) => item.id === selectedId)
     : null;
+  const selectedReaderRating = selectedWebtoon
+    ? readerRatings[selectedWebtoon.id]
+    : undefined;
 
   return (
     <main className="app-shell">
@@ -446,16 +501,41 @@ function App() {
                   <span>{webtoon.episodeCount}화</span>
                 </div>
 
-                {webtoon.userRating && (
+                <div className="score-row">
+                  {webtoon.userRating && (
+                    <div
+                      className="rating-row creator-rating"
+                      aria-label={`제작자 점수 ${webtoon.userRating}점`}
+                    >
+                      <span>제작자</span>
+                      <Star size={15} fill="currentColor" aria-hidden="true" />
+                      <strong>{webtoon.userRating.toFixed(1)}</strong>
+                    </div>
+                  )}
+
                   <div
-                    className="rating-row creator-rating"
-                    aria-label={`제작자 점수 ${webtoon.userRating}점`}
+                    className={`rating-row reader-rating ${
+                      readerRatings[webtoon.id] ? "" : "empty"
+                    }`}
+                    aria-label={
+                      readerRatings[webtoon.id]
+                        ? `독자 점수 ${readerRatings[webtoon.id]}점`
+                        : "독자 점수 미평가"
+                    }
                   >
-                    <span>제작자</span>
-                    <Star size={15} fill="currentColor" aria-hidden="true" />
-                    <strong>{webtoon.userRating.toFixed(1)}</strong>
+                    <span>독자</span>
+                    <Star
+                      size={15}
+                      fill={readerRatings[webtoon.id] ? "currentColor" : "none"}
+                      aria-hidden="true"
+                    />
+                    <strong>
+                      {readerRatings[webtoon.id]
+                        ? readerRatings[webtoon.id].toFixed(1)
+                        : "미평가"}
+                    </strong>
                   </div>
-                )}
+                </div>
 
                 <p className="review-copy">{getCardCopy(webtoon)}</p>
 
@@ -540,6 +620,39 @@ function App() {
                   <p>{selectedWebtoon.userReview}</p>
                 </section>
               )}
+
+              <section className="reader-rating-panel" aria-label="독자 평점">
+                <div className="reader-rating-heading">
+                  <strong>독자 점수</strong>
+                  <span>
+                    {selectedReaderRating
+                      ? `${selectedReaderRating.toFixed(1)}점`
+                      : "미평가"}
+                  </span>
+                </div>
+                <div className="reader-rating-buttons">
+                  {readerRatingSteps.map((rating) => (
+                    <button
+                      key={rating}
+                      className={selectedReaderRating === rating ? "active" : ""}
+                      type="button"
+                      aria-label={`독자 점수 ${rating}점`}
+                      onClick={() => saveReaderRating(selectedWebtoon.id, rating)}
+                    >
+                      <Star
+                        size={18}
+                        fill={
+                          selectedReaderRating && selectedReaderRating >= rating
+                            ? "currentColor"
+                            : "none"
+                        }
+                        aria-hidden="true"
+                      />
+                      <span>{rating}</span>
+                    </button>
+                  ))}
+                </div>
+              </section>
 
               {selectedWebtoon.userReadingStatus === "dropped" &&
                 selectedWebtoon.dropReason && (

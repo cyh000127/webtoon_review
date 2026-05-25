@@ -485,12 +485,19 @@ h1 {
   color: #d5dbe6;
 }
 
+.score-row {
+  min-height: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
 .rating-row {
   min-height: 28px;
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: 10px;
   border-radius: 999px;
   padding: 0 9px;
   color: #ffcf5a;
@@ -505,6 +512,25 @@ h1 {
 
 .rating-row strong {
   color: #ffffff;
+}
+
+.reader-rating {
+  color: #73d3ff;
+  background: rgb(115 211 255 / 0.12);
+}
+
+.reader-rating span {
+  color: #9adeff;
+}
+
+.reader-rating.empty {
+  color: #9fa8b8;
+  background: #242b3a;
+}
+
+.reader-rating.empty span,
+.reader-rating.empty strong {
+  color: #c3cad6;
 }
 
 .review-copy {
@@ -728,6 +754,58 @@ h1 {
   color: #d5dbe6;
   font-size: 14px;
   line-height: 1.58;
+}
+
+.reader-rating-panel {
+  margin-top: 18px;
+  border: 1px solid #34586b;
+  border-radius: 8px;
+  padding: 14px;
+  background: #202635;
+}
+
+.reader-rating-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.reader-rating-heading strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.reader-rating-heading span {
+  color: #9adeff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.reader-rating-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.reader-rating-buttons button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid #4f5a6f;
+  border-radius: 6px;
+  color: #9adeff;
+  background: #171b27;
+  font-weight: 900;
+}
+
+.reader-rating-buttons button.active {
+  border-color: #73d3ff;
+  color: #101823;
+  background: #73d3ff;
 }
 
 .detail-tags {
