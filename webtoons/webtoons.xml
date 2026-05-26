@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" count="44">
+<webtoons collectedAt="2026-05-25" count="45">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -772,5 +772,28 @@
     <coverImage>webtoons/covers/044.png</coverImage>
     <descriptionFile>webtoons/description/044.txt</descriptionFile>
     <note>공식 카카오페이지 정보로 작가, 장르, 완결 상태, 표지를 보정했습니다. 회차 수는 카카오페이지 완결 이벤트의 1편부터 200편까지 완독 안내 기준으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="045">
+    <title>이뤄질 수 없는 마녀의 소망</title>
+    <author>해청</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>52960341</platformId>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>미스터리</genre>
+      <genre>드라마</genre>
+      <genre>마녀</genre>
+    </genres>
+    <description>대화재로 모든 것을 잃은 카이델이 사건의 단서인 하얀 머리의 소녀를 쫓으며 진실과 선택을 마주하는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(132화)" episodeCount="132"/>
+    <userReading status="dropped" progress="63화에서 중단" group="dropped"/>
+    <userReview rating="3.2">불쾌함
+남캐들도 어딘가 애매하고 여주 하나 만보고 읽기에는 한계가있음</userReview>
+    <dropReason>불쾌함
+남캐들도 어딘가 애매하고 여주 하나 만보고 읽기에는 한계가있음</dropReason>
+    <coverImage>webtoons/covers/045.jpg</coverImage>
+    <descriptionFile>webtoons/description/045.txt</descriptionFile>
+    <note>공식 카카오페이지 정보로 제목, 작가, 로판 분류, 완결 상태, 소개, 표지를 확인했습니다. 회차 수는 카카오웹툰 마지막화(132) 기준으로 기록했습니다.</note>
   </webtoon>
 </webtoons>
