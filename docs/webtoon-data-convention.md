@@ -76,7 +76,7 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
 | `group` | 예 | 기존 정리 그룹. `ongoing`, `completed-section`, `dropped` 등 |
 | `coverImage` | 예 | 표지 이미지 경로 |
 | `descriptionFile` | 예 | 작품 소개 텍스트 파일 경로 |
-| `userRating` | 예 | 개인 평점. 0부터 5까지 숫자. 사용자가 아직 평가하지 않은 예외 상황에서만 생략 |
+| `userRating` | 예 | 개인 평점. 0부터 5까지 숫자. 저장은 유지하지만 화면에는 표시하지 않음 |
 | `userReview` | 예 | 개인 한줄평. 저장은 유지하지만 화면에는 표시하지 않음 |
 | `dropReason` | 아니오 | 중도 포기 사유 |
 | `note` | 예 | 제목 보정, 확인 사항 등. 없으면 빈 문자열 |
@@ -122,7 +122,7 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
 - `descriptionFile`의 첫 줄은 작품 제목으로 시작한다.
 - 설명 파일에는 작품 소개 다음에 `평점:`과 `후기:`를 적는다.
 - 개인 평점과 후기가 있으면 `userRating`, `userReview`를 함께 작성한다.
-- 화면 카드와 상세 패널에는 `userReview`를 표시하지 않고 `description`만 표시한다.
+- 화면 카드와 목록에는 `userRating`, `userReview`를 표시하지 않고 `description`만 표시한다.
 - 새로 추가하는 웹툰은 기본적으로 사용자의 별점과 한줄평을 함께 받는다.
 - 장르는 화면 필터에 그대로 쓰이므로 같은 장르는 같은 표기를 유지한다.
 - 아카이브를 수정한 뒤 `npm run validate:webtoons`를 실행한다.

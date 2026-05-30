@@ -22,8 +22,7 @@ import type {
 } from "./types/webtoon";
 
 type ReadingFilter = "all" | UserReadingStatus;
-type RatingFilter = "all" | "rated" | "gte45" | "gte40";
-type SortKey = "id" | "episode" | "title" | "creatorRating";
+type SortKey = "id" | "episode" | "title";
 type ViewMode = "card" | "list";
 type ReaderRatings = Record<string, number>;
 type BarDatum = {
@@ -46,9 +45,9 @@ const archiveData = archive as WebtoonArchive;
 const archiveLastUpdatedAt = archiveData.lastUpdatedAt ?? archiveData.collectedAt;
 
 const webtoons: WebtoonViewModel[] = archiveData.items.map((item) => ({
-    ...item,
-    coverUrl: coverModules[`../${item.coverImage}`] ?? item.coverImage
-  }));
+  ...item,
+  coverUrl: coverModules[`../${item.coverImage}`] ?? item.coverImage
+}));
 
 const serializationTabs: Array<{ id: SerializationStatus; label: string }> = [
   { id: "ongoing", label: "연재중" },
@@ -64,16 +63,8 @@ const readingTabs: Array<{ id: ReadingFilter; label: string }> = [
 
 const sortOptions: Array<{ id: SortKey; label: string }> = [
   { id: "id", label: "등록순" },
-  { id: "creatorRating", label: "제작자 평점순" },
   { id: "episode", label: "화수순" },
   { id: "title", label: "가나다순" }
-];
-
-const ratingFilters: Array<{ id: RatingFilter; label: string }> = [
-  { id: "all", label: "평점 전체" },
-  { id: "rated", label: "평점 있음" },
-  { id: "gte45", label: "4.5 이상" },
-  { id: "gte40", label: "4.0 이상" }
 ];
 
 const readerRatingStorageKey = "webtoon-review-reader-ratings-v1";
@@ -177,16 +168,6 @@ function getReadingIcon(status: ReadingFilter) {
 }
 
 function compareBySort(a: WebtoonViewModel, b: WebtoonViewModel, sortBy: SortKey) {
-  if (sortBy === "creatorRating") {
-    const ratingDiff = (b.userRating ?? -1) - (a.userRating ?? -1);
-
-    if (ratingDiff !== 0) {
-      return ratingDiff;
-    }
-
-    return Number(a.id) - Number(b.id);
-  }
-
   if (sortBy === "episode") {
     return (b.episodeCount ?? 0) - (a.episodeCount ?? 0);
   }
@@ -210,22 +191,6 @@ function getPlatformShortLabel(platform: string) {
 
 function getCardCopy(webtoon: WebtoonViewModel) {
   return webtoon.description;
-}
-
-function matchesRatingFilter(webtoon: WebtoonViewModel, filter: RatingFilter) {
-  if (filter === "rated") {
-    return typeof webtoon.userRating === "number";
-  }
-
-  if (filter === "gte45") {
-    return (webtoon.userRating ?? 0) >= 4.5;
-  }
-
-  if (filter === "gte40") {
-    return (webtoon.userRating ?? 0) >= 4;
-  }
-
-  return true;
 }
 
 function readReaderRatings(): ReaderRatings {
@@ -262,55 +227,12 @@ function getBarStyle(value: number, maxValue: number): CSSProperties {
   } as CSSProperties;
 }
 
-function formatAverageScore(score: number) {
-  return score > 0 ? score.toFixed(1) : "미평가";
-}
-
-function ScorePills({
-  webtoon,
-  readerRating
-}: {
-  webtoon: WebtoonViewModel;
-  readerRating?: number;
-}) {
-  return (
-    <div className="score-row">
-      {webtoon.userRating && (
-        <div
-          className="rating-row creator-rating"
-          aria-label={`제작자 점수 ${webtoon.userRating}점`}
-        >
-          <span>제작자</span>
-          <Star size={15} fill="currentColor" aria-hidden="true" />
-          <strong>{webtoon.userRating.toFixed(1)}</strong>
-        </div>
-      )}
-
-      <div
-        className={`rating-row reader-rating ${readerRating ? "" : "empty"}`}
-        aria-label={
-          readerRating ? `독자 점수 ${readerRating}점` : "독자 점수 미평가"
-        }
-      >
-        <span>독자</span>
-        <Star
-          size={15}
-          fill={readerRating ? "currentColor" : "none"}
-          aria-hidden="true"
-        />
-        <strong>{readerRating ? readerRating.toFixed(1) : "미평가"}</strong>
-      </div>
-    </div>
-  );
-}
-
 function App() {
   const [serialization, setSerialization] =
     useState<SerializationStatus>("ongoing");
   const [reading, setReading] = useState<ReadingFilter>("all");
   const [platform, setPlatform] = useState<string>("전체");
   const [genre, setGenre] = useState<string>("전체");
-  const [ratingFilter, setRatingFilter] = useState<RatingFilter>("all");
   const [sortBy, setSortBy] = useState<SortKey>("id");
   const [viewMode, setViewMode] = useState<ViewMode>("card");
   const [query, setQuery] = useState("");
@@ -335,18 +257,6 @@ function App() {
       [webtoonId]: rating
     }));
   };
-
-  const creatorRatingSummary = useMemo(() => {
-    const ratings = webtoons
-      .map((item) => item.userRating)
-      .filter((rating): rating is number => typeof rating === "number");
-    const total = ratings.reduce((sum, rating) => sum + rating, 0);
-
-    return {
-      average: ratings.length > 0 ? total / ratings.length : 0,
-      count: ratings.length
-    };
-  }, []);
 
   const archiveStats = useMemo(() => {
     const statusBars = readingTabs
@@ -373,40 +283,6 @@ function App() {
         value
       }));
 
-    const ratingBars: BarDatum[] = [
-      {
-        id: "excellent",
-        label: "4.5 이상",
-        value: webtoons.filter((item) => (item.userRating ?? 0) >= 4.5).length
-      },
-      {
-        id: "great",
-        label: "4.0 이상",
-        value: webtoons.filter(
-          (item) => (item.userRating ?? 0) >= 4 && (item.userRating ?? 0) < 4.5
-        ).length
-      },
-      {
-        id: "good",
-        label: "3점대",
-        value: webtoons.filter(
-          (item) => (item.userRating ?? 0) >= 3 && (item.userRating ?? 0) < 4
-        ).length
-      },
-      {
-        id: "unrated",
-        label: "미기록",
-        value: webtoons.filter((item) => typeof item.userRating !== "number").length
-      }
-    ];
-
-    const readerRatingValues = Object.values(readerRatings).filter(
-      (rating) => rating >= 1 && rating <= 5
-    );
-    const readerRatingTotal = readerRatingValues.reduce(
-      (total, rating) => total + rating,
-      0
-    );
     const finishedCount = webtoons.filter(
       (item) => item.userReadingStatus === "finished"
     ).length;
@@ -416,16 +292,9 @@ function App() {
       statusMax: Math.max(1, ...statusBars.map((bar) => bar.value)),
       genreBars,
       genreMax: Math.max(1, ...genreBars.map((bar) => bar.value)),
-      ratingBars,
-      ratingMax: Math.max(1, ...ratingBars.map((bar) => bar.value)),
-      readerAverage:
-        readerRatingValues.length > 0
-          ? readerRatingTotal / readerRatingValues.length
-          : 0,
-      readerCount: readerRatingValues.length,
       finishedRate: Math.round((finishedCount / webtoons.length) * 100)
     };
-  }, [readerRatings]);
+  }, []);
 
   const serializationScoped = useMemo(() => {
     return webtoons.filter((item) => item.serializationStatus === serialization);
@@ -467,7 +336,6 @@ function App() {
       .filter((item) => reading === "all" || item.userReadingStatus === reading)
       .filter((item) => platform === "전체" || item.platform === platform)
       .filter((item) => genre === "전체" || item.genres.includes(genre))
-      .filter((item) => matchesRatingFilter(item, ratingFilter))
       .filter((item) => {
         if (!normalizedQuery) {
           return true;
@@ -491,7 +359,7 @@ function App() {
         return joined.includes(normalizedQuery);
       })
       .sort((a, b) => compareBySort(a, b, sortBy));
-  }, [genre, platform, query, ratingFilter, reading, serializationScoped, sortBy]);
+  }, [genre, platform, query, reading, serializationScoped, sortBy]);
 
   const serializationCounts = useMemo(() => {
     return serializationTabs.reduce<Record<SerializationStatus, number>>(
@@ -521,10 +389,6 @@ function App() {
         </div>
         <div className="header-stats" aria-label="현재 아카이브 요약">
           <span>{webtoons.length}개 작품</span>
-          <span>
-            제작자 평균 {creatorRatingSummary.average.toFixed(1)} /{" "}
-            {creatorRatingSummary.count}개
-          </span>
           <span>{archiveLastUpdatedAt} 업데이트</span>
         </div>
       </header>
@@ -540,7 +404,6 @@ function App() {
               setReading("all");
               setPlatform("전체");
               setGenre("전체");
-              setRatingFilter("all");
             }}
           >
             <span>{tab.label}</span>
@@ -633,19 +496,6 @@ function App() {
           ))}
         </div>
 
-        <div className="rating-filter-row" aria-label="제작자 평점 필터">
-          {ratingFilters.map((filter) => (
-            <button
-              key={filter.id}
-              className={ratingFilter === filter.id ? "active" : ""}
-              type="button"
-              onClick={() => setRatingFilter(filter.id)}
-            >
-              <Star size={15} fill="currentColor" aria-hidden="true" />
-              <span>{filter.label}</span>
-            </button>
-          ))}
-        </div>
       </section>
 
       <section className="result-bar" aria-label="현재 선택">
@@ -654,7 +504,6 @@ function App() {
           <span>{readingTabs.find((tab) => tab.id === reading)?.label}</span>
           <span>{platform}</span>
           <span>{genre}</span>
-          <span>{ratingFilters.find((filter) => filter.id === ratingFilter)?.label}</span>
           <span>{sortOptions.find((option) => option.id === sortBy)?.label}</span>
         </div>
         <div className="result-actions">
@@ -685,19 +534,19 @@ function App() {
       <section className="stats-dashboard" aria-label="통계 대시보드">
         <div className="metric-strip">
           <div>
-            <span>제작자 평균</span>
-            <strong>{formatAverageScore(creatorRatingSummary.average)}</strong>
-            <small>{creatorRatingSummary.count}개 기록</small>
-          </div>
-          <div>
-            <span>독자 평균</span>
-            <strong>{formatAverageScore(archiveStats.readerAverage)}</strong>
-            <small>{archiveStats.readerCount}개 평가</small>
+            <span>전체 작품</span>
+            <strong>{webtoons.length}</strong>
+            <small>아카이브 기록</small>
           </div>
           <div>
             <span>완주율</span>
             <strong>{archiveStats.finishedRate}%</strong>
             <small>전체 {webtoons.length}개 기준</small>
+          </div>
+          <div>
+            <span>최근 업데이트</span>
+            <strong>{getUpdateDistanceLabel(archiveLastUpdatedAt)}</strong>
+            <small>{formatArchiveDate(archiveLastUpdatedAt)} 기준</small>
           </div>
         </div>
 
@@ -725,21 +574,6 @@ function App() {
                   <span>{bar.label}</span>
                   <div className="bar-track genre">
                     <i style={getBarStyle(bar.value, archiveStats.genreMax)} />
-                  </div>
-                  <strong>{bar.value}</strong>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          <article className="chart-panel">
-            <h2>제작자 평점 분포</h2>
-            <div className="bar-list">
-              {archiveStats.ratingBars.map((bar) => (
-                <div className="bar-row" key={bar.id}>
-                  <span>{bar.label}</span>
-                  <div className={`bar-track rating-${bar.id}`}>
-                    <i style={getBarStyle(bar.value, archiveStats.ratingMax)} />
                   </div>
                   <strong>{bar.value}</strong>
                 </div>
@@ -785,18 +619,11 @@ function App() {
                   <span>{webtoon.episodeCount}화</span>
                 </div>
 
-                <ScorePills
-                  webtoon={webtoon}
-                  readerRating={readerRatings[webtoon.id]}
-                />
-
                 <p className="description-copy">{getCardCopy(webtoon)}</p>
 
-                <div className="tag-row">
-                  {webtoon.genres.slice(0, 4).map((itemGenre) => (
-                    <span key={itemGenre}>{itemGenre}</span>
-                  ))}
-                </div>
+                <p className="genre-summary" title={webtoon.genres.join(", ")}>
+                  {webtoon.genres.join(" · ")}
+                </p>
 
                 <button
                   className="detail-button"
@@ -836,18 +663,12 @@ function App() {
 
                 <p className="list-copy">{getCardCopy(webtoon)}</p>
 
-                <div className="tag-row list-tags">
-                  {webtoon.genres.slice(0, 5).map((itemGenre) => (
-                    <span key={itemGenre}>{itemGenre}</span>
-                  ))}
-                </div>
+                <p className="genre-summary" title={webtoon.genres.join(", ")}>
+                  {webtoon.genres.join(" · ")}
+                </p>
               </div>
 
               <div className="list-side">
-                <ScorePills
-                  webtoon={webtoon}
-                  readerRating={readerRatings[webtoon.id]}
-                />
                 <div className="progress-row list-progress">
                   <span>
                     <Clock3 size={15} aria-hidden="true" />
@@ -935,11 +756,9 @@ function App() {
               <section className="reader-rating-panel" aria-label="독자 평점">
                 <div className="reader-rating-heading">
                   <strong>독자 점수</strong>
-                  <span>
-                    {selectedReaderRating
-                      ? `${selectedReaderRating.toFixed(1)}점`
-                      : "미평가"}
-                  </span>
+                  {selectedReaderRating && (
+                    <span>{selectedReaderRating.toFixed(1)}점</span>
+                  )}
                 </div>
                 <div className="reader-rating-buttons">
                   {readerRatingSteps.map((rating) => (
