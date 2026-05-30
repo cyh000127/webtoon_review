@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-05-30" count="57">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-05-30" count="59">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1027,5 +1027,46 @@
     <coverImage>webtoons/covers/057.jpg</coverImage>
     <descriptionFile>webtoons/description/057.txt</descriptionFile>
     <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="058">
+    <title>칼끝에 입술</title>
+    <author>핀쿠 / 뫄과 / 윤슬</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>800778</platformId>
+    <genres>
+      <genre>로맨스</genre>
+      <genre>로맨스 판타지</genre>
+      <genre>서양풍</genre>
+      <genre>왕족/귀족</genre>
+    </genres>
+    <description>제국 최강의 기사 아르네가 부모 성화로 결혼하고, 연약하다는 오해 속에서 집착 남편 카시안과 엇갈리는 착각 로맨스를 이어 가는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(103화)" episodeCount="103"/>
+    <userReading status="reading" progress="50화" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/058.jpg</coverImage>
+    <descriptionFile>webtoons/description/058.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 50화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="059">
+    <title>엄청 소환된 건에 대하여</title>
+    <author>사이토사 / 츠구토쿠</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>831606</platformId>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션판타지</genre>
+      <genre>이세계</genre>
+      <genre>먼치킨</genre>
+      <genre>해외작품</genre>
+    </genres>
+    <description>고등학생 타카후지 이노리가 반 친구들과 이세계로 소환된 뒤 거듭 다른 세계로 불려가며 주인공급 사기 능력을 쌓아 가는 이세계 판타지다.</description>
+    <serialization status="completed" label="완결(88화)" episodeCount="88"/>
+    <userReading status="reading" progress="22화" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/059.jpg</coverImage>
+    <descriptionFile>webtoons/description/059.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 22화까지 읽는 중으로 기록했습니다.</note>
   </webtoon>
 </webtoons>

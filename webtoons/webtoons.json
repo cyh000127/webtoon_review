@@ -1466,6 +1466,61 @@
       "userRating": 4,
       "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
+    },
+    {
+      "id": "058",
+      "inputTitle": "칼끝에 입술",
+      "title": "칼끝에 입술",
+      "author": "핀쿠 / 뫄과 / 윤슬",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "800778",
+      "genres": [
+        "로맨스",
+        "로맨스 판타지",
+        "서양풍",
+        "왕족/귀족"
+      ],
+      "description": "제국 최강의 기사 아르네가 부모 성화로 결혼하고, 연약하다는 오해 속에서 집착 남편 카시안과 엇갈리는 착각 로맨스를 이어 가는 로맨스 판타지다.",
+      "serializationStatus": "completed",
+      "serializationLabel": "완결(103화)",
+      "episodeCount": 103,
+      "userReadingStatus": "reading",
+      "userProgress": "50화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/058.jpg",
+      "descriptionFile": "webtoons/description/058.txt",
+      "userRating": 4,
+      "userReview": ".",
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 50화까지 읽는 중으로 기록했습니다."
+    },
+    {
+      "id": "059",
+      "inputTitle": "엄청 소환된 건에 대하여",
+      "title": "엄청 소환된 건에 대하여",
+      "author": "사이토사 / 츠구토쿠",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "831606",
+      "genres": [
+        "판타지",
+        "액션판타지",
+        "이세계",
+        "먼치킨",
+        "해외작품"
+      ],
+      "description": "고등학생 타카후지 이노리가 반 친구들과 이세계로 소환된 뒤 거듭 다른 세계로 불려가며 주인공급 사기 능력을 쌓아 가는 이세계 판타지다.",
+      "serializationStatus": "completed",
+      "serializationLabel": "완결(88화)",
+      "episodeCount": 88,
+      "userReadingStatus": "reading",
+      "userProgress": "22화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/059.jpg",
+      "descriptionFile": "webtoons/description/059.txt",
+      "userRating": 4,
+      "userReview": ".",
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 22화까지 읽는 중으로 기록했습니다."
     }
   ]
 }
