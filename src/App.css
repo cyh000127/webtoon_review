@@ -791,7 +791,7 @@ h1 {
   color: #c3cad6;
 }
 
-.review-copy {
+.description-copy {
   min-height: 62px;
   display: -webkit-box;
   margin: 10px 0 0;
@@ -940,7 +940,7 @@ h1 {
 
 .detail-list div {
   display: grid;
-  grid-template-columns: 76px 1fr;
+  grid-template-columns: 96px 1fr;
   gap: 12px;
 }
 
@@ -961,37 +961,6 @@ h1 {
   color: #d5dbe6;
   font-size: 15px;
   line-height: 1.62;
-}
-
-.detail-review {
-  margin-top: 18px;
-  border: 1px solid #3e4658;
-  border-radius: 8px;
-  padding: 14px;
-  background: #202635;
-}
-
-.detail-review div {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #ffcf5a;
-  font-weight: 900;
-}
-
-.detail-review div span {
-  color: #f8dd90;
-}
-
-.detail-review strong {
-  color: #ffffff;
-}
-
-.detail-review p {
-  margin: 10px 0 0;
-  color: #e8edf6;
-  font-size: 14px;
-  line-height: 1.58;
 }
 
 .detail-drop {

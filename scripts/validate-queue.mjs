@@ -86,13 +86,6 @@ function validateEntry(entry, fileConfig, lineNumber) {
     }
 
     if (
-      entry.readingStatus === "completed" &&
-      (typeof entry.review !== "string" || entry.review.trim().length === 0)
-    ) {
-      errors.push(`${filePath}:${lineNumber} 완주 항목은 review가 필요합니다.`);
-    }
-
-    if (
       entry.readingStatus === "dropped" &&
       (typeof entry.dropReason !== "string" ||
         entry.dropReason.trim().length === 0)

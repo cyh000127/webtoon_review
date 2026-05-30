@@ -31,5 +31,6 @@ export interface ArchiveWebtoonRecord {
 
 export interface WebtoonArchive {
   collectedAt: string;
+  lastUpdatedAt?: string;
   items: ArchiveWebtoonRecord[];
 }

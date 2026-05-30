@@ -45,7 +45,7 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
   "serializationLabel": "연재중",
   "episodeCount": 120,
   "userReadingStatus": "reading",
-  "userProgress": "80화까지",
+  "userProgress": "80화",
   "group": "ongoing",
   "coverImage": "webtoons/covers/035.jpg",
   "descriptionFile": "webtoons/description/035.txt",
@@ -72,12 +72,12 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
 | `serializationLabel` | 예 | 화면에 보여줄 연재 상태 라벨 |
 | `episodeCount` | 예 | 공식/공개 기준 회차 수 |
 | `userReadingStatus` | 예 | `reading`, `finished`, `dropped` |
-| `userProgress` | 예 | `80화까지`, `완주`, `33화에서 중단`처럼 자유 표기 |
+| `userProgress` | 예 | 현재 본 화수만 `80화`처럼 기록. `까지`, `완주`, `완독`, `에서 중단` 같은 상태 표현은 쓰지 않음 |
 | `group` | 예 | 기존 정리 그룹. `ongoing`, `completed-section`, `dropped` 등 |
 | `coverImage` | 예 | 표지 이미지 경로 |
 | `descriptionFile` | 예 | 작품 소개 텍스트 파일 경로 |
 | `userRating` | 예 | 개인 평점. 0부터 5까지 숫자. 사용자가 아직 평가하지 않은 예외 상황에서만 생략 |
-| `userReview` | 예 | 개인 한줄평. 사용자가 아직 평가하지 않은 예외 상황에서만 생략 |
+| `userReview` | 예 | 개인 한줄평. 저장은 유지하지만 화면에는 표시하지 않음 |
 | `dropReason` | 아니오 | 중도 포기 사유 |
 | `note` | 예 | 제목 보정, 확인 사항 등. 없으면 빈 문자열 |
 
@@ -101,6 +101,7 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
 - 사용자가 `완주`라고 입력한 작품은 개인 기록 기준으로 완결 작품처럼 다룬다.
 - `userReadingStatus`는 `finished`, `serializationStatus`는 `completed`, `group`은 `completed-section`으로 기록한다.
 - 공식 연재 상태가 휴재 또는 연재중이어도, 사용자가 현재 공개분을 완주로 기록했다면 화면에서는 완결 탭에 들어가도록 `serializationLabel`을 `완결(회차)` 형식으로 적는다.
+- `userProgress`에는 `96화`처럼 화수만 남기고, 완주 여부는 `userReadingStatus`로만 표현한다.
 
 ### `platform`
 
@@ -121,6 +122,7 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
 - `descriptionFile`의 첫 줄은 작품 제목으로 시작한다.
 - 설명 파일에는 작품 소개 다음에 `평점:`과 `후기:`를 적는다.
 - 개인 평점과 후기가 있으면 `userRating`, `userReview`를 함께 작성한다.
+- 화면 카드와 상세 패널에는 `userReview`를 표시하지 않고 `description`만 표시한다.
 - 새로 추가하는 웹툰은 기본적으로 사용자의 별점과 한줄평을 함께 받는다.
 - 장르는 화면 필터에 그대로 쓰이므로 같은 장르는 같은 표기를 유지한다.
 - 아카이브를 수정한 뒤 `npm run validate:webtoons`를 실행한다.
@@ -155,7 +157,7 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
   "serializationLabel": "완결",
   "episodeCount": 96,
   "userReadingStatus": "finished",
-  "userProgress": "96화 완주",
+  "userProgress": "96화",
   "group": "completed-section",
   "coverImage": "webtoons/covers/035.jpg",
   "descriptionFile": "webtoons/description/035.txt",

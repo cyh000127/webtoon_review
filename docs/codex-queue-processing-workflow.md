@@ -68,6 +68,7 @@ xmllint --noout webtoons/webtoons.xml
 | `review` | `userReview` |
 
 `note`에는 제목 보정, 공식 정보 확인 여부, 특이사항을 남긴다.
+`userReview`는 저장만 하고 웹 화면에는 표시하지 않는다. `userProgress`는 `151화`처럼 화수만 남긴다.
 
 ## Description 파일 작성 규칙
 

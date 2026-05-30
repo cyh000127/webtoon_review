@@ -42,12 +42,13 @@ const coverModules = import.meta.glob("../webtoons/covers/*.{jpg,png,svg}", {
   query: "?url"
 }) as Record<string, string>;
 
-const webtoons: WebtoonViewModel[] = (archive as WebtoonArchive).items.map(
-  (item) => ({
+const archiveData = archive as WebtoonArchive;
+const archiveLastUpdatedAt = archiveData.lastUpdatedAt ?? archiveData.collectedAt;
+
+const webtoons: WebtoonViewModel[] = archiveData.items.map((item) => ({
     ...item,
     coverUrl: coverModules[`../${item.coverImage}`] ?? item.coverImage
-  })
-);
+  }));
 
 const serializationTabs: Array<{ id: SerializationStatus; label: string }> = [
   { id: "ongoing", label: "연재중" },
@@ -95,6 +96,68 @@ function getReadingLabel(status: UserReadingStatus) {
 
 function getSerializationLabel(status: SerializationStatus) {
   return status === "ongoing" ? "연재중" : "완결";
+}
+
+function formatProgress(progress: string, episodeCount: number) {
+  const match = progress.match(/(\d+)\s*(화|편)/);
+
+  if (match) {
+    return `${Number(match[1])}화`;
+  }
+
+  return Number.isFinite(episodeCount) ? `${episodeCount}화` : progress;
+}
+
+function parseArchiveDate(dateString: string) {
+  const [year, month, day] = dateString.split("-").map(Number);
+
+  if (!year || !month || !day) {
+    return null;
+  }
+
+  return new Date(year, month - 1, day);
+}
+
+function formatArchiveDate(dateString: string) {
+  const date = parseArchiveDate(dateString);
+
+  if (!date) {
+    return dateString;
+  }
+
+  return new Intl.DateTimeFormat("ko-KR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(date);
+}
+
+function getUpdateDistanceLabel(dateString: string) {
+  const updateDate = parseArchiveDate(dateString);
+
+  if (!updateDate) {
+    return "계산 불가";
+  }
+
+  const today = new Date();
+  const todayStart = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+  const diffDays = Math.floor(
+    (todayStart.getTime() - updateDate.getTime()) / 86_400_000
+  );
+
+  if (diffDays === 0) {
+    return "오늘 업데이트";
+  }
+
+  if (diffDays > 0) {
+    return `${diffDays}일 전`;
+  }
+
+  return `${Math.abs(diffDays)}일 후`;
 }
 
 function getReadingIcon(status: ReadingFilter) {
@@ -146,11 +209,7 @@ function getPlatformShortLabel(platform: string) {
 }
 
 function getCardCopy(webtoon: WebtoonViewModel) {
-  if (webtoon.userReadingStatus === "dropped" && webtoon.dropReason) {
-    return webtoon.dropReason;
-  }
-
-  return webtoon.userReview ?? webtoon.description;
+  return webtoon.description;
 }
 
 function matchesRatingFilter(webtoon: WebtoonViewModel, filter: RatingFilter) {
@@ -466,7 +525,7 @@ function App() {
             제작자 평균 {creatorRatingSummary.average.toFixed(1)} /{" "}
             {creatorRatingSummary.count}개
           </span>
-          <span>{archive.collectedAt} 기준</span>
+          <span>{archiveLastUpdatedAt} 업데이트</span>
         </div>
       </header>
 
@@ -721,7 +780,7 @@ function App() {
                 <div className="progress-row">
                   <span>
                     <Clock3 size={15} aria-hidden="true" />
-                    {webtoon.userProgress}
+                    {formatProgress(webtoon.userProgress, webtoon.episodeCount)}
                   </span>
                   <span>{webtoon.episodeCount}화</span>
                 </div>
@@ -731,7 +790,7 @@ function App() {
                   readerRating={readerRatings[webtoon.id]}
                 />
 
-                <p className="review-copy">{getCardCopy(webtoon)}</p>
+                <p className="description-copy">{getCardCopy(webtoon)}</p>
 
                 <div className="tag-row">
                   {webtoon.genres.slice(0, 4).map((itemGenre) => (
@@ -792,7 +851,7 @@ function App() {
                 <div className="progress-row list-progress">
                   <span>
                     <Clock3 size={15} aria-hidden="true" />
-                    {webtoon.userProgress}
+                    {formatProgress(webtoon.userProgress, webtoon.episodeCount)}
                   </span>
                 </div>
                 <button
@@ -854,22 +913,24 @@ function App() {
                 </div>
                 <div>
                   <dt>진도</dt>
-                  <dd>{selectedWebtoon.userProgress}</dd>
+                  <dd>
+                    {formatProgress(
+                      selectedWebtoon.userProgress,
+                      selectedWebtoon.episodeCount
+                    )}
+                  </dd>
+                </div>
+                <div>
+                  <dt>최신 업데이트</dt>
+                  <dd>{formatArchiveDate(archiveLastUpdatedAt)}</dd>
+                </div>
+                <div>
+                  <dt>오늘 기준</dt>
+                  <dd>{getUpdateDistanceLabel(archiveLastUpdatedAt)}</dd>
                 </div>
               </dl>
 
               <p className="detail-description">{selectedWebtoon.description}</p>
-
-              {selectedWebtoon.userRating && selectedWebtoon.userReview && (
-                <section className="detail-review" aria-label="제작자 후기">
-                  <div>
-                    <span>제작자 점수</span>
-                    <Star size={18} fill="currentColor" aria-hidden="true" />
-                    <strong>{selectedWebtoon.userRating.toFixed(1)}</strong>
-                  </div>
-                  <p>{selectedWebtoon.userReview}</p>
-                </section>
-              )}
 
               <section className="reader-rating-panel" aria-label="독자 평점">
                 <div className="reader-rating-heading">
