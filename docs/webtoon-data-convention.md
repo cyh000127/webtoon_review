@@ -96,6 +96,12 @@ JSON과 XML은 같은 작품 수, 같은 ID, 같은 표지 경로, 같은 설명
 - `finished`: 완주
 - `dropped`: 중도 포기
 
+## 완주 처리 규칙
+
+- 사용자가 `완주`라고 입력한 작품은 개인 기록 기준으로 완결 작품처럼 다룬다.
+- `userReadingStatus`는 `finished`, `serializationStatus`는 `completed`, `group`은 `completed-section`으로 기록한다.
+- 공식 연재 상태가 휴재 또는 연재중이어도, 사용자가 현재 공개분을 완주로 기록했다면 화면에서는 완결 탭에 들어가도록 `serializationLabel`을 `완결(회차)` 형식으로 적는다.
+
 ### `platform`
 
 현재 아카이브에서 쓰는 플랫폼명은 다음과 같다.

@@ -34,6 +34,8 @@ queue/
 | `readProgress` | 예 | 사용자가 어디까지 봤는지 적은 문자열. 예: `151화`, `완결까지`, `34화` |
 | `readingStatus` | 예 | `reading`, `completed`, `dropped` 중 하나 |
 | `review` | 조건부 | 완주 항목의 한줄평. `reading` 상태에서는 비워둘 수 있음 |
+
+완주로 제출된 항목은 정식 아카이브 승격 시 개인 기록 기준 완결로 처리한다. 즉 `userReadingStatus`는 `finished`, `serializationStatus`는 `completed`, `group`은 `completed-section`으로 변환한다.
 | `dropReason` | 조건부 | `dropped` 상태일 때 필요한 중도 이탈 사유 |
 | `createdAt` | 예 | 입력 시각. ISO 8601 문자열 |
 | `updatedAt` | 아니오 | 앱에서 최근 제출을 수정한 시각. ISO 8601 문자열 |
