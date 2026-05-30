@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" count="45">
+<webtoons collectedAt="2026-05-25" count="57">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -795,5 +795,234 @@
     <coverImage>webtoons/covers/045.jpg</coverImage>
     <descriptionFile>webtoons/description/045.txt</descriptionFile>
     <note>공식 카카오페이지 정보로 제목, 작가, 로판 분류, 완결 상태, 소개, 표지를 확인했습니다. 회차 수는 카카오웹툰 마지막화(132) 기준으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="046">
+    <title>겟백</title>
+    <author>세윤</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>727798</platformId>
+    <genres>
+      <genre>드라마</genre>
+      <genre>피카레스크</genre>
+    </genres>
+    <description>뒤바뀐 운명을 살아온 두 소녀가 천재성과 열등감, 가족 관계의 균열 속에서 서로의 삶을 뒤흔드는 드라마다.</description>
+    <serialization status="completed" label="완결(147화)" episodeCount="147"/>
+    <userReading status="finished" progress="147화 완주" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/046.jpg</coverImage>
+    <descriptionFile>webtoons/description/046.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="047" inputTitle="이번 생도 잘부탁해">
+    <title>이번 생도 잘 부탁해</title>
+    <author>이혜</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>746858</platformId>
+    <genres>
+      <genre>로맨스</genre>
+      <genre>재회</genre>
+      <genre>구원서사</genre>
+    </genres>
+    <description>전생을 기억하는 반지음이 19회차 인생에서 오래전 인연을 다시 찾아가며 마음을 이어 가는 재회 로맨스다.</description>
+    <serialization status="completed" label="완결(115화)" episodeCount="115"/>
+    <userReading status="finished" progress="115화 완주" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/047.jpg</coverImage>
+    <descriptionFile>webtoons/description/047.txt</descriptionFile>
+    <note>입력 제목은 띄어쓰기 없는 형태였고, 공식 작품명은 이번 생도 잘 부탁해입니다. 네이버웹툰 공식 정보로 보정했습니다.</note>
+  </webtoon>
+  <webtoon id="048" inputTitle="이두나">
+    <title>이두나!</title>
+    <author>민송아</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>731130</platformId>
+    <genres>
+      <genre>로맨스</genre>
+      <genre>러브코미디</genre>
+      <genre>아이돌</genre>
+    </genres>
+    <description>셰어하우스에 입주한 대학생이 은퇴한 아이돌 이두나와 여러 인연을 만나며 흔들리는 캠퍼스 로맨스다.</description>
+    <serialization status="completed" label="완결(154화)" episodeCount="154"/>
+    <userReading status="finished" progress="154화 완주" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/048.jpg</coverImage>
+    <descriptionFile>webtoons/description/048.txt</descriptionFile>
+    <note>입력 제목은 이두나이고, 공식 작품명은 이두나!입니다. 네이버웹툰 공식 정보로 보정했습니다.</note>
+  </webtoon>
+  <webtoon id="049">
+    <title>엽총소년</title>
+    <author>김칸비 / 홍필</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>759925</platformId>
+    <genres>
+      <genre>스릴러</genre>
+      <genre>아포칼립스</genre>
+      <genre>프리퀄</genre>
+    </genres>
+    <description>약자였던 한규환이 엽총 한 자루를 손에 넣으며 영웅이 될 수밖에 없는 길로 들어서는 스위트홈 세계관 프리퀄이다.</description>
+    <serialization status="completed" label="완결(69화)" episodeCount="69"/>
+    <userReading status="finished" progress="69화 완주" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/049.jpg</coverImage>
+    <descriptionFile>webtoons/description/049.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="050">
+    <title>스위트홈</title>
+    <author>김칸비 / 황영찬</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>701081</platformId>
+    <genres>
+      <genre>스릴러</genre>
+      <genre>아포칼립스</genre>
+      <genre>드라마</genre>
+    </genres>
+    <description>세상과 단절된 소년이 괴물화가 번지는 아파트에서 살아남으며 바깥으로 나아갈 이유를 찾는 생존 스릴러다.</description>
+    <serialization status="completed" label="완결(141화)" episodeCount="141"/>
+    <userReading status="finished" progress="141화 완주" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/050.jpg</coverImage>
+    <descriptionFile>webtoons/description/050.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="051">
+    <title>내향남녀</title>
+    <author>나</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>812629</platformId>
+    <genres>
+      <genre>로맨스</genre>
+      <genre>학원로맨스</genre>
+      <genre>청춘</genre>
+    </genres>
+    <description>극도로 내향적인 두 사람이 서로를 오해하고 부딪치며 트라우마와 관계를 조금씩 풀어 가는 학원 로맨스다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="154"/>
+    <userReading status="reading" progress="42화까지" group="ongoing"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/051.jpg</coverImage>
+    <descriptionFile>webtoons/description/051.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="052" inputTitle="나태 공자 노력 천재 되다">
+    <title>나태 공자, 노력 천재 되다</title>
+    <author>doip / 도도문 / 이등별</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>772853</platformId>
+    <genres>
+      <genre>판타지</genre>
+      <genre>성장</genre>
+      <genre>액션</genre>
+    </genres>
+    <description>나태 공자라 불리던 아이른 파레이라가 한 검사의 꿈을 계기로 검을 들고 스스로를 단련해 가는 성장 판타지다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="146"/>
+    <userReading status="reading" progress="110화까지" group="ongoing"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/052.jpg</coverImage>
+    <descriptionFile>webtoons/description/052.txt</descriptionFile>
+    <note>입력 제목은 쉼표 없이 들어왔고, 공식 작품명은 나태 공자, 노력 천재 되다입니다. 네이버웹툰 공식 정보로 보정했습니다.</note>
+  </webtoon>
+  <webtoon id="053">
+    <title>잔불의 기사</title>
+    <author>환댕</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>768536</platformId>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션</genre>
+      <genre>복수</genre>
+    </genres>
+    <description>천재 기사였던 쌍둥이 동생을 잃은 형이 복수를 위해 약함을 숨기고 강한 기사처럼 연기하는 판타지 액션이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="243"/>
+    <userReading status="reading" progress="105화까지" group="ongoing"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/053.jpg</coverImage>
+    <descriptionFile>webtoons/description/053.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="054">
+    <title>외모지상주의</title>
+    <author>박태준</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>641253</platformId>
+    <genres>
+      <genre>드라마</genre>
+      <genre>학원액션</genre>
+      <genre>소년</genre>
+    </genres>
+    <description>외모와 몸이 다른 두 삶을 오가게 된 주인공이 학교와 사회의 시선, 싸움, 관계를 마주하는 장기 드라마다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="609"/>
+    <userReading status="reading" progress="434화까지" group="ongoing"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/054.jpg</coverImage>
+    <descriptionFile>webtoons/description/054.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="055">
+    <title>놀이감</title>
+    <author>Q보이</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>824023</platformId>
+    <genres>
+      <genre>액션</genre>
+      <genre>학원액션</genre>
+      <genre>복수극</genre>
+      <genre>피카레스크</genre>
+    </genres>
+    <description>딸을 잃은 현도그룹 부회장이 탈북 소녀 윤가람을 입양하고, 그녀가 학교폭력 가해자들을 겨냥해 움직이는 복수 액션이다.</description>
+    <serialization status="ongoing" label="연재중(휴재)" episodeCount="79"/>
+    <userReading status="finished" progress="79화 완주" group="completed-section"/>
+    <userReview rating="3.3">.</userReview>
+    <coverImage>webtoons/covers/055.jpg</coverImage>
+    <descriptionFile>webtoons/description/055.txt</descriptionFile>
+    <note>성인 인증이 필요한 작품이라 네이버웹툰 공식 API로 제목, 작가, 장르, 소개, 표지를 확인했고, 회차 수는 네이버 시리즈 공개 목록의 총79화 기준으로 보정했습니다.</note>
+  </webtoon>
+  <webtoon id="056">
+    <title>아포칼립스에 집을 숨김</title>
+    <author>DD / 송지형 / 로드워리어</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>825332</platformId>
+    <genres>
+      <genre>액션</genre>
+      <genre>생존</genre>
+      <genre>크리처</genre>
+      <genre>아포칼립스</genre>
+    </genres>
+    <description>멸망을 예측하고 대비해 온 박규가 핵전쟁 이후 무너진 세계에서 숨겨 둔 집과 준비를 바탕으로 버티는 생존 액션이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="105"/>
+    <userReading status="reading" progress="70화까지" group="ongoing"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/056.jpg</coverImage>
+    <descriptionFile>webtoons/description/056.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="057">
+    <title>걸어서 30분</title>
+    <author>이온도</author>
+    <platform>네이버웹툰</platform>
+    <contentType>웹툰</contentType>
+    <platformId>700844</platformId>
+    <genres>
+      <genre>로맨스</genre>
+      <genre>하이틴</genre>
+      <genre>학원로맨스</genre>
+    </genres>
+    <description>은하학원 위성은과 지구봉의 귀갓길 30분을 중심으로 설렘과 관계의 변화를 담는 학원 로맨스다.</description>
+    <serialization status="completed" label="완결(214화)" episodeCount="214"/>
+    <userReading status="finished" progress="214화 완주" group="completed-section"/>
+    <userReview rating="4.0">.</userReview>
+    <coverImage>webtoons/covers/057.jpg</coverImage>
+    <descriptionFile>webtoons/description/057.txt</descriptionFile>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.</note>
   </webtoon>
 </webtoons>
