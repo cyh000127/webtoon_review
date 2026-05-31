@@ -1,19 +1,19 @@
 # Webtoon Review
 
 개인 웹툰 감상 기록을 정리하는 TypeScript 기반 웹 페이지입니다.  
-불법 공유나 외부 감상 링크 제공 목적이 아니라, 사용자가 읽은 웹툰의 상태, 평점, 한줄평, 중도 포기 사유를 정리하는 로컬 아카이브입니다.
+불법 공유나 외부 감상 링크 제공 목적이 아니라, 사용자가 읽은 웹툰의 상태, 진행도, 개인 평점을 정리하는 로컬 아카이브입니다.
 
 ## 주요 기능
 
 - 연재중/완결 기준 작품 분류
 - 전체/읽는 중/완주/중도 포기 감상 상태 필터
 - 제목, 작가, 장르, 플랫폼 검색
-- 플랫폼, 장르, 제작자 평점 필터
-- 등록순, 제작자 평점순, 화수순, 가나다순 정렬
+- 플랫폼, 장르 필터
+- 등록순, 화수순, 가나다순 정렬
 - 카드 보기와 목록 보기 전환
-- 상세 패널에서 작품 소개, 제작자 후기, 중도 포기 사유, 장르, note 확인
+- 상세 패널에서 작품 소개, 업데이트 요일, 최신 회차 공개일, 장르, note 확인
 - 같은 브라우저 기준 독자 평점 저장 및 수정
-- 제작자 평균, 독자 평균, 완주율, 상태/장르/평점 분포 통계 대시보드
+- 완주율, 감상 상태/장르 분포 통계 대시보드
 
 ## 기술 스택
 
@@ -62,17 +62,17 @@ webtoons/
 - `webtoons/webtoons.json`: 앱이 직접 읽는 데이터
 - `webtoons/webtoons.xml`: 보존용 XML 데이터
 - `webtoons/covers`: 작품 표지 이미지
-- `webtoons/description`: 작품별 소개, 평점, 한줄평 텍스트
+- `webtoons/description`: 작품별 소개 텍스트
 
-현재 아카이브는 43개 작품, 표지 43개, 설명 파일 43개로 구성되어 있습니다.
+현재 아카이브는 72개 작품, 표지 72개, 설명 파일 72개로 구성되어 있습니다.
 
 ## 웹툰 추가 흐름
 
 새 웹툰을 추가할 때는 아래 순서를 따릅니다.
 
 1. 공식/공개 페이지에서 표지를 찾아 `webtoons/covers/세자리ID.확장자`로 저장합니다.
-2. 공식/공개 페이지 기준 제목, 작가, 장르, 소개글, 연재 상태, 회차 수를 확인합니다.
-3. 사용자의 감상 상태, 진행도, 별점, 한줄평 또는 중도 포기 사유를 기록합니다.
+2. 공식/공개 페이지 기준 제목, 작가, 장르, 소개글, 연재 상태, 회차 수, 업데이트 요일을 확인합니다.
+3. 사용자의 감상 상태, 진행도, 별점을 기록합니다.
 4. `webtoons/webtoons.json`, `webtoons/webtoons.xml`, `webtoons/description/세자리ID.txt`를 함께 수정합니다.
 5. 검증 명령을 실행합니다.
 
@@ -82,9 +82,15 @@ npm run validate:webtoons
 
 자세한 입력 규칙은 [docs/webtoon-data-convention.md](docs/webtoon-data-convention.md)를 봅니다.
 
+연재중 작품의 최신 화수와 업데이트 요일을 다시 확인할 때는 아래 명령을 사용합니다.
+
+```bash
+npm run refresh:webtoons
+```
+
 ## 모바일 입력 앱 계획
 
-핸드폰에서 제목, 별점, 한줄평만 빠르게 입력한 뒤 GitHub 저장소의 대기열 파일에 커밋하는 앱을 계획하고 있습니다.
+핸드폰에서 제목, 별점, 감상 상태, 읽은 화수만 빠르게 입력한 뒤 GitHub 저장소의 대기열 파일에 커밋하는 앱을 제공합니다.
 
 - 입력 앱은 `queue/pending-webtoons.jsonl`만 수정합니다.
 - 정식 표지, 작가, 장르, 소개글 보강은 나중에 Codex가 처리합니다.
@@ -100,6 +106,7 @@ React Native 앱 실행 방법은 [app/README.md](app/README.md)를 봅니다.
 
 - [작업 정의](docs/webtoon-review-spec.md)
 - [웹툰 데이터 입력 컨벤션](docs/webtoon-data-convention.md)
+- [Codex refresh 스킬](codex-skills/refresh/SKILL.md)
 - [모바일 큐 앱 구현 계획](docs/mobile-queue-app-plan.md)
 - [웹툰 대기열 컨벤션](docs/webtoon-queue-convention.md)
 - [Codex 대기열 처리 워크플로우](docs/codex-queue-processing-workflow.md)

@@ -25,7 +25,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/001.jpg",
       "descriptionFile": "webtoons/description/001.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-24",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "002",
@@ -50,7 +56,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/002.jpg",
       "descriptionFile": "webtoons/description/002.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-24",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "003",
@@ -75,7 +87,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/003.jpg",
       "descriptionFile": "webtoons/description/003.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-09",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "004",
@@ -100,7 +118,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/004.jpg",
       "descriptionFile": "webtoons/description/004.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-02-06",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "005",
@@ -125,7 +149,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/005.jpg",
       "descriptionFile": "webtoons/description/005.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-24",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "006",
@@ -143,14 +173,20 @@
       ],
       "description": "검과 교감하는 감각을 지닌 인물이 무림에서 살아남고 성장하는 이야기다. 회귀와 수련, 세력 싸움이 결합된 정통 판무형 무협이다.",
       "serializationStatus": "ongoing",
-      "serializationLabel": "연재중",
-      "episodeCount": 184,
+      "serializationLabel": "연재중(휴재)",
+      "episodeCount": 185,
       "userReadingStatus": "reading",
       "userProgress": "137화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/006.jpg",
       "descriptionFile": "webtoons/description/006.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-24",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "007",
@@ -169,13 +205,19 @@
       "description": "삶을 되돌릴 기회를 얻은 무인이 과거의 실패를 바로잡으며 다시 정점으로 향한다. 회귀물 특유의 정보 우위와 무협 액션의 쾌감이 강하다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 102,
+      "episodeCount": 103,
       "userReadingStatus": "reading",
       "userProgress": "51화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/007.jpg",
       "descriptionFile": "webtoons/description/007.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-25",
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "화"
     },
     {
       "id": "008",
@@ -194,13 +236,19 @@
       "description": "배신과 죽음을 겪은 여주인공이 과거로 돌아와 왕비의 자리를 둘러싼 권력 싸움에 뛰어든다. 복수, 로맨스, 궁정 정치가 함께 전개된다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 202,
+      "episodeCount": 203,
       "userReadingStatus": "reading",
       "userProgress": "153화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/008.jpg",
       "descriptionFile": "webtoons/description/008.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-28",
+      "updateWeekdays": [
+        "금"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "금"
     },
     {
       "id": "009",
@@ -225,7 +273,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/009.jpg",
       "descriptionFile": "webtoons/description/009.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-03-30",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "latestEpisodeDate",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "010",
@@ -244,13 +298,19 @@
       "description": "무림과 의술 소재를 섞은 작품으로, 뛰어난 의술과 무공을 둘러싼 사건들이 이어진다. 치료와 생존, 강호의 대립이 주요 축이다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 75,
+      "episodeCount": 76,
       "userReadingStatus": "reading",
       "userProgress": "38화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/010.jpg",
       "descriptionFile": "webtoons/description/010.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-30",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "011",
@@ -275,7 +335,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/011.jpg",
       "descriptionFile": "webtoons/description/011.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2025-10-27",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "latestEpisodeDate",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "012",
@@ -301,7 +367,13 @@
       "coverImage": "webtoons/covers/012.jpg",
       "descriptionFile": "webtoons/description/012.txt",
       "note": "입력 제목은 별이샴샵이지만 공식 작품명은 별이삼샵입니다.",
-      "userRating": 4.8
+      "userRating": 4.8,
+      "latestEpisodeUpdatedAt": "2025-05-24",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "latestEpisodeDate",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "013",
@@ -326,7 +398,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/013.jpg",
       "descriptionFile": "webtoons/description/013.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-03-21",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "014",
@@ -351,7 +429,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/014.jpg",
       "descriptionFile": "webtoons/description/014.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-03",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "015",
@@ -376,7 +460,13 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/015.jpg",
       "descriptionFile": "webtoons/description/015.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-03-08",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "latestEpisodeDate",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "016",
@@ -395,13 +485,19 @@
       "description": "극악 난도의 모바일 게임 세계에 소환된 주인공이 생존을 위해 파티를 꾸리고 싸운다. 게임 시스템, 던전 공략, 전략 전투의 비중이 높다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 202,
+      "episodeCount": 203,
       "userReadingStatus": "reading",
       "userProgress": "189화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/016.jpg",
       "descriptionFile": "webtoons/description/016.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-27",
+      "updateWeekdays": [
+        "목"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "목"
     },
     {
       "id": "017",
@@ -420,13 +516,19 @@
       "description": "가짜로 취급받던 인물이 자신의 자리를 되찾기 위해 움직이는 로맨스 판타지다. 가족 관계와 정체성, 귀족 사회의 갈등이 주요 소재다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 113,
+      "episodeCount": 114,
       "userReadingStatus": "reading",
       "userProgress": "103화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/017.jpg",
       "descriptionFile": "webtoons/description/017.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-29",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "018",
@@ -451,7 +553,13 @@
       "group": "dropped",
       "coverImage": "webtoons/covers/018.png",
       "descriptionFile": "webtoons/description/018.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-03-02",
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "화"
     },
     {
       "id": "019",
@@ -476,7 +584,13 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/019.png",
       "descriptionFile": "webtoons/description/019.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-03-06",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "020",
@@ -501,7 +615,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/020.png",
       "descriptionFile": "webtoons/description/020.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2024-06-22",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "021",
@@ -526,7 +644,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/021.jpg",
       "descriptionFile": "webtoons/description/021.txt",
-      "note": "공식 표기는 적기사는 눈먼 돈을 좇지 않는다입니다."
+      "note": "공식 표기는 적기사는 눈먼 돈을 좇지 않는다입니다.",
+      "latestEpisodeUpdatedAt": "2024-03-17",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "022",
@@ -551,7 +673,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/022.png",
       "descriptionFile": "webtoons/description/022.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2024-09-17",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "023",
@@ -576,7 +702,10 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/023.jpg",
       "descriptionFile": "webtoons/description/023.txt",
-      "note": ""
+      "note": "",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "024",
@@ -601,7 +730,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/024.jpg",
       "descriptionFile": "webtoons/description/024.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2024-06-19",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "025",
@@ -620,13 +753,19 @@
       "description": "낯선 몸과 가족 관계 속에 던져진 주인공이 자신의 삶을 다시 세우려는 로맨스 판타지다. 빙의, 가문 갈등, 복수와 관계 회복이 섞여 있다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 89,
+      "episodeCount": 90,
       "userReadingStatus": "dropped",
       "userProgress": "61화",
       "group": "completed-section",
       "coverImage": "webtoons/covers/025.jpg",
       "descriptionFile": "webtoons/description/025.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-30",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "026",
@@ -651,7 +790,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/026.jpg",
       "descriptionFile": "webtoons/description/026.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2023-04-04",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "027",
@@ -676,7 +819,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/027.jpg",
       "descriptionFile": "webtoons/description/027.txt",
-      "note": "입력 제목은 북벽전기였지만 공식 검색 결과 기준 북검전기로 보정했습니다."
+      "note": "입력 제목은 북벽전기였지만 공식 검색 결과 기준 북검전기로 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2024-11-19",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "028",
@@ -701,7 +848,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/028.jpg",
       "descriptionFile": "webtoons/description/028.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2020-06-12",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "029",
@@ -725,7 +876,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/029.jpg",
       "descriptionFile": "webtoons/description/029.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2022-03-01",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "030",
@@ -750,7 +905,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/030.jpg",
       "descriptionFile": "webtoons/description/030.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2022-08-01",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "031",
@@ -775,7 +934,11 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/031.jpg",
       "descriptionFile": "webtoons/description/031.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2023-02-05",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "032",
@@ -794,13 +957,19 @@
       "description": "빙의자에게 주어진 특별한 조건과 시스템을 바탕으로 모험을 풀어 가는 로맨스 판타지다. 게임식 보상, 성장, 세계관 공략의 재미가 있다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 132,
+      "episodeCount": 133,
       "userReadingStatus": "dropped",
       "userProgress": "105화",
       "group": "completed-section",
       "coverImage": "webtoons/covers/032.jpg",
       "descriptionFile": "webtoons/description/032.txt",
-      "note": ""
+      "note": "",
+      "latestEpisodeUpdatedAt": "2026-05-30",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "033",
@@ -826,7 +995,11 @@
       "coverImage": "webtoons/covers/033.jpg",
       "descriptionFile": "webtoons/description/033.txt",
       "note": "",
-      "userRating": 4.5
+      "userRating": 4.5,
+      "latestEpisodeUpdatedAt": "2022-09-03",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "034",
@@ -851,7 +1024,10 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/034.jpg",
       "descriptionFile": "webtoons/description/034.txt",
-      "note": ""
+      "note": "",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "035",
@@ -877,7 +1053,13 @@
       "coverImage": "webtoons/covers/035.jpg",
       "descriptionFile": "webtoons/description/035.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다."
+      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-25",
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "화"
     },
     {
       "id": "036",
@@ -903,7 +1085,13 @@
       "coverImage": "webtoons/covers/036.jpg",
       "descriptionFile": "webtoons/description/036.txt",
       "userRating": 4.6,
-      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다."
+      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-28",
+      "updateWeekdays": [
+        "금"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "금"
     },
     {
       "id": "037",
@@ -929,7 +1117,13 @@
       "coverImage": "webtoons/covers/037.jpg",
       "descriptionFile": "webtoons/description/037.txt",
       "userRating": 4.8,
-      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다."
+      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-29",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "038",
@@ -948,14 +1142,20 @@
       "description": "천재 댄서이지만 무대 공포증을 지닌 혜은과, 초보 댄서이지만 무대를 두려워하지 않는 수현이 함께하는 스트릿 댄스 성장기다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 95,
+      "episodeCount": 96,
       "userReadingStatus": "reading",
       "userProgress": "89화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/038.jpg",
       "descriptionFile": "webtoons/description/038.txt",
       "userRating": 4,
-      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
+      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-29",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "039",
@@ -974,14 +1174,20 @@
       "description": "헌터의 꿈을 가졌지만 재능은 없는 만년 지망생 기승현 앞에 12년간 혼수상태였던 누나 기소현이 깨어나며 운명의 수레바퀴가 움직이기 시작한다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 71,
+      "episodeCount": 72,
       "userReadingStatus": "reading",
       "userProgress": "50화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/039.jpg",
       "descriptionFile": "webtoons/description/039.txt",
       "userRating": 4,
-      "note": "입력에는 섭으로 적혔지만 공식명 별과 사슬이 뜨는 섬으로 보정했습니다. 공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
+      "note": "입력에는 섭으로 적혔지만 공식명 별과 사슬이 뜨는 섬으로 보정했습니다. 공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-26",
+      "updateWeekdays": [
+        "수"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "수"
     },
     {
       "id": "040",
@@ -1007,7 +1213,11 @@
       "coverImage": "webtoons/covers/040.jpg",
       "descriptionFile": "webtoons/description/040.txt",
       "userRating": 4.9,
-      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
+      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2021-08-05",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "041",
@@ -1026,14 +1236,20 @@
       "description": "괴물 처치 부대 스레투가 사라진 세계에서 진청도가 전설의 아이템 미드우트로 과거로 가, 스레투를 학살한 이안을 죽이려 하는 판타지 액션이다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 192,
+      "episodeCount": 193,
       "userReadingStatus": "reading",
       "userProgress": "191화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/041.jpg",
       "descriptionFile": "webtoons/description/041.txt",
       "userRating": 3.8,
-      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
+      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-28",
+      "updateWeekdays": [
+        "금"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "금"
     },
     {
       "id": "042",
@@ -1052,14 +1268,20 @@
       "description": "착하고 의롭지만 무섭게 생긴 마법사 유진이 스승의 딸 아인을 제자로 거둬 대마법사로 키우고자 하는 마법 교육 판타지다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 31,
+      "episodeCount": 32,
       "userReadingStatus": "reading",
       "userProgress": "19화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/042.jpg",
       "descriptionFile": "webtoons/description/042.txt",
       "userRating": 4.3,
-      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
+      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-27",
+      "updateWeekdays": [
+        "목"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "목"
     },
     {
       "id": "043",
@@ -1078,14 +1300,20 @@
       "description": "마음의 검인 심검을 뽑는 자들이 용사라 불리는 세계에서 엘런이 꿈꾸던 영웅의 현실을 마주하고 진정한 용사가 되기 위해 나아가는 판타지 액션이다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 55,
+      "episodeCount": 56,
       "userReadingStatus": "reading",
       "userProgress": "42화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/043.jpg",
       "descriptionFile": "webtoons/description/043.txt",
       "userRating": 4,
-      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
+      "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-30",
+      "updateWeekdays": [
+        "일"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "일"
     },
     {
       "id": "044",
@@ -1111,7 +1339,11 @@
       "coverImage": "webtoons/covers/044.png",
       "descriptionFile": "webtoons/description/044.txt",
       "userRating": 4.5,
-      "note": "공식 카카오페이지 정보로 작가, 장르, 완결 상태, 표지를 보정했습니다. 회차 수는 카카오페이지 완결 이벤트의 1편부터 200편까지 완독 안내 기준으로 기록했습니다."
+      "note": "공식 카카오페이지 정보로 작가, 장르, 완결 상태, 표지를 보정했습니다. 회차 수는 카카오페이지 완결 이벤트의 1편부터 200편까지 완독 안내 기준으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2023-05-31",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "045",
@@ -1137,7 +1369,11 @@
       "coverImage": "webtoons/covers/045.jpg",
       "descriptionFile": "webtoons/description/045.txt",
       "userRating": 3.2,
-      "note": "공식 카카오페이지 정보로 제목, 작가, 로판 분류, 완결 상태, 소개, 표지를 확인했습니다. 회차 수는 카카오웹툰 마지막화(132) 기준으로 기록했습니다."
+      "note": "공식 카카오페이지 정보로 제목, 작가, 로판 분류, 완결 상태, 소개, 표지를 확인했습니다. 회차 수는 카카오웹툰 마지막화(132) 기준으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2022-05-20",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "046",
@@ -1161,7 +1397,11 @@
       "coverImage": "webtoons/covers/046.jpg",
       "descriptionFile": "webtoons/description/046.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2019-05-08",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "047",
@@ -1186,7 +1426,11 @@
       "coverImage": "webtoons/covers/047.jpg",
       "descriptionFile": "webtoons/description/047.txt",
       "userRating": 4,
-      "note": "입력 제목은 띄어쓰기 없는 형태였고, 공식 작품명은 이번 생도 잘 부탁해입니다. 네이버웹툰 공식 정보로 보정했습니다."
+      "note": "입력 제목은 띄어쓰기 없는 형태였고, 공식 작품명은 이번 생도 잘 부탁해입니다. 네이버웹툰 공식 정보로 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2020-06-06",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "048",
@@ -1211,7 +1455,11 @@
       "coverImage": "webtoons/covers/048.jpg",
       "descriptionFile": "webtoons/description/048.txt",
       "userRating": 4,
-      "note": "입력 제목은 이두나이고, 공식 작품명은 이두나!입니다. 네이버웹툰 공식 정보로 보정했습니다."
+      "note": "입력 제목은 이두나이고, 공식 작품명은 이두나!입니다. 네이버웹툰 공식 정보로 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2019-07-17",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "049",
@@ -1236,7 +1484,11 @@
       "coverImage": "webtoons/covers/049.jpg",
       "descriptionFile": "webtoons/description/049.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2021-02-22",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "050",
@@ -1261,7 +1513,11 @@
       "coverImage": "webtoons/covers/050.jpg",
       "descriptionFile": "webtoons/description/050.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2017-10-12",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "051",
@@ -1286,7 +1542,13 @@
       "coverImage": "webtoons/covers/051.jpg",
       "descriptionFile": "webtoons/description/051.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-27",
+      "updateWeekdays": [
+        "목"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "목"
     },
     {
       "id": "052",
@@ -1311,7 +1573,13 @@
       "coverImage": "webtoons/covers/052.jpg",
       "descriptionFile": "webtoons/description/052.txt",
       "userRating": 4,
-      "note": "입력 제목은 쉼표 없이 들어왔고, 공식 작품명은 나태 공자, 노력 천재 되다입니다. 네이버웹툰 공식 정보로 보정했습니다."
+      "note": "입력 제목은 쉼표 없이 들어왔고, 공식 작품명은 나태 공자, 노력 천재 되다입니다. 네이버웹툰 공식 정보로 보정했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-29",
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "토"
     },
     {
       "id": "053",
@@ -1336,7 +1604,13 @@
       "coverImage": "webtoons/covers/053.jpg",
       "descriptionFile": "webtoons/description/053.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-24",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "054",
@@ -1361,7 +1635,13 @@
       "coverImage": "webtoons/covers/054.jpg",
       "descriptionFile": "webtoons/description/054.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-28",
+      "updateWeekdays": [
+        "금"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "금"
     },
     {
       "id": "055",
@@ -1387,7 +1667,10 @@
       "coverImage": "webtoons/covers/055.jpg",
       "descriptionFile": "webtoons/description/055.txt",
       "userRating": 3.3,
-      "note": "성인 인증이 필요한 작품이라 네이버웹툰 공식 API로 제목, 작가, 장르, 소개, 표지를 확인했고, 회차 수는 네이버 시리즈 공개 목록의 총79화 기준으로 보정했습니다."
+      "note": "성인 인증이 필요한 작품이라 네이버웹툰 공식 API로 제목, 작가, 장르, 소개, 표지를 확인했고, 회차 수는 네이버 시리즈 공개 목록의 총79화 기준으로 보정했습니다.",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "056",
@@ -1413,7 +1696,13 @@
       "coverImage": "webtoons/covers/056.jpg",
       "descriptionFile": "webtoons/description/056.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-24",
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "월"
     },
     {
       "id": "057",
@@ -1438,7 +1727,11 @@
       "coverImage": "webtoons/covers/057.jpg",
       "descriptionFile": "webtoons/description/057.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다.",
+      "latestEpisodeUpdatedAt": "2017-09-21",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "058",
@@ -1464,7 +1757,11 @@
       "coverImage": "webtoons/covers/058.jpg",
       "descriptionFile": "webtoons/description/058.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 50화까지 읽는 중으로 기록했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 50화까지 읽는 중으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2022-10-08",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "059",
@@ -1491,7 +1788,11 @@
       "coverImage": "webtoons/covers/059.jpg",
       "descriptionFile": "webtoons/description/059.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 22화까지 읽는 중으로 기록했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 22화까지 읽는 중으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2024-09-18",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "060",
@@ -1518,7 +1819,11 @@
       "coverImage": "webtoons/covers/060.jpg",
       "descriptionFile": "webtoons/description/060.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러를 제외하고 본편 100화와 IF 외전 6편 기준으로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러를 제외하고 본편 100화와 IF 외전 6편 기준으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2023-08-02",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "061",
@@ -1545,7 +1850,11 @@
       "coverImage": "webtoons/covers/061.jpg",
       "descriptionFile": "webtoons/description/061.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 사용자는 48화에서 중도 포기로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 사용자는 48화에서 중도 포기로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2023-11-05",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "062",
@@ -1572,7 +1881,11 @@
       "coverImage": "webtoons/covers/062.jpg",
       "descriptionFile": "webtoons/description/062.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 본편 128화와 외전 15화 기준으로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 본편 128화와 외전 15화 기준으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2022-04-08",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "063",
@@ -1599,7 +1912,11 @@
       "coverImage": "webtoons/covers/063.jpg",
       "descriptionFile": "webtoons/description/063.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러와 프롤로그를 제외하고 에필로그까지 109화 기준으로 기록했습니다. 사용자는 20화에서 중도 포기로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러와 프롤로그를 제외하고 에필로그까지 109화 기준으로 기록했습니다. 사용자는 20화에서 중도 포기로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2023-08-03",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "064",
@@ -1626,7 +1943,11 @@
       "coverImage": "webtoons/covers/064.jpg",
       "descriptionFile": "webtoons/description/064.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 공개 회차, 표지를 확인했습니다. 공식 검색 정보는 휴재로 응답하지만, 사용자가 모든 추가 작품을 완결 작품으로 지정해 완결 탭에 배치했습니다."
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 공개 회차, 표지를 확인했습니다. 공식 검색 정보는 휴재로 응답하지만, 사용자가 모든 추가 작품을 완결 작품으로 지정해 완결 탭에 배치했습니다.",
+      "latestEpisodeUpdatedAt": "2024-11-23",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "065",
@@ -1652,7 +1973,11 @@
       "coverImage": "webtoons/covers/065.jpg",
       "descriptionFile": "webtoons/description/065.txt",
       "userRating": 3.5,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 끝 기록은 완주로 반영했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 끝 기록은 완주로 반영했습니다.",
+      "latestEpisodeUpdatedAt": "2023-09-12",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "066",
@@ -1679,7 +2004,11 @@
       "coverImage": "webtoons/covers/066.jpg",
       "descriptionFile": "webtoons/description/066.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 동영상 트레일러를 제외한 102화 기준으로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 동영상 트레일러를 제외한 102화 기준으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2024-01-01",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "067",
@@ -1706,7 +2035,11 @@
       "coverImage": "webtoons/covers/067.jpg",
       "descriptionFile": "webtoons/description/067.txt",
       "userRating": 4.4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. 회차는 외전 20화까지 포함한 총 150화 기준입니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. 회차는 외전 20화까지 포함한 총 150화 기준입니다.",
+      "latestEpisodeUpdatedAt": "2022-07-20",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "068",
@@ -1733,7 +2066,11 @@
       "coverImage": "webtoons/covers/068.jpg",
       "descriptionFile": "webtoons/description/068.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러 영상을 제외한 81화 기준으로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러 영상을 제외한 81화 기준으로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2022-12-25",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "069",
@@ -1760,7 +2097,11 @@
       "coverImage": "webtoons/covers/069.jpg",
       "descriptionFile": "webtoons/description/069.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue 상태는 reading이었지만 readProgress가 끝이라 완주로 반영했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue 상태는 reading이었지만 readProgress가 끝이라 완주로 반영했습니다.",
+      "latestEpisodeUpdatedAt": "2021-03-22",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "070",
@@ -1787,7 +2128,11 @@
       "coverImage": "webtoons/covers/070.jpg",
       "descriptionFile": "webtoons/description/070.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 206화, 에필로그, 후기까지 포함한 총 208개 공개분 기준입니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 206화, 에필로그, 후기까지 포함한 총 208개 공개분 기준입니다.",
+      "latestEpisodeUpdatedAt": "2023-12-16",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "071",
@@ -1814,7 +2159,11 @@
       "coverImage": "webtoons/covers/071.jpg",
       "descriptionFile": "webtoons/description/071.txt",
       "userRating": 4,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. 중복 queue 항목 2개는 같은 아카이브 항목으로 처리했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. 중복 queue 항목 2개는 같은 아카이브 항목으로 처리했습니다.",
+      "latestEpisodeUpdatedAt": "2024-02-23",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
     },
     {
       "id": "072",
@@ -1841,7 +2190,13 @@
       "coverImage": "webtoons/covers/072.jpg",
       "descriptionFile": "webtoons/description/072.txt",
       "userRating": 3.5,
-      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 최신 회차, 표지를 확인했습니다. 회차는 트레일러 등 비본편을 제외하고 187화 기준으로 기록했습니다. 사용자는 87화에서 중도 포기로 기록했습니다."
+      "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 최신 회차, 표지를 확인했습니다. 회차는 트레일러 등 비본편을 제외하고 187화 기준으로 기록했습니다. 사용자는 87화에서 중도 포기로 기록했습니다.",
+      "latestEpisodeUpdatedAt": "2026-05-26",
+      "updateWeekdays": [
+        "수"
+      ],
+      "updateScheduleSource": "official",
+      "updateScheduleLabel": "수"
     }
   ]
 }

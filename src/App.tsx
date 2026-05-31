@@ -349,6 +349,8 @@ function App() {
           item.contentType,
           item.userProgress,
           item.serializationLabel,
+          item.updateScheduleLabel,
+          ...(item.updateWeekdays ?? []),
           item.description,
           item.note,
           ...item.genres
@@ -379,6 +381,8 @@ function App() {
   const selectedReaderRating = selectedWebtoon
     ? readerRatings[selectedWebtoon.id]
     : undefined;
+  const selectedLatestUpdatedAt =
+    selectedWebtoon?.latestEpisodeUpdatedAt ?? archiveLastUpdatedAt;
 
   return (
     <main className="app-shell">
@@ -742,12 +746,16 @@ function App() {
                   </dd>
                 </div>
                 <div>
+                  <dt>업데이트 요일</dt>
+                  <dd>{selectedWebtoon.updateScheduleLabel}</dd>
+                </div>
+                <div>
                   <dt>최신 업데이트</dt>
-                  <dd>{formatArchiveDate(archiveLastUpdatedAt)}</dd>
+                  <dd>{formatArchiveDate(selectedLatestUpdatedAt)}</dd>
                 </div>
                 <div>
                   <dt>오늘 기준</dt>
-                  <dd>{getUpdateDistanceLabel(archiveLastUpdatedAt)}</dd>
+                  <dd>{getUpdateDistanceLabel(selectedLatestUpdatedAt)}</dd>
                 </div>
               </dl>
 

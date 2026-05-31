@@ -39,6 +39,8 @@ npm run validate:webtoons
    - 작품 소개
    - 연재 상태
    - 회차 수
+   - 업데이트 요일
+   - 최신 회차 공개일
    - 대표 표지 이미지
 6. 표지를 `webtoons/covers/세자리ID.확장자`로 저장한다.
 7. `webtoons/webtoons.json`에 새 항목을 추가한다.
@@ -50,6 +52,7 @@ npm run validate:webtoons
 
 ```bash
 npm run validate:queue
+npm run refresh:webtoons:dry
 npm run validate:webtoons
 xmllint --noout webtoons/webtoons.xml
 ```
@@ -68,6 +71,7 @@ xmllint --noout webtoons/webtoons.xml
 
 `note`에는 제목 보정, 공식 정보 확인 여부, 특이사항을 남긴다.
 `userProgress`는 `151화`처럼 화수만 남긴다. `completed` 항목에 `readProgress`가 없으면 공식 공개분 기준 회차 수를 사용한다.
+`updateWeekdays`, `updateScheduleLabel`, `updateScheduleSource`, `latestEpisodeUpdatedAt`은 공식/공개 출처 기준으로 채운다.
 
 ## Description 파일 작성 규칙
 

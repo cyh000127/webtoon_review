@@ -60,6 +60,8 @@ for (const item of items) {
     "serializationLabel",
     "userReadingStatus",
     "userProgress",
+    "updateScheduleLabel",
+    "updateScheduleSource",
     "group",
     "coverImage",
     "descriptionFile"
@@ -73,6 +75,35 @@ for (const item of items) {
 
   if (!["ongoing", "completed"].includes(item.serializationStatus)) {
     fail(`${item.id} 항목의 serializationStatus 값이 올바르지 않습니다.`);
+  }
+
+  if (
+    !["official", "latestEpisodeDate", "completed", "unknown"].includes(
+      item.updateScheduleSource
+    )
+  ) {
+    fail(`${item.id} 항목의 updateScheduleSource 값이 올바르지 않습니다.`);
+  }
+
+  if (!Array.isArray(item.updateWeekdays)) {
+    fail(`${item.id} 항목의 updateWeekdays 값이 배열이 아닙니다.`);
+  }
+
+  for (const weekday of item.updateWeekdays) {
+    if (!["월", "화", "수", "목", "금", "토", "일"].includes(weekday)) {
+      fail(`${item.id} 항목의 updateWeekdays 값이 올바르지 않습니다: ${weekday}`);
+    }
+  }
+
+  if (item.serializationStatus === "ongoing" && item.updateWeekdays.length === 0) {
+    fail(`${item.id} 연재중 항목의 updateWeekdays 값이 비어 있습니다.`);
+  }
+
+  if (
+    item.latestEpisodeUpdatedAt !== undefined &&
+    !/^\d{4}-\d{2}-\d{2}$/.test(item.latestEpisodeUpdatedAt)
+  ) {
+    fail(`${item.id} 항목의 latestEpisodeUpdatedAt 날짜 형식이 올바르지 않습니다.`);
   }
 
   if (!["reading", "finished", "dropped"].includes(item.userReadingStatus)) {

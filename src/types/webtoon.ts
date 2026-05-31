@@ -1,5 +1,11 @@
 export type SerializationStatus = "ongoing" | "completed";
 
+export type UpdateScheduleSource =
+  | "official"
+  | "latestEpisodeDate"
+  | "completed"
+  | "unknown";
+
 export type UserReadingStatus =
   | "reading"
   | "finished"
@@ -18,6 +24,10 @@ export interface ArchiveWebtoonRecord {
   serializationStatus: SerializationStatus;
   serializationLabel: string;
   episodeCount: number;
+  updateWeekdays: string[];
+  updateScheduleLabel: string;
+  updateScheduleSource: UpdateScheduleSource;
+  latestEpisodeUpdatedAt?: string;
   userReadingStatus: UserReadingStatus;
   userProgress: string;
   group: string;
