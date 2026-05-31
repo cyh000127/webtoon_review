@@ -76,7 +76,7 @@ Codex는 legacy 항목을 정리할 때 `review`, `dropReason`을 삭제하고, 
 - `PUT /repos/{owner}/{repo}/contents/{path}`로 append된 전체 파일을 커밋한다.
 - 기존 파일을 업데이트할 때는 GitHub API 요청 본문에 현재 파일의 `sha`를 포함한다.
 - `content`는 Base64 인코딩한다.
-- 409 conflict가 발생하면 파일을 다시 읽고 최신 `sha`로 재시도한다.
+- 409 conflict가 발생하면 파일을 다시 읽고 최신 `sha`로 최대 3회 재시도한다.
 
 ## Codex 처리 규칙
 

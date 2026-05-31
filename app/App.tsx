@@ -30,6 +30,7 @@ import {
 } from "./src/queueEntry";
 
 type Screen = "entry" | "recent" | "settings" | "guide";
+type RemoteSyncMode = "fetch" | "pull" | "force";
 
 const ratingSteps = [0, 1, 2, 3, 4, 5];
 const readingStatusOptions: Array<{ label: string; value: ReadingStatus }> = [
@@ -95,6 +96,9 @@ export default function App() {
   const [hasToken, setHasToken] = useState(false);
   const [isTestingConnection, setIsTestingConnection] = useState(false);
   const [isRefreshingRecent, setIsRefreshingRecent] = useState(false);
+  const [remoteSyncMode, setRemoteSyncMode] = useState<RemoteSyncMode | null>(
+    null
+  );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
   const [recentMessage, setRecentMessage] = useState("");
@@ -317,14 +321,21 @@ export default function App() {
     setScreen("entry");
   };
 
-  const refreshRecentSubmissions = async () => {
+  const syncRemoteSubmissions = async (mode: RemoteSyncMode) => {
     if (!isSettingsReady) {
       setRecentMessage("설정 탭에서 저장소 정보와 토큰을 먼저 저장해 주세요.");
       return;
     }
 
     setIsRefreshingRecent(true);
-    setRecentMessage("GitHub 대기열에서 최근 제출을 불러오는 중입니다.");
+    setRemoteSyncMode(mode);
+    setRecentMessage(
+      mode === "fetch"
+        ? "원격 대기열을 확인하는 중입니다."
+        : mode === "pull"
+          ? "원격 대기열을 로컬 최근 목록과 합치는 중입니다."
+          : "원격 대기열로 로컬 최근 목록을 덮어쓰는 중입니다."
+    );
 
     try {
       const token = await SecureStore.getItemAsync(tokenStorageKey);
@@ -344,12 +355,27 @@ export default function App() {
         )
         .slice(0, 10);
 
-      await saveRecentSubmissions(latestEntries);
-      setRecentMessage(
-        latestEntries.length > 0
-          ? `최근 제출 ${latestEntries.length}개를 불러왔습니다.`
-          : "아직 pending 대기열에 제출된 항목이 없습니다."
-      );
+      if (mode === "fetch") {
+        setRecentMessage(
+          entries.length > 0
+            ? `Fetch 완료. 원격 pending ${entries.length}개를 확인했습니다.`
+            : "Fetch 완료. 원격 pending 대기열이 비어 있습니다."
+        );
+      } else if (mode === "pull") {
+        await saveRecentSubmissions([...latestEntries, ...recentSubmissions]);
+        setRecentMessage(
+          latestEntries.length > 0
+            ? `Pull 완료. 원격 최근 제출 ${latestEntries.length}개를 합쳤습니다.`
+            : "Pull 완료. 원격 pending 대기열이 비어 있습니다."
+        );
+      } else {
+        await saveRecentSubmissions(latestEntries);
+        setRecentMessage(
+          latestEntries.length > 0
+            ? `Force 받기 완료. 원격 최근 제출 ${latestEntries.length}개로 맞췄습니다.`
+            : "Force 받기 완료. 원격 pending 대기열이 비어 있습니다."
+        );
+      }
     } catch (error) {
       setRecentMessage(
         error instanceof Error
@@ -358,6 +384,7 @@ export default function App() {
       );
     } finally {
       setIsRefreshingRecent(false);
+      setRemoteSyncMode(null);
     }
   };
 
@@ -757,23 +784,36 @@ export default function App() {
                 <View>
                   <Text style={styles.guideTitle}>최근 제출</Text>
                   <Text style={styles.sectionDescription}>
-                    pending 대기열에 올라간 항목을 불러와 다시 수정합니다.
+                    pending 대기열에 올라간 항목을 원격에서 확인하고 다시 수정합니다.
                   </Text>
                 </View>
-                <Pressable
-                  accessibilityRole="button"
-                  disabled={!isSettingsReady || isRefreshingRecent}
-                  style={[
-                    styles.refreshButton,
-                    (!isSettingsReady || isRefreshingRecent) &&
-                      styles.submitButtonDisabled
-                  ]}
-                  onPress={refreshRecentSubmissions}
-                >
-                  <Text style={styles.refreshButtonText}>
-                    {isRefreshingRecent ? "불러오는 중" : "새로고침"}
-                  </Text>
-                </Pressable>
+              </View>
+
+              <View style={styles.syncButtonRow}>
+                {(
+                  [
+                    ["fetch", "Fetch"],
+                    ["pull", "Pull"],
+                    ["force", "Force 받기"]
+                  ] as const
+                ).map(([mode, label]) => (
+                  <Pressable
+                    key={mode}
+                    accessibilityRole="button"
+                    disabled={!isSettingsReady || isRefreshingRecent}
+                    style={[
+                      styles.syncButton,
+                      mode === "pull" && styles.primarySyncButton,
+                      (!isSettingsReady || isRefreshingRecent) &&
+                        styles.submitButtonDisabled
+                    ]}
+                    onPress={() => syncRemoteSubmissions(mode)}
+                  >
+                    <Text style={styles.syncButtonText}>
+                      {remoteSyncMode === mode ? "진행 중" : label}
+                    </Text>
+                  </Pressable>
+                ))}
               </View>
 
               {recentMessage && (
@@ -920,6 +960,10 @@ export default function App() {
               <Text style={styles.guideText}>
                 최근 탭은 pending 대기열을 다시 읽어 같은 id의 줄을 교체합니다.
                 이미 처리된 항목은 Codex가 processed로 옮긴 뒤라 수정 대상에서 빠집니다.
+              </Text>
+              <Text style={styles.guideText}>
+                Fetch는 원격 상태만 확인하고, Pull은 원격 항목을 로컬 최근 목록과
+                합치며, Force 받기는 원격 대기열로 로컬 최근 목록을 덮어씁니다.
               </Text>
               <Text style={styles.guideText}>
                 저장소 설정은 SecureStore에 저장하고, GitHub Contents API로 queue
@@ -1277,15 +1321,27 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     lineHeight: 19
   },
-  refreshButton: {
+  syncButtonRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginBottom: 12
+  },
+  syncButton: {
     minHeight: 40,
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    borderColor: "#566071",
     borderRadius: 8,
+    borderWidth: 1,
     paddingHorizontal: 12,
+    backgroundColor: "#242b3a"
+  },
+  primarySyncButton: {
+    borderColor: "#ff4050",
     backgroundColor: "#e93449"
   },
-  refreshButtonText: {
+  syncButtonText: {
     color: "#ffffff",
     fontSize: 13,
     fontWeight: "900"

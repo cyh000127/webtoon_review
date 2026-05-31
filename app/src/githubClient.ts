@@ -27,6 +27,7 @@ export type QueueFile = {
 };
 
 const apiVersion = "2022-11-28";
+const maxContentWriteAttempts = 3;
 
 function toUtf8Bytes(value: string) {
   const bytes: number[] = [];
@@ -175,6 +176,44 @@ function getHeaders(token: string) {
   };
 }
 
+function isConflictError(error: unknown) {
+  return error instanceof Error && error.message.includes("(409)");
+}
+
+async function writeQueueFileWithRetries({
+  buildContent,
+  message,
+  settings,
+  token
+}: {
+  buildContent: (content: string) => string;
+  message: string;
+  settings: GitHubQueueSettings;
+  token: string;
+}) {
+  let latest = await readQueueFile(settings, token);
+
+  for (let attempt = 1; attempt <= maxContentWriteAttempts; attempt += 1) {
+    try {
+      return await writeQueueFile({
+        content: buildContent(latest.content),
+        message,
+        settings,
+        sha: latest.sha,
+        token
+      });
+    } catch (error) {
+      if (!isConflictError(error) || attempt === maxContentWriteAttempts) {
+        throw error;
+      }
+
+      latest = await readQueueFile(settings, token);
+    }
+  }
+
+  throw new Error("대기열 파일 갱신에 실패했습니다.");
+}
+
 export async function readQueueFile(
   settings: GitHubQueueSettings,
   token: string
@@ -258,31 +297,13 @@ export async function appendQueueLine({
 }) {
   const append = (content: string) =>
     content.trimEnd().length > 0 ? `${content.trimEnd()}\n${line}\n` : `${line}\n`;
-  const current = await readQueueFile(settings, token);
 
-  try {
-    return await writeQueueFile({
-      content: append(current.content),
-      message,
-      settings,
-      sha: current.sha,
-      token
-    });
-  } catch (error) {
-    if (error instanceof Error && error.message.includes("409")) {
-      const latest = await readQueueFile(settings, token);
-
-      return writeQueueFile({
-        content: append(latest.content),
-        message,
-        settings,
-        sha: latest.sha,
-        token
-      });
-    }
-
-    throw error;
-  }
+  return writeQueueFileWithRetries({
+    buildContent: append,
+    message,
+    settings,
+    token
+  });
 }
 
 function replaceQueueLineContent({
@@ -331,40 +352,17 @@ export async function updateQueueLine({
   settings: GitHubQueueSettings;
   token: string;
 }) {
-  const current = await readQueueFile(settings, token);
-  const nextContent = replaceQueueLineContent({
-    content: current.content,
-    id,
-    line
+  return writeQueueFileWithRetries({
+    buildContent: (content) =>
+      replaceQueueLineContent({
+        content,
+        id,
+        line
+      }),
+    message,
+    settings,
+    token
   });
-
-  try {
-    return await writeQueueFile({
-      content: nextContent,
-      message,
-      settings,
-      sha: current.sha,
-      token
-    });
-  } catch (error) {
-    if (error instanceof Error && error.message.includes("409")) {
-      const latest = await readQueueFile(settings, token);
-
-      return writeQueueFile({
-        content: replaceQueueLineContent({
-          content: latest.content,
-          id,
-          line
-        }),
-        message,
-        settings,
-        sha: latest.sha,
-        token
-      });
-    }
-
-    throw error;
-  }
 }
 
 export async function readPendingQueueEntries(

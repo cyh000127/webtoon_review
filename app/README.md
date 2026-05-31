@@ -29,7 +29,7 @@ npx eas-cli@latest build -p android --profile preview
 ## 앱 화면
 
 - `입력`: 웹툰 제목, 별점, 읽은 위치, 감상 상태 입력 및 GitHub 대기열 제출
-- `최근`: pending 대기열의 최근 제출 확인 및 같은 `id` 항목 수정
+- `최근`: pending 대기열의 최근 제출 확인, fetch/pull/force 받기, 같은 `id` 항목 수정
 - `설정`: GitHub owner, repo, branch, queue path, fine-grained PAT 저장
 - `안내`: 앱의 동작 방식 확인
 
