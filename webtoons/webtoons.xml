@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-05-30" count="64">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-05-31" count="72">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1137,5 +1137,164 @@
     <coverImage>webtoons/covers/064.jpg</coverImage>
     <descriptionFile>webtoons/description/064.txt</descriptionFile>
     <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 공개 회차, 표지를 확인했습니다. 공식 검색 정보는 휴재로 응답하지만, 사용자가 모든 추가 작품을 완결 작품으로 지정해 완결 탭에 배치했습니다.</note>
+  </webtoon>
+  <webtoon id="065">
+    <title>우리 삼촌은 월드스타</title>
+    <author>놉니,네딸아빠</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>54085634</platformId>
+    <genres>
+      <genre>드라마</genre>
+      <genre>현대판타지</genre>
+      <genre>연예계</genre>
+      <genre>성장</genre>
+    </genres>
+    <description>가수를 포기하고 가족을 책임지던 청년가장 우진이 별똥별과 드림 프로그램을 계기로 세계적인 스타를 향해 나아가는 연예계 성장 드라마다.</description>
+    <serialization status="completed" label="완결(186화)" episodeCount="186"/>
+    <userReading status="finished" progress="186화" group="completed-section"/>
+    <coverImage>webtoons/covers/065.jpg</coverImage>
+    <descriptionFile>webtoons/description/065.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 끝 기록은 완주로 반영했습니다.</note>
+  </webtoon>
+  <webtoon id="066">
+    <title>악녀를 죽여 줘</title>
+    <author>해기,사월생</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>56712146</platformId>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>빙의</genre>
+      <genre>서양풍</genre>
+      <genre>피카레스크</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>소설 속 악녀 에리스에게 빙의한 주인공이 정해진 서사와 남주들의 집착을 거부하고 원래 세계로 돌아가기 위해 발버둥치는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(102화)" episodeCount="102"/>
+    <userReading status="finished" progress="102화" group="completed-section"/>
+    <coverImage>webtoons/covers/066.jpg</coverImage>
+    <descriptionFile>webtoons/description/066.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 동영상 트레일러를 제외한 102화 기준으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="067">
+    <title>괴물 공작가의 계약 공녀</title>
+    <author>민작,리아란</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>52792529</platformId>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>가족</genre>
+      <genre>성장</genre>
+      <genre>힐링</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>학대받던 소녀 레슬리가 살기 위해 괴물 공작가와 계약하고, 새 가족의 보호 속에서 자신의 힘과 삶을 되찾아 가는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(150화)" episodeCount="150"/>
+    <userReading status="finished" progress="150화" group="completed-section"/>
+    <coverImage>webtoons/covers/067.jpg</coverImage>
+    <descriptionFile>webtoons/description/067.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. 회차는 외전 20화까지 포함한 총 150화 기준입니다.</note>
+  </webtoon>
+  <webtoon id="068">
+    <title>8클래스 마법사의 회귀</title>
+    <author>테스,류송</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>57140255</platformId>
+    <genres>
+      <genre>판타지</genre>
+      <genre>회귀</genre>
+      <genre>마법</genre>
+      <genre>복수</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>대륙 최초의 8클래스 마법사 이안 페이지가 황제에게 배신당한 뒤 과거로 돌아가, 전생의 비극을 뒤집기 위해 다시 힘을 쌓는 회귀 판타지다.</description>
+    <serialization status="completed" label="완결(81화)" episodeCount="81"/>
+    <userReading status="finished" progress="81화" group="completed-section"/>
+    <coverImage>webtoons/covers/068.jpg</coverImage>
+    <descriptionFile>webtoons/description/068.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러 영상을 제외한 81화 기준으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="069">
+    <title>그녀가 공작저로 가야 했던 사정</title>
+    <author>고래,밀차</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>50242834</platformId>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>빙의</genre>
+      <genre>계약연애</genre>
+      <genre>왕족/귀족</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>소설 속 조연 레리아나로 빙의한 주인공이 죽음을 피하려 공작 노아와 계약 약혼을 맺으며 원작의 흐름을 바꾸는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(158화)" episodeCount="158"/>
+    <userReading status="finished" progress="158화" group="completed-section"/>
+    <coverImage>webtoons/covers/069.jpg</coverImage>
+    <descriptionFile>webtoons/description/069.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue 상태는 reading이었지만 readProgress가 끝이라 완주로 반영했습니다.</note>
+  </webtoon>
+  <webtoon id="070">
+    <title>대마법사의 딸</title>
+    <author>문설아,새벽애</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>53769306</platformId>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>가족</genre>
+      <genre>마법</genre>
+      <genre>성장</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>친부모에게 버림받았다고 믿던 아이가 진짜 아버지인 대마법사를 찾아가고, 마법사 가문과 새 가족 안에서 성장해 가는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(208화)" episodeCount="208"/>
+    <userReading status="finished" progress="208화" group="completed-section"/>
+    <coverImage>webtoons/covers/070.jpg</coverImage>
+    <descriptionFile>webtoons/description/070.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 206화, 에필로그, 후기까지 포함한 총 208개 공개분 기준입니다.</note>
+  </webtoon>
+  <webtoon id="071">
+    <title>쓰레기장 속 황녀님</title>
+    <author>오십,해루아,하라쇼</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>55166366</platformId>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+      <genre>가족</genre>
+      <genre>힐링</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>쓰레기장에 버려진 황녀가 황실 가족과 만나며 상처를 회복하고, 숨겨진 힘과 가족의 의미를 찾아가는 육아 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(100화)" episodeCount="100"/>
+    <userReading status="finished" progress="100화" group="completed-section"/>
+    <coverImage>webtoons/covers/071.jpg</coverImage>
+    <descriptionFile>webtoons/description/071.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. 중복 queue 항목 2개는 같은 아카이브 항목으로 처리했습니다.</note>
+  </webtoon>
+  <webtoon id="072">
+    <title>회귀자 사용설명서</title>
+    <author>도미,미드나잇 스튜디오,흙수저</author>
+    <platform>카카오페이지</platform>
+    <contentType>웹툰</contentType>
+    <platformId>58095657</platformId>
+    <genres>
+      <genre>판타지</genre>
+      <genre>회귀</genre>
+      <genre>게임판타지</genre>
+      <genre>성장</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>이세계에 소환된 주인공이 낮은 재능을 교활한 판단력과 생존 전략으로 보완하며 회귀자를 이용해 판을 키워 가는 게임 판타지다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="187"/>
+    <userReading status="dropped" progress="87화" group="dropped"/>
+    <coverImage>webtoons/covers/072.jpg</coverImage>
+    <descriptionFile>webtoons/description/072.txt</descriptionFile>
+    <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 최신 회차, 표지를 확인했습니다. 회차는 트레일러 등 비본편을 제외하고 187화 기준으로 기록했습니다. 사용자는 87화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
 </webtoons>
