@@ -4,7 +4,7 @@
 
 `queue/pending-webtoons.jsonl`에 쌓인 모바일 입력 항목을 정식 웹툰 아카이브로 반영한다.
 
-모바일 앱은 제목, 별점, 한줄평만 올린다.  
+모바일 앱은 제목, 별점, 읽은 위치, 감상 상태만 올린다.  
 Codex는 공식/공개 정보를 확인해 표지, 작가, 장르, 작품 소개, 연재 상태, 회차 수를 보강한다.
 
 ## 시작 전 확인
@@ -28,7 +28,7 @@ npm run validate:webtoons
 
 1. `queue/pending-webtoons.jsonl`의 가장 오래된 항목부터 읽는다.
 2. 같은 제목 또는 보정 가능한 제목이 이미 `webtoons/webtoons.json`에 있는지 확인한다.
-3. 기존 항목이 있으면 새 작품을 만들지 않고 별점/한줄평 보강이 가능한지 판단한다.
+3. 기존 항목이 있으면 새 작품을 만들지 않고 별점/독서 상태 보강이 가능한지 판단한다.
 4. 새 작품이면 다음 세 자리 ID를 정한다.
 5. 공식/공개 페이지에서 아래 정보를 확인한다.
    - 공식 제목
@@ -65,10 +65,9 @@ xmllint --noout webtoons/webtoons.xml
 | `title` | `inputTitle` |
 | 공식 보정 제목 | `title` |
 | `rating` | `userRating` |
-| `review` | `userReview` |
 
 `note`에는 제목 보정, 공식 정보 확인 여부, 특이사항을 남긴다.
-`userReview`는 저장만 하고 웹 화면에는 표시하지 않는다. `userProgress`는 `151화`처럼 화수만 남긴다.
+`userProgress`는 `151화`처럼 화수만 남긴다. `completed` 항목에 `readProgress`가 없으면 공식 공개분 기준 회차 수를 사용한다.
 
 ## Description 파일 작성 규칙
 
@@ -76,9 +75,6 @@ xmllint --noout webtoons/webtoons.xml
 공식 웹툰 제목
 
 공식/공개 정보 기준 작품 소개 요약.
-
-평점: 4.5
-후기: 사용자가 남긴 한줄평
 ```
 
 ## Processed 항목 작성 규칙

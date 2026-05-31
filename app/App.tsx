@@ -74,13 +74,22 @@ function formatRating(value: number) {
   return Number.isInteger(rounded) ? rounded.toFixed(1) : String(rounded);
 }
 
+function formatProgressLabel(submission: PendingWebtoonQueueEntry) {
+  const progress = submission.readProgress.trim();
+
+  if (progress) {
+    return progress;
+  }
+
+  return submission.readingStatus === "completed" ? "완결까지" : "진도 미입력";
+}
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>("entry");
   const [title, setTitle] = useState("");
   const [ratingInput, setRatingInput] = useState("4.0");
   const [readProgress, setReadProgress] = useState("");
   const [readingStatus, setReadingStatus] = useState<ReadingStatus>("reading");
-  const [review, setReview] = useState("");
   const [settings, setSettings] = useState<GitHubQueueSettings>(defaultSettings);
   const [tokenInput, setTokenInput] = useState("");
   const [hasToken, setHasToken] = useState(false);
@@ -151,13 +160,7 @@ export default function App() {
 
   const parsedRating = useMemo(() => parseRatingInput(ratingInput), [ratingInput]);
   const isRatingValid = parsedRating !== null;
-  const isFinalState = readingStatus === "completed" || readingStatus === "dropped";
-  const noteLabel =
-    readingStatus === "dropped"
-      ? "중도 이탈 사유"
-      : readingStatus === "completed"
-        ? "완주 한줄평"
-        : "메모";
+  const isReadProgressRequired = readingStatus !== "completed";
 
   const validationMessage = useMemo(() => {
     if (title.trim().length === 0) {
@@ -168,25 +171,18 @@ export default function App() {
       return "별점은 0부터 5 사이 숫자로 입력해 주세요.";
     }
 
-    if (readProgress.trim().length === 0) {
+    if (isReadProgressRequired && readProgress.trim().length === 0) {
       return "어디까지 봤는지 입력해 주세요.";
-    }
-
-    if (isFinalState && review.trim().length === 0) {
-      return readingStatus === "dropped"
-        ? "중도 이탈 사유를 입력해 주세요."
-        : "완주 한줄평을 입력해 주세요.";
     }
 
     return editingEntry
       ? "수정 준비 완료. 기존 대기열 항목을 갱신할 수 있어요."
       : "입력 준비 완료. GitHub 대기열에 올릴 수 있어요.";
-  }, [editingEntry, isFinalState, isRatingValid, readProgress, readingStatus, review, title]);
+  }, [editingEntry, isRatingValid, isReadProgressRequired, readProgress, title]);
 
   const isReady =
     title.trim().length > 0 &&
-    readProgress.trim().length > 0 &&
-    (!isFinalState || review.trim().length > 0) &&
+    (!isReadProgressRequired || readProgress.trim().length > 0) &&
     isRatingValid;
   const isSettingsReady =
     settings.owner.trim().length > 0 &&
@@ -308,7 +304,6 @@ export default function App() {
     setRatingInput("4.0");
     setReadProgress("");
     setReadingStatus("reading");
-    setReview("");
     setEditingEntry(null);
   };
 
@@ -318,11 +313,6 @@ export default function App() {
     setRatingInput(formatRating(submission.rating));
     setReadProgress(submission.readProgress);
     setReadingStatus(submission.readingStatus);
-    setReview(
-      submission.readingStatus === "dropped"
-        ? submission.dropReason ?? submission.review
-        : submission.review
-    );
     setSubmitMessage(`${submission.title} 수정 모드입니다.`);
     setScreen("entry");
   };
@@ -374,7 +364,6 @@ export default function App() {
   const submitQueueEntry = async (allowDuplicateTitle = false) => {
     const trimmedTitle = title.trim();
     const trimmedReadProgress = readProgress.trim();
-    const trimmedReview = review.trim();
 
     if (!trimmedTitle) {
       setSubmitMessage("제목을 입력해 주세요.");
@@ -386,17 +375,8 @@ export default function App() {
       return;
     }
 
-    if (!trimmedReadProgress) {
+    if (isReadProgressRequired && !trimmedReadProgress) {
       setSubmitMessage("어디까지 봤는지 입력해 주세요.");
-      return;
-    }
-
-    if (isFinalState && !trimmedReview) {
-      setSubmitMessage(
-        readingStatus === "dropped"
-          ? "중도 이탈 사유를 입력해 주세요."
-          : "완주 한줄평을 입력해 주세요."
-      );
       return;
     }
 
@@ -443,21 +423,15 @@ export default function App() {
 
       const entry = editingEntry
         ? updateQueueEntry(editingEntry, {
-            dropReason:
-              readingStatus === "dropped" ? trimmedReview : undefined,
             rating: parsedRating,
             readProgress: trimmedReadProgress,
             readingStatus,
-            review: trimmedReview,
             title: trimmedTitle
           })
         : createQueueEntry({
-            dropReason:
-              readingStatus === "dropped" ? trimmedReview : undefined,
             rating: parsedRating,
             readProgress: trimmedReadProgress,
             readingStatus,
-            review: trimmedReview,
             title: trimmedTitle
           });
 
@@ -465,14 +439,14 @@ export default function App() {
         await updateQueueLine({
           id: editingEntry.id,
           line: serializeQueueEntry(entry),
-          message: "chore: 웹툰 대기열 수정",
+          message: "update",
           settings,
           token
         });
       } else {
         await appendQueueLine({
           line: serializeQueueEntry(entry),
-          message: "chore: 웹툰 대기열 추가",
+          message: "update",
           settings,
           token
         });
@@ -517,7 +491,7 @@ export default function App() {
             <Text style={styles.eyebrow}>WEBTOON QUEUE</Text>
             <Text style={styles.title}>읽는 웹툰 빠른 기록</Text>
             <Text style={styles.description}>
-              제목, 별점, 한줄평만 남기고 나중에 Codex가 공식 정보를 채우는
+              제목, 별점, 읽은 위치만 남기고 나중에 Codex가 공식 정보를 채우는
               흐름입니다.
             </Text>
           </View>
@@ -672,7 +646,11 @@ export default function App() {
               <TextInput
                 value={readProgress}
                 onChangeText={setReadProgress}
-                placeholder="예: 151화 / 완결까지 / 34화"
+                placeholder={
+                  readingStatus === "completed"
+                    ? "완주라면 비워도 돼요"
+                    : "예: 151화 / 34화"
+                }
                 placeholderTextColor="#7f8792"
                 style={styles.input}
               />
@@ -702,23 +680,6 @@ export default function App() {
                 ))}
               </View>
 
-              <Text style={styles.label}>{noteLabel}</Text>
-              <TextInput
-                value={review}
-                onChangeText={setReview}
-                placeholder={
-                  readingStatus === "dropped"
-                    ? "왜 중도 이탈했는지 남겨주세요."
-                    : readingStatus === "completed"
-                      ? "완주하고 남는 감상을 짧게 적어주세요."
-                      : "지금 감상이나 메모가 있으면 적어주세요."
-                }
-                placeholderTextColor="#7f8792"
-                multiline
-                style={[styles.input, styles.textarea]}
-                textAlignVertical="top"
-              />
-
               <View style={styles.previewBox}>
                 <Text style={styles.previewTitle}>대기열 미리보기</Text>
                 <Text style={styles.previewLine}>제목: {title.trim() || "-"}</Text>
@@ -730,9 +691,6 @@ export default function App() {
                 </Text>
                 <Text style={styles.previewLine}>
                   상태: {readingStatusLabels[readingStatus]}
-                </Text>
-                <Text style={styles.previewLine}>
-                  {noteLabel}: {review.trim() || "-"}
                 </Text>
               </View>
 
@@ -779,7 +737,7 @@ export default function App() {
                       <Text style={styles.recentMeta}>
                         {formatRating(submission.rating)}점 ·{" "}
                         {readingStatusLabels[submission.readingStatus]} ·{" "}
-                        {submission.readProgress || "진도 미입력"}
+                        {formatProgressLabel(submission)}
                       </Text>
                       <Pressable
                         accessibilityRole="button"
@@ -834,12 +792,7 @@ export default function App() {
                       <Text style={styles.recentMeta}>
                         {formatRating(submission.rating)}점 ·{" "}
                         {readingStatusLabels[submission.readingStatus]} ·{" "}
-                        {submission.readProgress || "진도 미입력"}
-                      </Text>
-                      <Text style={styles.recentNote}>
-                        {submission.readingStatus === "dropped"
-                          ? submission.dropReason || submission.review || "이탈 사유 없음"
-                          : submission.review || "메모 없음"}
+                        {formatProgressLabel(submission)}
                       </Text>
                       <View style={styles.recentFooter}>
                         <Text style={styles.recentDate}>
@@ -961,7 +914,7 @@ export default function App() {
                 JSON Lines 한 줄을 추가합니다.
               </Text>
               <Text style={styles.guideText}>
-                앱은 제목, 평점, 읽은 위치, 감상 상태, 한줄평 또는 이탈 사유를
+                앱은 제목, 평점, 읽은 위치, 감상 상태를
                 저장하고 표지, 작가, 장르, 소개글은 Codex가 후처리합니다.
               </Text>
               <Text style={styles.guideText}>
@@ -1110,11 +1063,6 @@ const styles = StyleSheet.create({
   },
   inputError: {
     borderColor: "#ff6b7a"
-  },
-  textarea: {
-    minHeight: 112,
-    paddingTop: 12,
-    lineHeight: 22
   },
   ratingInput: {
     marginBottom: 8
@@ -1353,12 +1301,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 12,
     backgroundColor: "#202635"
-  },
-  recentNote: {
-    color: "#d5dbe6",
-    fontSize: 13,
-    fontWeight: "700",
-    lineHeight: 19
   },
   recentFooter: {
     flexDirection: "row",

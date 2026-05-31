@@ -4,10 +4,8 @@ export type PendingWebtoonQueueEntry = {
   id: string;
   title: string;
   rating: number;
-  review: string;
   readProgress: string;
   readingStatus: ReadingStatus;
-  dropReason?: string;
   createdAt: string;
   updatedAt?: string;
   source: "mobile-queue-app";
@@ -35,18 +33,14 @@ export function formatLocalIso(date: Date) {
 }
 
 export function createQueueEntry({
-  dropReason,
   rating,
   readProgress,
   readingStatus,
-  review,
   title
 }: {
-  dropReason?: string;
   rating: number;
   readProgress: string;
   readingStatus: ReadingStatus;
-  review: string;
   title: string;
 }): PendingWebtoonQueueEntry {
   const now = new Date();
@@ -61,10 +55,8 @@ export function createQueueEntry({
     id: `wq_${datePart}_${timePart}`,
     title: title.trim(),
     rating,
-    review: review.trim(),
     readProgress: readProgress.trim(),
     readingStatus,
-    ...(dropReason?.trim() ? { dropReason: dropReason.trim() } : {}),
     createdAt: formatLocalIso(now),
     source: "mobile-queue-app",
     status: "pending"
@@ -74,18 +66,14 @@ export function createQueueEntry({
 export function updateQueueEntry(
   current: PendingWebtoonQueueEntry,
   {
-    dropReason,
     rating,
     readProgress,
     readingStatus,
-    review,
     title
   }: {
-    dropReason?: string;
     rating: number;
     readProgress: string;
     readingStatus: ReadingStatus;
-    review: string;
     title: string;
   }
 ): PendingWebtoonQueueEntry {
@@ -93,10 +81,8 @@ export function updateQueueEntry(
     ...current,
     title: title.trim(),
     rating,
-    review: review.trim(),
     readProgress: readProgress.trim(),
     readingStatus,
-    dropReason: dropReason?.trim() || undefined,
     updatedAt: formatLocalIso(new Date())
   };
 }
@@ -130,13 +116,9 @@ export function normalizeQueueEntry(value: unknown) {
     id: candidate.id,
     title: candidate.title,
     rating: candidate.rating,
-    review: typeof candidate.review === "string" ? candidate.review : "",
     readProgress:
       typeof candidate.readProgress === "string" ? candidate.readProgress : "",
     readingStatus,
-    ...(typeof candidate.dropReason === "string" && candidate.dropReason.trim()
-      ? { dropReason: candidate.dropReason }
-      : {}),
     createdAt: candidate.createdAt,
     ...(typeof candidate.updatedAt === "string"
       ? { updatedAt: candidate.updatedAt }

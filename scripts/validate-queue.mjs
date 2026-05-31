@@ -73,12 +73,9 @@ function validateEntry(entry, fileConfig, lineNumber) {
     errors.push(`${filePath}:${lineNumber} rating은 0부터 5까지의 숫자여야 합니다.`);
   }
 
-  const hasReadingSchema =
-    "readProgress" in entry || "readingStatus" in entry || "dropReason" in entry;
+  const hasReadingSchema = "readProgress" in entry || "readingStatus" in entry;
 
   if (hasReadingSchema) {
-    validateRequiredString(entry, "readProgress", filePath, lineNumber);
-
     if (!["reading", "completed", "dropped"].includes(entry.readingStatus)) {
       errors.push(
         `${filePath}:${lineNumber} readingStatus는 reading, completed, dropped 중 하나여야 합니다.`
@@ -86,19 +83,14 @@ function validateEntry(entry, fileConfig, lineNumber) {
     }
 
     if (
-      entry.readingStatus === "dropped" &&
-      (typeof entry.dropReason !== "string" ||
-        entry.dropReason.trim().length === 0)
+      entry.readingStatus !== "completed" &&
+      (typeof entry.readProgress !== "string" ||
+        entry.readProgress.trim().length === 0)
     ) {
       errors.push(
-        `${filePath}:${lineNumber} 중도 이탈 항목은 dropReason이 필요합니다.`
+        `${filePath}:${lineNumber} 읽는 중/중도 이탈 항목은 readProgress가 필요합니다.`
       );
     }
-  } else if (
-    typeof entry.review !== "string" ||
-    entry.review.trim().length === 0
-  ) {
-    errors.push(`${filePath}:${lineNumber} 기존 형식 항목은 review가 필요합니다.`);
   }
 
   if (!isValidDate(entry.createdAt)) {
