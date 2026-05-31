@@ -36,6 +36,11 @@
 - 파일명, 명령어, 패키지명, 타입명처럼 코드 맥락에서 필요한 단어는 영어를 허용한다.
 - 의미가 모호한 `update`, `changes`, `initial commit` 같은 메시지는 사용하지 않는다.
 
+## 예외
+
+- 모바일 입력 앱이 GitHub Contents API로 `queue/pending-webtoons.jsonl`만 갱신할 때는 사용자가 지정한 자동 커밋 메시지 `update`를 사용한다.
+- Codex나 사람이 직접 만드는 저장소 작업 커밋에는 이 예외를 적용하지 않는다.
+
 ## 좋은 예시
 
 ```text
