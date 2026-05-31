@@ -24,8 +24,6 @@ export interface ArchiveWebtoonRecord {
   coverImage: string;
   descriptionFile: string;
   userRating?: number;
-  userReview?: string;
-  dropReason?: string;
   note: string;
 }
 

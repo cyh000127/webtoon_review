@@ -784,14 +784,6 @@ function App() {
                 </div>
               </section>
 
-              {selectedWebtoon.userReadingStatus === "dropped" &&
-                selectedWebtoon.dropReason && (
-                  <section className="detail-drop" aria-label="중도 포기 사유">
-                    <strong>중도 포기 사유</strong>
-                    <p>{selectedWebtoon.dropReason}</p>
-                  </section>
-                )}
-
               <div className="detail-tags">
                 {selectedWebtoon.genres.map((itemGenre) => (
                   <span key={itemGenre}>{itemGenre}</span>

@@ -301,8 +301,7 @@
       "coverImage": "webtoons/covers/012.jpg",
       "descriptionFile": "webtoons/description/012.txt",
       "note": "입력 제목은 별이샴샵이지만 공식 작품명은 별이삼샵입니다.",
-      "userRating": 4.8,
-      "userReview": "달달하고 재미있음. 순애의 교과서 같은 느낌"
+      "userRating": 4.8
     },
     {
       "id": "013",
@@ -452,7 +451,6 @@
       "group": "dropped",
       "coverImage": "webtoons/covers/018.png",
       "descriptionFile": "webtoons/description/018.txt",
-      "dropReason": "재미가 없고 난해해서 주인공에 몰입이 안되서",
       "note": ""
     },
     {
@@ -828,8 +826,7 @@
       "coverImage": "webtoons/covers/033.jpg",
       "descriptionFile": "webtoons/description/033.txt",
       "note": "",
-      "userRating": 4.5,
-      "userReview": "제목이 진입장벽. 굉장히 양판 같지만 마무리가 잘된 웹툰"
+      "userRating": 4.5
     },
     {
       "id": "034",
@@ -880,7 +877,6 @@
       "coverImage": "webtoons/covers/035.jpg",
       "descriptionFile": "webtoons/description/035.txt",
       "userRating": 4,
-      "userReview": "살짝 어지러운 스토리긴하데 모두의 입장이 이해가 되서 몰입이 되는 스토리.",
       "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다."
     },
     {
@@ -907,7 +903,6 @@
       "coverImage": "webtoons/covers/036.jpg",
       "descriptionFile": "webtoons/description/036.txt",
       "userRating": 4.6,
-      "userReview": "볼만한 판타지 웹툰 없을 때 추천. 색감과 그림체가 굉장히 다채로워서 보는 맛이 있음. 스토리 전개도 빠른 편이지만 뇌빼고 보는 사람들에게는 약가의 집중이 필요함",
       "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다."
     },
     {
@@ -934,7 +929,6 @@
       "coverImage": "webtoons/covers/037.jpg",
       "descriptionFile": "webtoons/description/037.txt",
       "userRating": 4.8,
-      "userReview": "rpg 게임 + 로맨스 물이라 게임을 좋아하는 사람들한테는 굉장히 흥미롭게 다가올 거같음",
       "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다."
     },
     {
@@ -961,7 +955,6 @@
       "coverImage": "webtoons/covers/038.jpg",
       "descriptionFile": "webtoons/description/038.txt",
       "userRating": 4,
-      "userReview": "춤을 모르는 사람 들도 볼만은 함. 포인트가 춤에 맞춰져 있어서 춤을 모르는 입장에서 아쉬웠음",
       "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
     },
     {
@@ -988,7 +981,6 @@
       "coverImage": "webtoons/covers/039.jpg",
       "descriptionFile": "webtoons/description/039.txt",
       "userRating": 4,
-      "userReview": "볼만한 판타지 웹툰. 재미 있음",
       "note": "입력에는 섭으로 적혔지만 공식명 별과 사슬이 뜨는 섬으로 보정했습니다. 공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
     },
     {
@@ -1015,7 +1007,6 @@
       "coverImage": "webtoons/covers/040.jpg",
       "descriptionFile": "webtoons/description/040.txt",
       "userRating": 4.9,
-      "userReview": "용두용미. 깔끔하게 재미가 없어지기 전에 후루룩 전개하고 마무리한 재미있는 웹툰",
       "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
     },
     {
@@ -1042,7 +1033,6 @@
       "coverImage": "webtoons/covers/041.jpg",
       "descriptionFile": "webtoons/description/041.txt",
       "userRating": 3.8,
-      "userReview": "볼만한 판타지 웹툰. 빌드업은 재미있고 각 캐릭별 서사는 너무 즐겁지만 뭐랄까 너무 매끄럽게 진행되서 고구마에 비해 사이다가 부족한 느낌",
       "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
     },
     {
@@ -1069,7 +1059,6 @@
       "coverImage": "webtoons/covers/042.jpg",
       "descriptionFile": "webtoons/description/042.txt",
       "userRating": 4.3,
-      "userReview": "소재가 신선하고, 각 인물별 서사가 궁금한 웹툰. 굉장히 재미있음. 단 하나 아쉬운건 너무 일찍 발견해버린것",
       "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
     },
     {
@@ -1096,7 +1085,6 @@
       "coverImage": "webtoons/covers/043.jpg",
       "descriptionFile": "webtoons/description/043.txt",
       "userRating": 4,
-      "userReview": "볼만한 웹툰. 각 캐릭터들이 신선하고 용사들의 능력이 궁금해지는 판타지 웹툰",
       "note": "공식 네이버웹툰 정보로 작가, 소개, 표지를 보정했습니다."
     },
     {
@@ -1123,7 +1111,6 @@
       "coverImage": "webtoons/covers/044.png",
       "descriptionFile": "webtoons/description/044.txt",
       "userRating": 4.5,
-      "userReview": "멋있는 그림체 괜찮은 마무리 술술읽히는 전개",
       "note": "공식 카카오페이지 정보로 작가, 장르, 완결 상태, 표지를 보정했습니다. 회차 수는 카카오페이지 완결 이벤트의 1편부터 200편까지 완독 안내 기준으로 기록했습니다."
     },
     {
@@ -1150,8 +1137,6 @@
       "coverImage": "webtoons/covers/045.jpg",
       "descriptionFile": "webtoons/description/045.txt",
       "userRating": 3.2,
-      "userReview": "불쾌함\n남캐들도 어딘가 애매하고 여주 하나 만보고 읽기에는 한계가있음",
-      "dropReason": "불쾌함\n남캐들도 어딘가 애매하고 여주 하나 만보고 읽기에는 한계가있음",
       "note": "공식 카카오페이지 정보로 제목, 작가, 로판 분류, 완결 상태, 소개, 표지를 확인했습니다. 회차 수는 카카오웹툰 마지막화(132) 기준으로 기록했습니다."
     },
     {
@@ -1176,7 +1161,6 @@
       "coverImage": "webtoons/covers/046.jpg",
       "descriptionFile": "webtoons/description/046.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
     },
     {
@@ -1202,7 +1186,6 @@
       "coverImage": "webtoons/covers/047.jpg",
       "descriptionFile": "webtoons/description/047.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "입력 제목은 띄어쓰기 없는 형태였고, 공식 작품명은 이번 생도 잘 부탁해입니다. 네이버웹툰 공식 정보로 보정했습니다."
     },
     {
@@ -1228,7 +1211,6 @@
       "coverImage": "webtoons/covers/048.jpg",
       "descriptionFile": "webtoons/description/048.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "입력 제목은 이두나이고, 공식 작품명은 이두나!입니다. 네이버웹툰 공식 정보로 보정했습니다."
     },
     {
@@ -1254,7 +1236,6 @@
       "coverImage": "webtoons/covers/049.jpg",
       "descriptionFile": "webtoons/description/049.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
     },
     {
@@ -1280,7 +1261,6 @@
       "coverImage": "webtoons/covers/050.jpg",
       "descriptionFile": "webtoons/description/050.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
     },
     {
@@ -1306,7 +1286,6 @@
       "coverImage": "webtoons/covers/051.jpg",
       "descriptionFile": "webtoons/description/051.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
     },
     {
@@ -1332,7 +1311,6 @@
       "coverImage": "webtoons/covers/052.jpg",
       "descriptionFile": "webtoons/description/052.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "입력 제목은 쉼표 없이 들어왔고, 공식 작품명은 나태 공자, 노력 천재 되다입니다. 네이버웹툰 공식 정보로 보정했습니다."
     },
     {
@@ -1358,7 +1336,6 @@
       "coverImage": "webtoons/covers/053.jpg",
       "descriptionFile": "webtoons/description/053.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
     },
     {
@@ -1384,7 +1361,6 @@
       "coverImage": "webtoons/covers/054.jpg",
       "descriptionFile": "webtoons/description/054.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
     },
     {
@@ -1411,7 +1387,6 @@
       "coverImage": "webtoons/covers/055.jpg",
       "descriptionFile": "webtoons/description/055.txt",
       "userRating": 3.3,
-      "userReview": ".",
       "note": "성인 인증이 필요한 작품이라 네이버웹툰 공식 API로 제목, 작가, 장르, 소개, 표지를 확인했고, 회차 수는 네이버 시리즈 공개 목록의 총79화 기준으로 보정했습니다."
     },
     {
@@ -1438,7 +1413,6 @@
       "coverImage": "webtoons/covers/056.jpg",
       "descriptionFile": "webtoons/description/056.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 최신 회차, 표지를 확인했습니다."
     },
     {
@@ -1464,7 +1438,6 @@
       "coverImage": "webtoons/covers/057.jpg",
       "descriptionFile": "webtoons/description/057.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다."
     },
     {
@@ -1491,7 +1464,6 @@
       "coverImage": "webtoons/covers/058.jpg",
       "descriptionFile": "webtoons/description/058.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 50화까지 읽는 중으로 기록했습니다."
     },
     {
@@ -1519,7 +1491,6 @@
       "coverImage": "webtoons/covers/059.jpg",
       "descriptionFile": "webtoons/description/059.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 완결 회차, 표지를 확인했습니다. 사용자는 22화까지 읽는 중으로 기록했습니다."
     },
     {
@@ -1547,7 +1518,6 @@
       "coverImage": "webtoons/covers/060.jpg",
       "descriptionFile": "webtoons/description/060.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러를 제외하고 본편 100화와 IF 외전 6편 기준으로 기록했습니다."
     },
     {
@@ -1575,7 +1545,6 @@
       "coverImage": "webtoons/covers/061.jpg",
       "descriptionFile": "webtoons/description/061.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 사용자는 48화에서 중도 포기로 기록했습니다."
     },
     {
@@ -1603,7 +1572,6 @@
       "coverImage": "webtoons/covers/062.jpg",
       "descriptionFile": "webtoons/description/062.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 본편 128화와 외전 15화 기준으로 기록했습니다."
     },
     {
@@ -1631,7 +1599,6 @@
       "coverImage": "webtoons/covers/063.jpg",
       "descriptionFile": "webtoons/description/063.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 완결 상태, 표지를 확인했습니다. 회차는 트레일러와 프롤로그를 제외하고 에필로그까지 109화 기준으로 기록했습니다. 사용자는 20화에서 중도 포기로 기록했습니다."
     },
     {
@@ -1659,7 +1626,6 @@
       "coverImage": "webtoons/covers/064.jpg",
       "descriptionFile": "webtoons/description/064.txt",
       "userRating": 4,
-      "userReview": ".",
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 공개 회차, 표지를 확인했습니다. 공식 검색 정보는 휴재로 응답하지만, 사용자가 모든 추가 작품을 완결 작품으로 지정해 완결 탭에 배치했습니다."
     }
   ]
