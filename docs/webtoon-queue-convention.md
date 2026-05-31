@@ -67,8 +67,8 @@ Codex는 legacy 항목을 정리할 때 `review`, `dropReason`을 삭제하고, 
 - 읽은 위치는 `reading`, `dropped`일 때만 필수다. `completed`는 비워 둘 수 있다.
 - 평점은 숫자이며 0 이상 5 이하만 허용한다.
 - 같은 브라우저에서 제출 중에는 버튼을 비활성화해 중복 커밋을 막는다.
-- 커밋 메시지는 앱 내부에서 `update`를 사용한다.
-- 최근 제출 수정은 같은 `id`의 JSON Lines 한 줄을 교체하고, 커밋 메시지는 `update`를 사용한다.
+- 커밋 메시지는 앱 내부에서 `update: webtoon`을 사용한다.
+- 최근 제출 수정은 같은 `id`의 JSON Lines 한 줄을 교체하고, 커밋 메시지는 `update: webtoon`을 사용한다.
 
 ## GitHub API 규칙
 

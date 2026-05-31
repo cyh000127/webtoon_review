@@ -54,13 +54,13 @@ queue/pending-webtoons.jsonl
 커밋 메시지:
 
 ```text
-update
+update: webtoon
 ```
 
 최근 제출을 수정하면 같은 JSON Lines 항목을 교체하고 아래 커밋 메시지를 사용합니다.
 
 ```text
-update
+update: webtoon
 ```
 
 ## 검증

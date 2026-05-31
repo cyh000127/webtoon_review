@@ -40,7 +40,7 @@ GitHub 공식 Repository contents API를 사용한다.
 3. 새 입력값을 JSON Lines 한 줄로 append한다.
 4. 전체 파일 내용을 Base64로 인코딩한다.
 5. `PUT /repos/{owner}/{repo}/contents/{path}`로 파일을 갱신한다.
-6. 커밋 메시지는 `update`를 사용한다.
+6. 커밋 메시지는 `update: webtoon`을 사용한다.
 
 GitHub 공식 문서 기준으로 파일 업데이트 시 새 파일 content는 Base64 인코딩이 필요하고, 기존 파일 업데이트에는 교체 대상 파일의 `sha`가 필요하다.
 
@@ -171,7 +171,7 @@ GitHub 공식 문서 기준으로 파일 업데이트 시 새 파일 content는 
 - 평점 0부터 5까지 범위 검증
 - `reading`, `dropped` 상태일 때 읽은 위치 필수 검증
 - 제출 payload를 JSONL 한 줄로 만든다.
-- 커밋 메시지 `update`로 GitHub에 반영한다.
+- 커밋 메시지 `update: webtoon`으로 GitHub에 반영한다.
 
 완료 기준:
 

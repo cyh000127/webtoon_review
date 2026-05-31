@@ -466,14 +466,14 @@ export default function App() {
         await updateQueueLine({
           id: editingEntry.id,
           line: serializeQueueEntry(entry),
-          message: "update",
+          message: "update: webtoon",
           settings,
           token
         });
       } else {
         await appendQueueLine({
           line: serializeQueueEntry(entry),
-          message: "update",
+          message: "update: webtoon",
           settings,
           token
         });
