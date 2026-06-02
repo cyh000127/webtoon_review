@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-05-31" count="72">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-03" count="74">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1593,5 +1593,53 @@
     <descriptionFile>webtoons/description/072.txt</descriptionFile>
     <userRating>3.5</userRating>
     <note>카카오페이지 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 최신 회차, 표지를 확인했습니다. 회차는 트레일러 등 비본편을 제외하고 187화 기준으로 기록했습니다. 사용자는 87화에서 중도 포기로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="073">
+    <title>데뷔 못 하면 죽는 병 걸림</title>
+    <author>장진,소흔,백덕수</author>
+    <platform>카카오페이지</platform>
+    <platformId>59782511</platformId>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>드라마</genre>
+      <genre>아이돌</genre>
+      <genre>빙의</genre>
+      <genre>연예계</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>공시생이 낯선 몸에 빙의해 상태창의 돌연사 협박을 피하려 아이돌 데뷔에 도전하는 연예계 드라마 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="105" latestEpisodeUpdatedAt="2026-05-30"/>
+    <updateSchedule label="일" source="official">
+      <weekday>일</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="104화" group="ongoing"/>
+    <coverImage>webtoons/covers/073.jpg</coverImage>
+    <descriptionFile>webtoons/description/073.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오페이지와 카카오웹툰 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 최신 회차, 표지를 확인했습니다. 회차는 PV와 프롤로그를 제외한 최신 105화 기준이며, 사용자는 104화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="074">
+    <title>악당을 구하는 다람쥐가 되었다</title>
+    <author>핑고헤,별별토</author>
+    <platform>카카오페이지</platform>
+    <platformId>65360889</platformId>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>빙의</genre>
+      <genre>마법</genre>
+      <genre>수인/동물</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>인간에서 신수 다람쥐가 된 주인공이 인간으로 돌아가기 위해 악당이 될 요한의 마력을 모으며 얽히는 로맨스 판타지다.</description>
+    <serialization status="completed" label="완결(75화)" episodeCount="75" latestEpisodeUpdatedAt="2026-05-16"/>
+    <updateSchedule label="완결" source="completed">
+
+    </updateSchedule>
+    <userReading status="finished" progress="75화" group="completed-section"/>
+    <coverImage>webtoons/covers/074.jpg</coverImage>
+    <descriptionFile>webtoons/description/074.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오페이지와 카카오웹툰 공식 정보로 제목, 작가, 장르, 소개, 최종화, 표지를 확인했습니다. queue의 완료 상태와 빈 진행도는 공식 최종화 75화 완주로 반영했습니다.</note>
   </webtoon>
 </webtoons>
