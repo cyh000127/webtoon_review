@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-03" count="74">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-05" count="75">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1641,5 +1641,29 @@
     <descriptionFile>webtoons/description/074.txt</descriptionFile>
     <userRating>4</userRating>
     <note>카카오페이지와 카카오웹툰 공식 정보로 제목, 작가, 장르, 소개, 최종화, 표지를 확인했습니다. queue의 완료 상태와 빈 진행도는 공식 최종화 75화 완주로 반영했습니다.</note>
+  </webtoon>
+  <webtoon id="075">
+    <title>취사병 전설이 되다</title>
+    <author>제이로빈,이진수</author>
+    <platform>네이버웹툰</platform>
+    <platformId>727188</platformId>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>밀리터리</genre>
+      <genre>직업드라마</genre>
+      <genre>음식&amp;요리</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>흙수저 청년 강성재가 군 생활 중 전설의 취사병이 될 기회를 얻고 요리와 퀘스트를 통해 성장하는 밀리터리 요리 판타지다.</description>
+    <serialization status="completed" label="완결(236화)" episodeCount="236" latestEpisodeUpdatedAt="2023-10-27"/>
+    <updateSchedule label="완결" source="completed">
+
+    </updateSchedule>
+    <userReading status="finished" progress="236화" group="completed-section"/>
+    <coverImage>webtoons/covers/075.jpg</coverImage>
+    <descriptionFile>webtoons/description/075.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 API로 제목, 작가, 장르 태그, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 완료 상태와 빈 진행도는 공식 완결 236화 완주로 반영했습니다.</note>
   </webtoon>
 </webtoons>

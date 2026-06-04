@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-06-03",
+  "lastUpdatedAt": "2026-06-05",
   "items": [
     {
       "id": "001",
@@ -2258,6 +2258,37 @@
       "userRating": 4,
       "note": "카카오페이지와 카카오웹툰 공식 정보로 제목, 작가, 장르, 소개, 최종화, 표지를 확인했습니다. queue의 완료 상태와 빈 진행도는 공식 최종화 75화 완주로 반영했습니다.",
       "latestEpisodeUpdatedAt": "2026-05-16",
+      "updateWeekdays": [],
+      "updateScheduleSource": "completed",
+      "updateScheduleLabel": "완결"
+    },
+    {
+      "id": "075",
+      "inputTitle": "취사병 전설이 되다",
+      "title": "취사병 전설이 되다",
+      "author": "제이로빈,이진수",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "727188",
+      "genres": [
+        "판타지",
+        "밀리터리",
+        "직업드라마",
+        "음식&요리",
+        "소설원작"
+      ],
+      "description": "흙수저 청년 강성재가 군 생활 중 전설의 취사병이 될 기회를 얻고 요리와 퀘스트를 통해 성장하는 밀리터리 요리 판타지다.",
+      "serializationStatus": "completed",
+      "serializationLabel": "완결(236화)",
+      "episodeCount": 236,
+      "userReadingStatus": "finished",
+      "userProgress": "236화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/075.jpg",
+      "descriptionFile": "webtoons/description/075.txt",
+      "userRating": 4,
+      "note": "네이버웹툰 공식 API로 제목, 작가, 장르 태그, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 완료 상태와 빈 진행도는 공식 완결 236화 완주로 반영했습니다.",
+      "latestEpisodeUpdatedAt": "2023-10-27",
       "updateWeekdays": [],
       "updateScheduleSource": "completed",
       "updateScheduleLabel": "완결"
