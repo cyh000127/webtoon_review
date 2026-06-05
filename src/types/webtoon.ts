@@ -19,6 +19,7 @@ export interface ArchiveWebtoonRecord {
   platform: string;
   contentType: string;
   platformId?: string;
+  officialUrl: string;
   genres: string[];
   description: string;
   serializationStatus: SerializationStatus;

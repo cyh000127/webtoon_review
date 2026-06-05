@@ -10,6 +10,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "64096846",
+      "officialUrl": "https://page.kakao.com/content/64096846",
       "genres": [
         "판타지",
         "환생",
@@ -41,6 +42,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "56566288",
+      "officialUrl": "https://page.kakao.com/content/56566288",
       "genres": [
         "로맨스 판타지",
         "회귀",
@@ -72,6 +74,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "62596697",
+      "officialUrl": "https://page.kakao.com/content/62596697",
       "genres": [
         "로맨스 판타지",
         "예지",
@@ -103,6 +106,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "54872059",
+      "officialUrl": "https://page.kakao.com/content/54872059",
       "genres": [
         "무협",
         "현대판타지",
@@ -134,6 +138,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "822657",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=822657",
       "genres": [
         "무협/사극",
         "환생",
@@ -165,6 +170,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "796075",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=796075",
       "genres": [
         "무협/사극",
         "회귀",
@@ -196,6 +202,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "828715",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=828715",
       "genres": [
         "무협/사극",
         "회귀",
@@ -227,6 +234,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "798917",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=798917",
       "genres": [
         "로맨스",
         "회귀",
@@ -258,6 +266,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "821597",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=821597",
       "genres": [
         "무협/사극",
         "오컬트",
@@ -289,6 +298,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "66346734",
+      "officialUrl": "https://page.kakao.com/content/66346734",
       "genres": [
         "무협",
         "의학",
@@ -320,6 +330,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "836848",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=836848",
       "genres": [
         "스릴러",
         "서바이벌",
@@ -351,6 +362,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "737628",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=737628",
       "genres": [
         "드라마",
         "러브코미디",
@@ -366,8 +378,8 @@
       "group": "ongoing",
       "coverImage": "webtoons/covers/012.jpg",
       "descriptionFile": "webtoons/description/012.txt",
-      "note": "입력 제목은 별이샴샵이지만 공식 작품명은 별이삼샵입니다.",
       "userRating": 4.8,
+      "note": "입력 제목은 별이샴샵이지만 공식 작품명은 별이삼샵입니다.",
       "latestEpisodeUpdatedAt": "2025-05-24",
       "updateWeekdays": [
         "토"
@@ -383,6 +395,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "65404412",
+      "officialUrl": "https://page.kakao.com/content/65404412",
       "genres": [
         "로맨스 판타지",
         "육아",
@@ -414,6 +427,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "55889891",
+      "officialUrl": "https://page.kakao.com/content/55889891",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -445,6 +459,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "832703",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=832703",
       "genres": [
         "무협/사극",
         "정통무협",
@@ -476,6 +491,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "60914825",
+      "officialUrl": "https://page.kakao.com/content/60914825",
       "genres": [
         "판타지",
         "게임판타지",
@@ -507,6 +523,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "61145798",
+      "officialUrl": "https://page.kakao.com/content/61145798",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -538,6 +555,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "59902182",
+      "officialUrl": "https://page.kakao.com/content/59902182",
       "genres": [
         "로맨스 판타지",
         "회귀",
@@ -569,6 +587,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "52854258",
+      "officialUrl": "https://page.kakao.com/content/52854258",
       "genres": [
         "로맨스 판타지",
         "회귀",
@@ -600,6 +619,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "51185123",
+      "officialUrl": "https://page.kakao.com/content/51185123",
       "genres": [
         "판타지",
         "회귀",
@@ -629,6 +649,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "57142071",
+      "officialUrl": "https://page.kakao.com/content/57142071",
       "genres": [
         "로맨스 판타지",
         "회귀",
@@ -658,6 +679,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "58396566",
+      "officialUrl": "https://page.kakao.com/content/58396566",
       "genres": [
         "로맨스 판타지",
         "육아",
@@ -687,6 +709,7 @@
       "platform": "네이버 시리즈",
       "contentType": "웹소설",
       "platformId": "5275901",
+      "officialUrl": "https://series.naver.com/novel/detail.series?productNo=5275901",
       "genres": [
         "현대판타지",
         "SF",
@@ -715,6 +738,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "56065304",
+      "officialUrl": "https://page.kakao.com/content/56065304",
       "genres": [
         "판타지",
         "성장",
@@ -744,6 +768,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "61677168",
+      "officialUrl": "https://page.kakao.com/content/61677168",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -775,6 +800,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "808018",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=808018",
       "genres": [
         "로맨스",
         "빙의",
@@ -804,6 +830,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "54189843",
+      "officialUrl": "https://page.kakao.com/content/54189843",
       "genres": [
         "무협",
         "복수",
@@ -833,6 +860,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "746833",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=746833",
       "genres": [
         "드라마",
         "로맨스",
@@ -862,6 +890,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "791140",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=791140",
       "genres": [
         "스릴러",
         "미스터리",
@@ -890,6 +919,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "798101",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=798101",
       "genres": [
         "액션",
         "학원액션",
@@ -919,6 +949,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "805702",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=805702",
       "genres": [
         "로맨스",
         "청춘",
@@ -948,6 +979,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "59071959",
+      "officialUrl": "https://page.kakao.com/content/59071959",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -979,6 +1011,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "799805",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=799805",
       "genres": [
         "판타지",
         "현대판타지",
@@ -994,8 +1027,8 @@
       "group": "completed-section",
       "coverImage": "webtoons/covers/033.jpg",
       "descriptionFile": "webtoons/description/033.txt",
-      "note": "",
       "userRating": 4.5,
+      "note": "",
       "latestEpisodeUpdatedAt": "2022-09-03",
       "updateWeekdays": [],
       "updateScheduleSource": "completed",
@@ -1009,6 +1042,7 @@
       "platform": "레진코믹스",
       "contentType": "웹툰",
       "platformId": "secretofjjak",
+      "officialUrl": "https://www.lezhin.com/ko/comic/secretofjjak",
       "genres": [
         "러브코미디",
         "학원",
@@ -1037,6 +1071,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "738487",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=738487",
       "genres": [
         "로맨스 판타지",
         "드라마",
@@ -1069,6 +1104,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "745876",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=745876",
       "genres": [
         "판타지",
         "액션",
@@ -1101,6 +1137,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "835557",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=835557",
       "genres": [
         "로맨스",
         "게임",
@@ -1133,6 +1170,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "822642",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=822642",
       "genres": [
         "드라마",
         "스포츠",
@@ -1165,6 +1203,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "837100",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=837100",
       "genres": [
         "판타지",
         "액션",
@@ -1197,6 +1236,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "777767",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=777767",
       "genres": [
         "판타지",
         "개그/코미디",
@@ -1227,6 +1267,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "800006",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=800006",
       "genres": [
         "판타지",
         "드라마",
@@ -1259,6 +1300,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "844951",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=844951",
       "genres": [
         "판타지",
         "마법",
@@ -1291,6 +1333,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "839585",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=839585",
       "genres": [
         "판타지",
         "액션",
@@ -1323,6 +1366,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "50866481",
+      "officialUrl": "https://page.kakao.com/content/50866481",
       "genres": [
         "판타지",
         "액션",
@@ -1353,6 +1397,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "52960341",
+      "officialUrl": "https://page.kakao.com/content/52960341",
       "genres": [
         "로맨스 판타지",
         "미스터리",
@@ -1383,6 +1428,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "727798",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=727798",
       "genres": [
         "드라마",
         "피카레스크"
@@ -1411,6 +1457,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "746858",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=746858",
       "genres": [
         "로맨스",
         "재회",
@@ -1440,6 +1487,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "731130",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=731130",
       "genres": [
         "로맨스",
         "러브코미디",
@@ -1469,6 +1517,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "759925",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=759925",
       "genres": [
         "스릴러",
         "아포칼립스",
@@ -1498,6 +1547,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "701081",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=701081",
       "genres": [
         "스릴러",
         "아포칼립스",
@@ -1527,6 +1577,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "812629",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=812629",
       "genres": [
         "로맨스",
         "학원로맨스",
@@ -1558,6 +1609,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "772853",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=772853",
       "genres": [
         "판타지",
         "성장",
@@ -1589,6 +1641,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "768536",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=768536",
       "genres": [
         "판타지",
         "액션",
@@ -1620,6 +1673,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "641253",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=641253",
       "genres": [
         "드라마",
         "학원액션",
@@ -1651,6 +1705,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "824023",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=824023",
       "genres": [
         "액션",
         "학원액션",
@@ -1680,6 +1735,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "825332",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=825332",
       "genres": [
         "액션",
         "생존",
@@ -1712,6 +1768,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "700844",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=700844",
       "genres": [
         "로맨스",
         "하이틴",
@@ -1741,6 +1798,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "800778",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=800778",
       "genres": [
         "로맨스",
         "로맨스 판타지",
@@ -1771,6 +1829,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "831606",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=831606",
       "genres": [
         "판타지",
         "액션판타지",
@@ -1802,6 +1861,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "55602918",
+      "officialUrl": "https://page.kakao.com/content/55602918",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -1833,6 +1893,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "58649535",
+      "officialUrl": "https://page.kakao.com/content/58649535",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -1864,6 +1925,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "53297664",
+      "officialUrl": "https://page.kakao.com/content/53297664",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -1895,6 +1957,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "55383201",
+      "officialUrl": "https://page.kakao.com/content/55383201",
       "genres": [
         "로맨스 판타지",
         "결혼생활",
@@ -1926,6 +1989,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "785251",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=785251",
       "genres": [
         "로맨스",
         "로맨스 판타지",
@@ -1957,6 +2021,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "54085634",
+      "officialUrl": "https://page.kakao.com/content/54085634",
       "genres": [
         "드라마",
         "현대판타지",
@@ -1987,6 +2052,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "56712146",
+      "officialUrl": "https://page.kakao.com/content/56712146",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -2018,6 +2084,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "52792529",
+      "officialUrl": "https://page.kakao.com/content/52792529",
       "genres": [
         "로맨스 판타지",
         "가족",
@@ -2049,6 +2116,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "57140255",
+      "officialUrl": "https://page.kakao.com/content/57140255",
       "genres": [
         "판타지",
         "회귀",
@@ -2080,6 +2148,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "50242834",
+      "officialUrl": "https://page.kakao.com/content/50242834",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -2111,6 +2180,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "53769306",
+      "officialUrl": "https://page.kakao.com/content/53769306",
       "genres": [
         "로맨스 판타지",
         "가족",
@@ -2142,6 +2212,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "55166366",
+      "officialUrl": "https://page.kakao.com/content/55166366",
       "genres": [
         "로맨스 판타지",
         "육아",
@@ -2173,6 +2244,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "58095657",
+      "officialUrl": "https://page.kakao.com/content/58095657",
       "genres": [
         "판타지",
         "회귀",
@@ -2206,6 +2278,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "59782511",
+      "officialUrl": "https://page.kakao.com/content/59782511",
       "genres": [
         "드라마",
         "아이돌",
@@ -2239,6 +2312,7 @@
       "platform": "카카오페이지",
       "contentType": "웹툰",
       "platformId": "65360889",
+      "officialUrl": "https://page.kakao.com/content/65360889",
       "genres": [
         "로맨스 판타지",
         "빙의",
@@ -2270,6 +2344,7 @@
       "platform": "네이버웹툰",
       "contentType": "웹툰",
       "platformId": "727188",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=727188",
       "genres": [
         "판타지",
         "밀리터리",

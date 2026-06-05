@@ -348,6 +348,9 @@ function renderWebtoonXml(item) {
   const platformIdNode = item.platformId
     ? `\n    <platformId>${escapeXml(item.platformId)}</platformId>`
     : "";
+  const officialUrlNode = item.officialUrl
+    ? `\n    <officialUrl>${escapeXml(item.officialUrl)}</officialUrl>`
+    : "";
   const userRatingNode =
     item.userRating !== undefined
       ? `\n    <userRating>${item.userRating}</userRating>`
@@ -359,7 +362,7 @@ function renderWebtoonXml(item) {
   return `  <webtoon id="${escapeXml(item.id)}"${inputTitleAttribute}>
     <title>${escapeXml(item.title)}</title>
     <author>${escapeXml(item.author)}</author>
-    <platform>${escapeXml(item.platform)}</platform>${platformIdNode}
+    <platform>${escapeXml(item.platform)}</platform>${platformIdNode}${officialUrlNode}
     <contentType>${escapeXml(item.contentType)}</contentType>
     <genres>
 ${item.genres.map((genre) => `      <genre>${escapeXml(genre)}</genre>`).join("\n")}

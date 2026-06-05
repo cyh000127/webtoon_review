@@ -25,6 +25,7 @@ Use this skill when the user asks for `/web update` or wants queued webtoons ref
    - author
    - platform
    - platform ID
+   - official URL
    - genres
    - description
    - serialization status
@@ -64,6 +65,7 @@ Use this skill when the user asks for `/web update` or wants queued webtoons ref
 - legacy rows without `readProgress` should use a conservative progress value and mention the inference in `note`.
 - Official update weekdays -> `updateWeekdays`, `updateScheduleLabel`, `updateScheduleSource`.
 - Latest episode release date -> `latestEpisodeUpdatedAt` in `YYYY-MM-DD` format.
+- Official platform page URL -> `officialUrl`. Use the current canonical official page when available.
 
 ## Update Schedule Sources
 

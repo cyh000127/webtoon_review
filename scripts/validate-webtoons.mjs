@@ -23,12 +23,17 @@ function getXmlItemIds(xml) {
   );
 }
 
+function getXmlOfficialUrlCount(xml) {
+  return Array.from(xml.matchAll(/<officialUrl>/g)).length;
+}
+
 const archive = readJson(archiveJsonPath);
 const xml = readFileSync(archiveXmlPath, "utf8");
 
 const items = archive.items ?? [];
 const xmlCount = getXmlCount(xml);
 const xmlIds = getXmlItemIds(xml);
+const xmlOfficialUrlCount = getXmlOfficialUrlCount(xml);
 const jsonIds = items.map((item) => item.id);
 const duplicateIds = jsonIds.filter((id, index) => jsonIds.indexOf(id) !== index);
 
@@ -44,6 +49,10 @@ if (xmlIds.length !== items.length) {
   fail(`XML 웹툰 항목 수(${xmlIds.length})와 JSON 항목 수(${items.length})가 다릅니다.`);
 }
 
+if (xmlOfficialUrlCount !== items.length) {
+  fail(`XML officialUrl 수(${xmlOfficialUrlCount})와 JSON 항목 수(${items.length})가 다릅니다.`);
+}
+
 if (duplicateIds.length > 0) {
   fail(`중복 id가 있습니다: ${[...new Set(duplicateIds)].join(", ")}`);
 }
@@ -54,6 +63,7 @@ for (const item of items) {
     "title",
     "author",
     "platform",
+    "officialUrl",
     "genres",
     "description",
     "serializationStatus",
@@ -104,6 +114,16 @@ for (const item of items) {
     !/^\d{4}-\d{2}-\d{2}$/.test(item.latestEpisodeUpdatedAt)
   ) {
     fail(`${item.id} 항목의 latestEpisodeUpdatedAt 날짜 형식이 올바르지 않습니다.`);
+  }
+
+  try {
+    const officialUrl = new URL(item.officialUrl);
+
+    if (officialUrl.protocol !== "https:") {
+      fail(`${item.id} 항목의 officialUrl은 https URL이어야 합니다.`);
+    }
+  } catch {
+    fail(`${item.id} 항목의 officialUrl 형식이 올바르지 않습니다.`);
   }
 
   if (!["reading", "finished", "dropped"].includes(item.userReadingStatus)) {

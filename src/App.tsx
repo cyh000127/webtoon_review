@@ -5,6 +5,7 @@ import {
   BookmarkX,
   ChevronRight,
   Clock3,
+  ExternalLink,
   LayoutGrid,
   Library,
   List,
@@ -350,6 +351,7 @@ function App() {
           item.userProgress,
           item.serializationLabel,
           item.updateScheduleLabel,
+          item.officialUrl,
           ...(item.updateWeekdays ?? []),
           item.description,
           item.note,
@@ -721,6 +723,18 @@ function App() {
               <div className="detail-heading">
                 <p>{selectedWebtoon.platform}</p>
                 <h2>{selectedWebtoon.title}</h2>
+              </div>
+
+              <div className="detail-action-tabs">
+                <a
+                  className="official-link-tab"
+                  href={selectedWebtoon.officialUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ExternalLink size={17} aria-hidden="true" />
+                  <span>보러가기</span>
+                </a>
               </div>
 
               <dl className="detail-list">
