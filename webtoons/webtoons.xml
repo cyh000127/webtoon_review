@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-05" count="75">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-10" count="76">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1740,5 +1740,29 @@
     <descriptionFile>webtoons/description/075.txt</descriptionFile>
     <userRating>4</userRating>
     <note>네이버웹툰 공식 API로 제목, 작가, 장르 태그, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 완료 상태와 빈 진행도는 공식 완결 236화 완주로 반영했습니다.</note>
+  </webtoon>
+  <webtoon id="076">
+    <title>열렙전사</title>
+    <author>김세훈</author>
+    <platform>네이버웹툰</platform>
+    <platformId>670152</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=670152</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션</genre>
+      <genre>게임판타지</genre>
+      <genre>모험</genre>
+    </genres>
+    <description>'퀘스트를 클리어 하는 자, 모든 것을 얻을 것이다'라는 규칙 아래, 현실 밖의 게임 세계 루시드 어드벤쳐에서 최강의 용사 열렙전사와 동료들이 모험을 벌이는 RPG 판타지 웹툰이다.</description>
+    <serialization status="completed" label="완결(319화)" episodeCount="319" latestEpisodeUpdatedAt="2023-09-20"/>
+    <updateSchedule label="완결" source="completed">
+
+    </updateSchedule>
+    <userReading status="finished" progress="319화" group="completed-section"/>
+    <coverImage>webtoons/covers/076.jpg</coverImage>
+    <descriptionFile>webtoons/description/076.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 completed 상태와 빈 진행도는 공식 319화 완주로 반영했습니다.</note>
   </webtoon>
 </webtoons>
