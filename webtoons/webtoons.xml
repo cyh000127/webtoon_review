@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-10" count="76">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-10" count="78">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1764,5 +1764,53 @@
     <descriptionFile>webtoons/description/076.txt</descriptionFile>
     <userRating>4</userRating>
     <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 회차 수, 표지를 확인했습니다. queue의 completed 상태와 빈 진행도는 공식 319화 완주로 반영했습니다.</note>
+  </webtoon>
+  <webtoon id="077">
+    <title>염라강림</title>
+    <author>바른꽃</author>
+    <platform>네이버웹툰</platform>
+    <platformId>818192</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=818192</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션</genre>
+      <genre>오컬트</genre>
+      <genre>성장</genre>
+    </genres>
+    <description>지옥이 무너지고 후임 털보가 사라진 뒤, 은퇴를 꿈꾸던 염라대왕이 인간계에 강림해 장의사들과 함께 세상을 어지럽힌 털보를 쫓는 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중(휴재)" episodeCount="140" latestEpisodeUpdatedAt="2026-06-01"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="84화" group="ongoing"/>
+    <coverImage>webtoons/covers/077.jpg</coverImage>
+    <descriptionFile>webtoons/description/077.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 요일, 표지를 확인했습니다. 공식 페이지의 다음 화 2026-06-15 업로드 예정 공지를 함께 반영했습니다.</note>
+  </webtoon>
+  <webtoon id="078">
+    <title>천재는 평범하게 살기로 했더</title>
+    <author>비단가리비,아티,자손e</author>
+    <platform>네이버웹툰</platform>
+    <platformId>835042</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=835042</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>드라마</genre>
+      <genre>회귀</genre>
+      <genre>가족</genre>
+      <genre>성장</genre>
+    </genres>
+    <description>성공한 인생을 살았지만 가족과의 평범한 삶을 바라던 손진혁이 사고 후 부모님을 잃기 전 아홉 살로 돌아가 가족을 지키려는 회귀 드라마 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="65" latestEpisodeUpdatedAt="2026-06-09"/>
+    <updateSchedule label="수" source="official">
+      <weekday>수</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="57화" group="ongoing"/>
+    <coverImage>webtoons/covers/078.jpg</coverImage>
+    <descriptionFile>webtoons/description/078.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 요일, 표지를 확인했습니다. queue의 입력 제목 오타는 공식 제목으로 보정했습니다.</note>
   </webtoon>
 </webtoons>
