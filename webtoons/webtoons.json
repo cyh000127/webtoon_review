@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-06-10",
+  "lastUpdatedAt": "2026-06-12",
   "items": [
     {
       "id": "001",
@@ -2464,6 +2464,40 @@
       ],
       "updateScheduleSource": "official",
       "updateScheduleLabel": "수"
+    },
+    {
+      "id": "079",
+      "inputTitle": "리턴투플레이어",
+      "title": "리턴 투 플레이어",
+      "author": "레포 / 세혼 / 인덱스",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "752414",
+      "genres": [
+        "판타지",
+        "게임판타지",
+        "회귀",
+        "아포칼립스",
+        "배틀"
+      ],
+      "description": "어느 날 게임처럼 변한 세상에서 몬스터와 퀘스트가 인류를 덮친다. 종말을 겪고 회귀한 2회차 플레이어 김세한이 시스템의 정체와 세계의 붕괴에 맞서는 게임 판타지 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 253,
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleLabel": "월",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-06-07",
+      "userReadingStatus": "dropped",
+      "userProgress": "147화",
+      "group": "dropped",
+      "coverImage": "webtoons/covers/079.jpg",
+      "descriptionFile": "webtoons/description/079.txt",
+      "userRating": 4,
+      "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 업데이트 요일, 최신 회차, 표지를 확인했습니다. 사용자는 147화에서 중도 포기로 기록했습니다.",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=752414"
     }
   ]
 }

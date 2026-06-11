@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-10" count="78">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-12" count="79">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1789,7 +1789,7 @@
     <userRating>4</userRating>
     <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 요일, 표지를 확인했습니다. 공식 페이지의 다음 화 2026-06-15 업로드 예정 공지를 함께 반영했습니다.</note>
   </webtoon>
-  <webtoon id="078">
+  <webtoon id="078" inputTitle="천재는 평범하게 살기르 했더">
     <title>천재는 평범하게 살기로 했더</title>
     <author>비단가리비,아티,자손e</author>
     <platform>네이버웹툰</platform>
@@ -1812,5 +1812,30 @@
     <descriptionFile>webtoons/description/078.txt</descriptionFile>
     <userRating>4</userRating>
     <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 요일, 표지를 확인했습니다. queue의 입력 제목 오타는 공식 제목으로 보정했습니다.</note>
+  </webtoon>
+  <webtoon id="079" inputTitle="리턴투플레이어">
+    <title>리턴 투 플레이어</title>
+    <author>레포 / 세혼 / 인덱스</author>
+    <platform>네이버웹툰</platform>
+    <platformId>752414</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=752414</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>게임판타지</genre>
+      <genre>회귀</genre>
+      <genre>아포칼립스</genre>
+      <genre>배틀</genre>
+    </genres>
+    <description>어느 날 게임처럼 변한 세상에서 몬스터와 퀘스트가 인류를 덮친다. 종말을 겪고 회귀한 2회차 플레이어 김세한이 시스템의 정체와 세계의 붕괴에 맞서는 게임 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="253" latestEpisodeUpdatedAt="2026-06-07"/>
+    <updateSchedule label="월" source="official">
+      <weekday>월</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="147화" group="dropped"/>
+    <coverImage>webtoons/covers/079.jpg</coverImage>
+    <descriptionFile>webtoons/description/079.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 업데이트 요일, 최신 회차, 표지를 확인했습니다. 사용자는 147화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
 </webtoons>
