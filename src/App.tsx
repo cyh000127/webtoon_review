@@ -25,6 +25,7 @@ import type {
 type ReadingFilter = "all" | UserReadingStatus;
 type SortKey = "id" | "episode" | "title";
 type ViewMode = "card" | "list";
+type GenreFilterMode = "include" | "exclude";
 type ReaderRatings = Record<string, number>;
 type BarDatum = {
   id: string;
@@ -234,6 +235,7 @@ function App() {
   const [reading, setReading] = useState<ReadingFilter>("all");
   const [platform, setPlatform] = useState<string>("전체");
   const [genre, setGenre] = useState<string>("전체");
+  const [genreMode, setGenreMode] = useState<GenreFilterMode>("include");
   const [sortBy, setSortBy] = useState<SortKey>("id");
   const [viewMode, setViewMode] = useState<ViewMode>("card");
   const [query, setQuery] = useState("");
@@ -257,6 +259,28 @@ function App() {
       ...currentRatings,
       [webtoonId]: rating
     }));
+  };
+
+  const selectGenre = (nextGenre: string) => {
+    if (nextGenre === "전체") {
+      setGenre("전체");
+      setGenreMode("include");
+      return;
+    }
+
+    if (genre === nextGenre && genreMode === "include") {
+      setGenreMode("exclude");
+      return;
+    }
+
+    if (genre === nextGenre && genreMode === "exclude") {
+      setGenre("전체");
+      setGenreMode("include");
+      return;
+    }
+
+    setGenre(nextGenre);
+    setGenreMode("include");
   };
 
   const archiveStats = useMemo(() => {
@@ -336,7 +360,15 @@ function App() {
     return serializationScoped
       .filter((item) => reading === "all" || item.userReadingStatus === reading)
       .filter((item) => platform === "전체" || item.platform === platform)
-      .filter((item) => genre === "전체" || item.genres.includes(genre))
+      .filter((item) => {
+        if (genre === "전체") {
+          return true;
+        }
+
+        const hasGenre = item.genres.includes(genre);
+
+        return genreMode === "exclude" ? !hasGenre : hasGenre;
+      })
       .filter((item) => {
         if (!normalizedQuery) {
           return true;
@@ -363,7 +395,7 @@ function App() {
         return joined.includes(normalizedQuery);
       })
       .sort((a, b) => compareBySort(a, b, sortBy));
-  }, [genre, platform, query, reading, serializationScoped, sortBy]);
+  }, [genre, genreMode, platform, query, reading, serializationScoped, sortBy]);
 
   const serializationCounts = useMemo(() => {
     return serializationTabs.reduce<Record<SerializationStatus, number>>(
@@ -410,6 +442,7 @@ function App() {
               setReading("all");
               setPlatform("전체");
               setGenre("전체");
+              setGenreMode("include");
             }}
           >
             <span>{tab.label}</span>
@@ -490,16 +523,30 @@ function App() {
         </div>
 
         <div className="genre-row" aria-label="장르 필터">
-          {visibleGenres.map((genreName) => (
-            <button
-              key={genreName}
-              className={genre === genreName ? "active" : ""}
-              type="button"
-              onClick={() => setGenre(genreName)}
-            >
-              {genreName}
-            </button>
-          ))}
+          {visibleGenres.map((genreName) => {
+            const isSelected = genre === genreName;
+            const isExcluded = isSelected && genreMode === "exclude";
+
+            return (
+              <button
+                key={genreName}
+                className={`${isSelected ? "active" : ""} ${isExcluded ? "exclude" : ""}`}
+                type="button"
+                title={
+                  genreName === "전체"
+                    ? "전체 장르 보기"
+                    : isExcluded
+                      ? "장르 필터 초기화"
+                      : isSelected
+                        ? `${genreName} 장르 제외`
+                        : `${genreName} 장르 보기`
+                }
+                onClick={() => selectGenre(genreName)}
+              >
+                {genreName}
+              </button>
+            );
+          })}
         </div>
 
       </section>
@@ -509,7 +556,7 @@ function App() {
           <strong>{getSerializationLabel(serialization)}</strong>
           <span>{readingTabs.find((tab) => tab.id === reading)?.label}</span>
           <span>{platform}</span>
-          <span>{genre}</span>
+          <span>{genreMode === "exclude" && genre !== "전체" ? `${genre} 제외` : genre}</span>
           <span>{sortOptions.find((option) => option.id === sortBy)?.label}</span>
         </div>
         <div className="result-actions">

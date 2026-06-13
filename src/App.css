@@ -273,6 +273,12 @@ h1 {
   background: #e93449;
 }
 
+.genre-row button.exclude {
+  border-color: #4da3ff;
+  color: #ffffff;
+  background: #176fca;
+}
+
 .result-bar {
   display: flex;
   align-items: center;
