@@ -92,6 +92,10 @@ function getSerializationLabel(status: SerializationStatus) {
 }
 
 function formatProgress(progress: string, episodeCount: number) {
+  if (progress.includes("부")) {
+    return progress.trim();
+  }
+
   const match = progress.match(/(\d+)\s*(화|편)/);
 
   if (match) {
