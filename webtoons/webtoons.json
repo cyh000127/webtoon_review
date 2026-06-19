@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-06-18",
+  "lastUpdatedAt": "2026-06-20",
   "items": [
     {
       "id": "001",
@@ -2596,6 +2596,39 @@
       "descriptionFile": "webtoons/description/082.txt",
       "userRating": 4,
       "note": "네이버웹툰 공식 정보로 제목, 작가, 장르, 소개, 연재 상태, 업데이트 요일, 최신 회차, 표지를 확인했습니다."
+    },
+    {
+      "id": "083",
+      "inputTitle": "라서드",
+      "title": "라서드",
+      "author": "감람",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "756140",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=756140",
+      "genres": [
+        "판타지",
+        "액션",
+        "모험",
+        "성장"
+      ],
+      "description": "절대적 권능을 지닌 11인의 왕과 기사단이 존재하는 세계에서 수습기사 힌타가 파트너 캐넛과 함께 정식 기사가 되기 위한 모험을 떠나는 정통 판타지 액션 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 177,
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleLabel": "월",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-06-14",
+      "userReadingStatus": "reading",
+      "userProgress": "110화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/083.jpg",
+      "descriptionFile": "webtoons/description/083.txt",
+      "userRating": 4,
+      "note": "네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
     }
   ]
 }
