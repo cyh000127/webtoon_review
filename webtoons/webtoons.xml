@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-20" count="83">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-24" count="84">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1925,14 +1925,39 @@
       <genre>성장</genre>
     </genres>
     <description>절대적 권능을 지닌 11인의 왕과 기사단이 존재하는 세계에서 수습기사 힌타가 파트너 캐넛과 함께 정식 기사가 되기 위한 모험을 떠나는 정통 판타지 액션 웹툰이다.</description>
-    <serialization status="ongoing" label="연재중" episodeCount="177" latestEpisodeUpdatedAt="2026-06-14"/>
+    <serialization status="ongoing" label="연재중" episodeCount="178" latestEpisodeUpdatedAt="2026-06-21"/>
     <updateSchedule label="월" source="official">
       <weekday>월</weekday>
     </updateSchedule>
-    <userReading status="reading" progress="110화" group="ongoing"/>
+    <userReading status="reading" progress="169화" group="ongoing"/>
     <coverImage>webtoons/covers/083.jpg</coverImage>
     <descriptionFile>webtoons/description/083.txt</descriptionFile>
     <userRating>4</userRating>
-    <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
+    <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. queue의 새 진행도 입력을 반영해 userProgress를 169화로 갱신했습니다.</note>
+  </webtoon>
+  <webtoon id="084">
+    <title>아카데미가 망했다</title>
+    <author>BIN,GG,ROHRAN</author>
+    <platform>네이버웹툰</platform>
+    <platformId>828077</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=828077</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>아카데미</genre>
+      <genre>성장</genre>
+      <genre>개그</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>파산 직전의 아카데미에 신입 교사로 부임한 아몬 드레이크가 탈출과 출세 사이에서 학교를 갱생시키며 벌어지는 폭풍성장 판타지 개그 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="105" latestEpisodeUpdatedAt="2026-06-22"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="18화" group="dropped"/>
+    <coverImage>webtoons/covers/084.jpg</coverImage>
+    <descriptionFile>webtoons/description/084.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 아카데미가망했다는 네이버웹툰 공식 제목 아카데미가 망했다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 18화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
 </webtoons>

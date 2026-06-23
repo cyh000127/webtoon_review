@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-06-20",
+  "lastUpdatedAt": "2026-06-24",
   "items": [
     {
       "id": "001",
@@ -2615,20 +2615,54 @@
       "description": "절대적 권능을 지닌 11인의 왕과 기사단이 존재하는 세계에서 수습기사 힌타가 파트너 캐넛과 함께 정식 기사가 되기 위한 모험을 떠나는 정통 판타지 액션 웹툰이다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 177,
+      "episodeCount": 178,
       "updateWeekdays": [
         "월"
       ],
       "updateScheduleLabel": "월",
       "updateScheduleSource": "official",
-      "latestEpisodeUpdatedAt": "2026-06-14",
+      "latestEpisodeUpdatedAt": "2026-06-21",
       "userReadingStatus": "reading",
-      "userProgress": "110화",
+      "userProgress": "169화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/083.jpg",
       "descriptionFile": "webtoons/description/083.txt",
       "userRating": 4,
-      "note": "네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
+      "note": "네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. queue의 새 진행도 입력을 반영해 userProgress를 169화로 갱신했습니다."
+    },
+    {
+      "id": "084",
+      "inputTitle": "아카데미가망했다",
+      "title": "아카데미가 망했다",
+      "author": "BIN,GG,ROHRAN",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "828077",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=828077",
+      "genres": [
+        "판타지",
+        "아카데미",
+        "성장",
+        "개그",
+        "소설원작"
+      ],
+      "description": "파산 직전의 아카데미에 신입 교사로 부임한 아몬 드레이크가 탈출과 출세 사이에서 학교를 갱생시키며 벌어지는 폭풍성장 판타지 개그 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 105,
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleLabel": "화",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-06-22",
+      "userReadingStatus": "dropped",
+      "userProgress": "18화",
+      "group": "dropped",
+      "coverImage": "webtoons/covers/084.jpg",
+      "descriptionFile": "webtoons/description/084.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 아카데미가망했다는 네이버웹툰 공식 제목 아카데미가 망했다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 18화에서 중도 포기로 기록했습니다."
     }
   ]
 }
