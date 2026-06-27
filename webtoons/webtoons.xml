@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-24" count="84">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-28" count="86">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1959,5 +1959,55 @@
     <descriptionFile>webtoons/description/084.txt</descriptionFile>
     <userRating>4</userRating>
     <note>사용자 입력 제목 아카데미가망했다는 네이버웹툰 공식 제목 아카데미가 망했다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 18화에서 중도 포기로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="085">
+    <title>이세계 싱글대디</title>
+    <author>왓챠,W</author>
+    <platform>네이버웹툰</platform>
+    <platformId>840880</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=840880</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>이세계</genre>
+      <genre>육아</genre>
+      <genre>생존</genre>
+      <genre>가족</genre>
+    </genres>
+    <description>아내가 실종되고 희귀병을 앓는 딸을 홀로 돌보던 싱글대디가 딸과 함께 아내가 쓴 다크 판타지 소설 속 이세계로 떨어져 딸을 지키려는 생존 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="58" latestEpisodeUpdatedAt="2026-06-24"/>
+    <updateSchedule label="목" source="official">
+      <weekday>목</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="47화" group="dropped"/>
+    <coverImage>webtoons/covers/085.jpg</coverImage>
+    <descriptionFile>webtoons/description/085.txt</descriptionFile>
+    <userRating>3</userRating>
+    <note>사용자 입력 제목 이세계싱글대디는 네이버웹툰 공식 제목 이세계 싱글대디로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 47화에서 중도 포기로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="086">
+    <title>약 파는 황태자</title>
+    <author>하강호,히스,문백경</author>
+    <platform>네이버웹툰</platform>
+    <platformId>818969</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=818969</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>의학</genre>
+      <genre>빙의</genre>
+      <genre>궁정</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>소설 속 병약해 요절할 황태자에게 빙의한 한의사가 체질개선과 한방 지식을 무기로 자신의 몸과 궁정의 위기를 돌보는 의학 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="120" latestEpisodeUpdatedAt="2026-06-22"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="13화" group="ongoing"/>
+    <coverImage>webtoons/covers/086.jpg</coverImage>
+    <descriptionFile>webtoons/description/086.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 약파는황태자는 네이버웹툰 공식 제목 약 파는 황태자로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
   </webtoon>
 </webtoons>
