@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-06-28" count="86">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-08" count="90">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -814,15 +814,15 @@
       <genre>청춘</genre>
     </genres>
     <description>남동생 계정으로 게임을 하던 아진과 정체를 숨긴 지현이 온라인 게임 안에서 오해와 관계를 쌓아 가는 게임 로맨스다.</description>
-    <serialization status="ongoing" label="연재중" episodeCount="51" latestEpisodeUpdatedAt="2026-06-12"/>
+    <serialization status="ongoing" label="연재중" episodeCount="54" latestEpisodeUpdatedAt="2026-07-03"/>
     <updateSchedule label="토" source="official">
       <weekday>토</weekday>
     </updateSchedule>
-    <userReading status="reading" progress="47화" group="ongoing"/>
+    <userReading status="reading" progress="52화" group="ongoing"/>
     <coverImage>webtoons/covers/037.jpg</coverImage>
     <descriptionFile>webtoons/description/037.txt</descriptionFile>
-    <userRating>4.8</userRating>
-    <note>네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다. 사용자 진행도를 47화로 갱신했습니다.</note>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. queue의 새 진행도와 평점을 52화, 4점으로 갱신했습니다.</note>
   </webtoon>
   <webtoon id="038">
     <title>스쿨 오브 스트릿</title>
@@ -2009,5 +2009,104 @@
     <descriptionFile>webtoons/description/086.txt</descriptionFile>
     <userRating>4</userRating>
     <note>사용자 입력 제목 약파는황태자는 네이버웹툰 공식 제목 약 파는 황태자로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="087">
+    <title>나만 보는 탑 공략집</title>
+    <author>사도,X-NAME,쾌조</author>
+    <platform>네이버웹툰</platform>
+    <platformId>823434</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=823434</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>탑등반</genre>
+      <genre>생존</genre>
+      <genre>액션</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>지구의 종말과 함께 시작된 탑 생존 게임에서 공략집을 손에 넣은 주인공이 불신과 파멸을 유도하는 탑에 맞서 사람들과 함께 결말을 바꾸려는 생존 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="127" latestEpisodeUpdatedAt="2026-07-06"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="80화" group="dropped"/>
+    <coverImage>webtoons/covers/087.jpg</coverImage>
+    <descriptionFile>webtoons/description/087.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 나만보는탑공략집은 네이버웹툰 공식 제목 나만 보는 탑 공략집으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 80화에서 중도 포기로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="088">
+    <title>아카데미에서 살아남기</title>
+    <author>기린그린,코리타</author>
+    <platform>네이버웹툰</platform>
+    <platformId>820097</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=820097</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>아카데미</genre>
+      <genre>빙의</genre>
+      <genre>생존</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>즐겨 하던 게임 속 삼류 엑스트라 악역으로 빙의한 주인공이 조용히 살고 싶다는 바람과 달리, 주인공이 할 수 없는 방식으로 아카데미 세계에서 살아남으려는 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="115" latestEpisodeUpdatedAt="2026-07-02"/>
+    <updateSchedule label="금" source="official">
+      <weekday>금</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="106화" group="ongoing"/>
+    <coverImage>webtoons/covers/088.jpg</coverImage>
+    <descriptionFile>webtoons/description/088.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 아카데미에서살아남기는 네이버웹툰 공식 제목 아카데미에서 살아남기로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="089">
+    <title>아카데미 플레이어를 죽였다</title>
+    <author>기린그린,사람살려.</author>
+    <platform>네이버웹툰</platform>
+    <platformId>818434</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=818434</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>아카데미</genre>
+      <genre>빙의</genre>
+      <genre>액션</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>죽일 만한 플레이어를 죽인 고인물 NPC가 되어버린 주인공이 아카데미 세계에서 자신만의 방식으로 살아남는 다크 판타지 아카데미 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="132" latestEpisodeUpdatedAt="2026-07-06"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="44화" group="ongoing"/>
+    <coverImage>webtoons/covers/089.jpg</coverImage>
+    <descriptionFile>webtoons/description/089.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 아카데미플레이어를죽였다는 네이버웹툰 공식 제목 아카데미 플레이어를 죽였다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="090">
+    <title>무직백수 계백순</title>
+    <author>지발</author>
+    <platform>네이버웹툰</platform>
+    <platformId>811721</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=811721</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>개그</genre>
+      <genre>일상</genre>
+      <genre>드라마</genre>
+      <genre>성장</genre>
+    </genres>
+    <description>스펙도 돈도 없는 백수 계백순이 현실의 벽과 일상의 관계 속에서 조금씩 움직이며 백수 탈출과 자기 삶을 찾아가는 일상 개그 드라마 웹툰이다.</description>
+    <serialization status="completed" label="완결(237화)" episodeCount="237" latestEpisodeUpdatedAt="2026-06-02"/>
+    <updateSchedule label="완결" source="completed">
+
+    </updateSchedule>
+    <userReading status="reading" progress="100화" group="completed-section"/>
+    <coverImage>webtoons/covers/090.jpg</coverImage>
+    <descriptionFile>webtoons/description/090.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 무직백수계백순은 네이버웹툰 공식 제목 무직백수 계백순으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 최종 회차, 최종 공개일, 표지를 확인했습니다. 작품은 완결이지만 사용자는 100화까지 읽는 중으로 기록했습니다.</note>
   </webtoon>
 </webtoons>

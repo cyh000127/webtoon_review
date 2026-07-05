@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-06-28",
+  "lastUpdatedAt": "2026-07-08",
   "items": [
     {
       "id": "001",
@@ -1147,15 +1147,15 @@
       "description": "남동생 계정으로 게임을 하던 아진과 정체를 숨긴 지현이 온라인 게임 안에서 오해와 관계를 쌓아 가는 게임 로맨스다.",
       "serializationStatus": "ongoing",
       "serializationLabel": "연재중",
-      "episodeCount": 51,
+      "episodeCount": 54,
       "userReadingStatus": "reading",
-      "userProgress": "47화",
+      "userProgress": "52화",
       "group": "ongoing",
       "coverImage": "webtoons/covers/037.jpg",
       "descriptionFile": "webtoons/description/037.txt",
-      "userRating": 4.8,
-      "note": "네이버웹툰 공식 정보로 작가, 작품 ID, 장르, 소개, 최신 회차, 표지를 보정했습니다. 사용자 진행도를 47화로 갱신했습니다.",
-      "latestEpisodeUpdatedAt": "2026-06-12",
+      "userRating": 4,
+      "note": "네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. queue의 새 진행도와 평점을 52화, 4점으로 갱신했습니다.",
+      "latestEpisodeUpdatedAt": "2026-07-03",
       "updateWeekdays": [
         "토"
       ],
@@ -2731,6 +2731,139 @@
       "descriptionFile": "webtoons/description/086.txt",
       "userRating": 4,
       "note": "사용자 입력 제목 약파는황태자는 네이버웹툰 공식 제목 약 파는 황태자로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
+    },
+    {
+      "id": "087",
+      "inputTitle": "나만보는탑공략집",
+      "title": "나만 보는 탑 공략집",
+      "author": "사도,X-NAME,쾌조",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "823434",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=823434",
+      "genres": [
+        "판타지",
+        "탑등반",
+        "생존",
+        "액션",
+        "소설원작"
+      ],
+      "description": "지구의 종말과 함께 시작된 탑 생존 게임에서 공략집을 손에 넣은 주인공이 불신과 파멸을 유도하는 탑에 맞서 사람들과 함께 결말을 바꾸려는 생존 판타지 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 127,
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleLabel": "화",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-06",
+      "userReadingStatus": "dropped",
+      "userProgress": "80화",
+      "group": "dropped",
+      "coverImage": "webtoons/covers/087.jpg",
+      "descriptionFile": "webtoons/description/087.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 나만보는탑공략집은 네이버웹툰 공식 제목 나만 보는 탑 공략집으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 80화에서 중도 포기로 기록했습니다."
+    },
+    {
+      "id": "088",
+      "inputTitle": "아카데미에서살아남기",
+      "title": "아카데미에서 살아남기",
+      "author": "기린그린,코리타",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "820097",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=820097",
+      "genres": [
+        "판타지",
+        "아카데미",
+        "빙의",
+        "생존",
+        "소설원작"
+      ],
+      "description": "즐겨 하던 게임 속 삼류 엑스트라 악역으로 빙의한 주인공이 조용히 살고 싶다는 바람과 달리, 주인공이 할 수 없는 방식으로 아카데미 세계에서 살아남으려는 판타지 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 115,
+      "updateWeekdays": [
+        "금"
+      ],
+      "updateScheduleLabel": "금",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-02",
+      "userReadingStatus": "reading",
+      "userProgress": "106화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/088.jpg",
+      "descriptionFile": "webtoons/description/088.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 아카데미에서살아남기는 네이버웹툰 공식 제목 아카데미에서 살아남기로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
+    },
+    {
+      "id": "089",
+      "inputTitle": "아카데미플레이어를죽였다",
+      "title": "아카데미 플레이어를 죽였다",
+      "author": "기린그린,사람살려.",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "818434",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=818434",
+      "genres": [
+        "판타지",
+        "아카데미",
+        "빙의",
+        "액션",
+        "소설원작"
+      ],
+      "description": "죽일 만한 플레이어를 죽인 고인물 NPC가 되어버린 주인공이 아카데미 세계에서 자신만의 방식으로 살아남는 다크 판타지 아카데미 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 132,
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleLabel": "화",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-06",
+      "userReadingStatus": "reading",
+      "userProgress": "44화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/089.jpg",
+      "descriptionFile": "webtoons/description/089.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 아카데미플레이어를죽였다는 네이버웹툰 공식 제목 아카데미 플레이어를 죽였다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
+    },
+    {
+      "id": "090",
+      "inputTitle": "무직백수계백순",
+      "title": "무직백수 계백순",
+      "author": "지발",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "811721",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=811721",
+      "genres": [
+        "개그",
+        "일상",
+        "드라마",
+        "성장"
+      ],
+      "description": "스펙도 돈도 없는 백수 계백순이 현실의 벽과 일상의 관계 속에서 조금씩 움직이며 백수 탈출과 자기 삶을 찾아가는 일상 개그 드라마 웹툰이다.",
+      "serializationStatus": "completed",
+      "serializationLabel": "완결(237화)",
+      "episodeCount": 237,
+      "updateWeekdays": [],
+      "updateScheduleLabel": "완결",
+      "updateScheduleSource": "completed",
+      "latestEpisodeUpdatedAt": "2026-06-02",
+      "userReadingStatus": "reading",
+      "userProgress": "100화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/090.jpg",
+      "descriptionFile": "webtoons/description/090.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 무직백수계백순은 네이버웹툰 공식 제목 무직백수 계백순으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 최종 회차, 최종 공개일, 표지를 확인했습니다. 작품은 완결이지만 사용자는 100화까지 읽는 중으로 기록했습니다."
     }
   ]
 }
