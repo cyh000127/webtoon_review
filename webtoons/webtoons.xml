@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-08" count="90">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-10" count="90">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2103,10 +2103,10 @@
     <updateSchedule label="완결" source="completed">
 
     </updateSchedule>
-    <userReading status="reading" progress="100화" group="completed-section"/>
+    <userReading status="finished" progress="237화" group="completed-section"/>
     <coverImage>webtoons/covers/090.jpg</coverImage>
     <descriptionFile>webtoons/description/090.txt</descriptionFile>
     <userRating>4</userRating>
-    <note>사용자 입력 제목 무직백수계백순은 네이버웹툰 공식 제목 무직백수 계백순으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 최종 회차, 최종 공개일, 표지를 확인했습니다. 작품은 완결이지만 사용자는 100화까지 읽는 중으로 기록했습니다.</note>
+    <note>사용자 입력 제목 무직백수계백순은 네이버웹툰 공식 제목 무직백수 계백순으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 최종 회차, 최종 공개일, 표지를 확인했습니다. queue의 completed 입력 2건을 반영해 237화 완주로 갱신했습니다.</note>
   </webtoon>
 </webtoons>
