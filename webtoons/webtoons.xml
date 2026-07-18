@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-19" count="93">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-20" count="93">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2181,10 +2181,10 @@
     <updateSchedule label="수" source="official">
       <weekday>수</weekday>
     </updateSchedule>
-    <userReading status="dropped" progress="50화" group="dropped"/>
+    <userReading status="dropped" progress="53화" group="dropped"/>
     <coverImage>webtoons/covers/093.jpg</coverImage>
     <descriptionFile>webtoons/description/093.txt</descriptionFile>
     <userRating>4</userRating>
-    <note>사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 50화에서 중도 포기로 기록했습니다.</note>
+    <note>사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 53화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
 </webtoons>

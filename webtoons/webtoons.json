@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-07-19",
+  "lastUpdatedAt": "2026-07-20",
   "items": [
     {
       "id": "001",
@@ -2963,12 +2963,12 @@
       "updateScheduleSource": "official",
       "latestEpisodeUpdatedAt": "2026-07-14",
       "userReadingStatus": "dropped",
-      "userProgress": "50화",
+      "userProgress": "53화",
       "group": "dropped",
       "coverImage": "webtoons/covers/093.jpg",
       "descriptionFile": "webtoons/description/093.txt",
       "userRating": 4,
-      "note": "사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 50화에서 중도 포기로 기록했습니다."
+      "note": "사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 53화에서 중도 포기로 기록했습니다."
     }
   ]
 }
