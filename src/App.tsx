@@ -23,7 +23,7 @@ import type {
 } from "./types/webtoon";
 
 type ReadingFilter = "all" | UserReadingStatus;
-type SortKey = "id" | "episode" | "title";
+type SortKey = "id" | "episode" | "unread" | "title";
 type ViewMode = "card" | "list";
 type GenreFilterMode = "include" | "exclude";
 type ReaderRatings = Record<string, number>;
@@ -31,6 +31,13 @@ type BarDatum = {
   id: string;
   label: string;
   value: number;
+};
+type SummaryChip = {
+  id: string;
+  label: string;
+  title: string;
+  tone?: "primary";
+  onClick: () => void;
 };
 
 type WebtoonViewModel = ArchiveWebtoonRecord & {
@@ -66,6 +73,7 @@ const readingTabs: Array<{ id: ReadingFilter; label: string }> = [
 const sortOptions: Array<{ id: SortKey; label: string }> = [
   { id: "id", label: "등록순" },
   { id: "episode", label: "화수순" },
+  { id: "unread", label: "안읽은순" },
   { id: "title", label: "가나다순" }
 ];
 
@@ -103,6 +111,22 @@ function formatProgress(progress: string, episodeCount: number) {
   }
 
   return Number.isFinite(episodeCount) ? `${episodeCount}화` : progress;
+}
+
+function getReadEpisodeCount(progress: string) {
+  const matches = Array.from(progress.matchAll(/(\d+)\s*(화|편)/g));
+  const lastMatch = matches[matches.length - 1];
+
+  return lastMatch ? Number(lastMatch[1]) : 0;
+}
+
+function getUnreadEpisodeCount(webtoon: WebtoonViewModel) {
+  const episodeCount = Number.isFinite(webtoon.episodeCount)
+    ? webtoon.episodeCount
+    : 0;
+  const readEpisodeCount = getReadEpisodeCount(webtoon.userProgress);
+
+  return Math.max(episodeCount - readEpisodeCount, 0);
 }
 
 function parseArchiveDate(dateString: string) {
@@ -176,6 +200,14 @@ function getReadingIcon(status: ReadingFilter) {
 function compareBySort(a: WebtoonViewModel, b: WebtoonViewModel, sortBy: SortKey) {
   if (sortBy === "episode") {
     return (b.episodeCount ?? 0) - (a.episodeCount ?? 0);
+  }
+
+  if (sortBy === "unread") {
+    return (
+      getUnreadEpisodeCount(b) - getUnreadEpisodeCount(a) ||
+      (b.episodeCount ?? 0) - (a.episodeCount ?? 0) ||
+      Number(a.id) - Number(b.id)
+    );
   }
 
   if (sortBy === "title") {
@@ -263,6 +295,25 @@ function App() {
       ...currentRatings,
       [webtoonId]: rating
     }));
+  };
+
+  const selectSerialization = (nextSerialization: SerializationStatus) => {
+    setSerialization(nextSerialization);
+    setReading("all");
+    setPlatform("전체");
+    setGenre("전체");
+    setGenreMode("include");
+  };
+
+  const toggleSerialization = () => {
+    selectSerialization(serialization === "ongoing" ? "completed" : "ongoing");
+  };
+
+  const cycleSortBy = () => {
+    const currentIndex = sortOptions.findIndex((option) => option.id === sortBy);
+    const nextOption = sortOptions[(currentIndex + 1) % sortOptions.length];
+
+    setSortBy(nextOption.id);
   };
 
   const selectGenre = (nextGenre: string) => {
@@ -401,6 +452,68 @@ function App() {
       .sort((a, b) => compareBySort(a, b, sortBy));
   }, [genre, genreMode, platform, query, reading, serializationScoped, sortBy]);
 
+  const selectedFilterChips = useMemo<SummaryChip[]>(() => {
+    const nextChips: SummaryChip[] = [
+      {
+        id: "serialization",
+        label: getSerializationLabel(serialization),
+        title: "연재 상태 바꾸기",
+        tone: "primary",
+        onClick: toggleSerialization
+      }
+    ];
+
+    if (reading !== "all") {
+      nextChips.push({
+        id: "reading",
+        label: readingTabs.find((tab) => tab.id === reading)?.label ?? reading,
+        title: "감상 상태 필터 초기화",
+        onClick: () => setReading("all")
+      });
+    }
+
+    if (platform !== "전체") {
+      nextChips.push({
+        id: "platform",
+        label: platform,
+        title: "플랫폼 필터 초기화",
+        onClick: () => setPlatform("전체")
+      });
+    }
+
+    if (genre !== "전체") {
+      nextChips.push({
+        id: "genre",
+        label: genreMode === "exclude" ? `${genre} 제외` : genre,
+        title: "장르 필터 초기화",
+        onClick: () => {
+          setGenre("전체");
+          setGenreMode("include");
+        }
+      });
+    }
+
+    const trimmedQuery = query.trim();
+
+    if (trimmedQuery) {
+      nextChips.push({
+        id: "query",
+        label: `검색: ${trimmedQuery}`,
+        title: "검색어 지우기",
+        onClick: () => setQuery("")
+      });
+    }
+
+    nextChips.push({
+      id: "sort",
+      label: sortOptions.find((option) => option.id === sortBy)?.label ?? sortBy,
+      title: "정렬 방식 바꾸기",
+      onClick: cycleSortBy
+    });
+
+    return nextChips;
+  }, [genre, genreMode, platform, query, reading, serialization, sortBy]);
+
   const serializationCounts = useMemo(() => {
     return serializationTabs.reduce<Record<SerializationStatus, number>>(
       (counts, tab) => {
@@ -441,13 +554,7 @@ function App() {
             key={tab.id}
             className={serialization === tab.id ? "active" : ""}
             type="button"
-            onClick={() => {
-              setSerialization(tab.id);
-              setReading("all");
-              setPlatform("전체");
-              setGenre("전체");
-              setGenreMode("include");
-            }}
+            onClick={() => selectSerialization(tab.id)}
           >
             <span>{tab.label}</span>
             <strong>{serializationCounts[tab.id]}</strong>
@@ -557,11 +664,17 @@ function App() {
 
       <section className="result-bar" aria-label="현재 선택">
         <div className="result-filter-summary">
-          <strong>{getSerializationLabel(serialization)}</strong>
-          <span>{readingTabs.find((tab) => tab.id === reading)?.label}</span>
-          <span>{platform}</span>
-          <span>{genreMode === "exclude" && genre !== "전체" ? `${genre} 제외` : genre}</span>
-          <span>{sortOptions.find((option) => option.id === sortBy)?.label}</span>
+          {selectedFilterChips.map((chip) => (
+            <button
+              key={chip.id}
+              className={`summary-chip ${chip.tone ?? ""}`}
+              type="button"
+              title={chip.title}
+              onClick={chip.onClick}
+            >
+              {chip.label}
+            </button>
+          ))}
         </div>
         <div className="result-actions">
           <p>{visibleWebtoons.length}개 기록</p>
