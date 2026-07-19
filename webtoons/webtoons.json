@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-07-10",
+  "lastUpdatedAt": "2026-07-19",
   "items": [
     {
       "id": "001",
@@ -2864,6 +2864,111 @@
       "descriptionFile": "webtoons/description/090.txt",
       "userRating": 4,
       "note": "사용자 입력 제목 무직백수계백순은 네이버웹툰 공식 제목 무직백수 계백순으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 최종 회차, 최종 공개일, 표지를 확인했습니다. queue의 completed 입력 2건을 반영해 237화 완주로 갱신했습니다."
+    },
+    {
+      "id": "091",
+      "inputTitle": "시한부를즐겼을뿐이였는데",
+      "title": "시한부를 즐겼을 뿐이었는데",
+      "author": "다락,다나",
+      "platform": "카카오페이지",
+      "contentType": "웹툰",
+      "platformId": "64150682",
+      "officialUrl": "https://page.kakao.com/content/64150682",
+      "genres": [
+        "로맨스 판타지",
+        "빙의",
+        "시한부",
+        "가족",
+        "성장",
+        "소설원작"
+      ],
+      "description": "시한부였던 주인공이 소설 속 시한부 캐릭터로 빙의해 21년의 삶을 선물처럼 즐기려 한다. 건강, 가족애, 오해와 착각이 섞인 로맨스 판타지 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 65,
+      "updateWeekdays": [
+        "금"
+      ],
+      "updateScheduleLabel": "금",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-09",
+      "userReadingStatus": "reading",
+      "userProgress": "65화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/091.png",
+      "descriptionFile": "webtoons/description/091.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 시한부를즐겼을뿐이였는데는 카카오페이지 공식 제목 시한부를 즐겼을 뿐이었는데로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
+    },
+    {
+      "id": "092",
+      "inputTitle": "겨울성의아기죄수님",
+      "title": "겨울성의 아기 죄수님",
+      "author": "heeya,류희온",
+      "platform": "카카오페이지",
+      "contentType": "웹툰",
+      "platformId": "63517874",
+      "officialUrl": "https://page.kakao.com/content/63517874",
+      "genres": [
+        "로맨스 판타지",
+        "육아",
+        "성장",
+        "가족",
+        "힐링",
+        "소설원작"
+      ],
+      "description": "패망한 왕국의 어린 왕족 클라리스가 18세까지 유예된 사형을 앞두고 북부 겨울성의 죄수로 살아간다. 새 가족과 관계를 만들어가는 힐링 로맨스 판타지 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 102,
+      "updateWeekdays": [
+        "화"
+      ],
+      "updateScheduleLabel": "화",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-13",
+      "userReadingStatus": "reading",
+      "userProgress": "102화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/092.jpg",
+      "descriptionFile": "webtoons/description/092.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 겨울성의아기죄수님은 카카오페이지 공식 제목 겨울성의 아기 죄수님으로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다."
+    },
+    {
+      "id": "093",
+      "inputTitle": "입양딸역할을지나치게잘해버렸다",
+      "title": "입양딸 역할을 지나치게 잘해버렸다",
+      "author": "라콰,다나",
+      "platform": "카카오페이지",
+      "contentType": "웹툰",
+      "platformId": "61324740",
+      "officialUrl": "https://page.kakao.com/content/61324740",
+      "genres": [
+        "로맨스 판타지",
+        "빙의",
+        "육아",
+        "가족",
+        "착각",
+        "소설원작"
+      ],
+      "description": "소설 속 입양딸로 빙의한 주인공이 살아남기 위해 맡은 역할을 성실히 해냈을 뿐인데, 원작 인물들의 과한 집착과 권력 다툼 속에 휘말리는 로맨스 판타지 웹툰이다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 129,
+      "updateWeekdays": [
+        "수"
+      ],
+      "updateScheduleLabel": "수",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-14",
+      "userReadingStatus": "dropped",
+      "userProgress": "50화",
+      "group": "dropped",
+      "coverImage": "webtoons/covers/093.jpg",
+      "descriptionFile": "webtoons/description/093.txt",
+      "userRating": 4,
+      "note": "사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 50화에서 중도 포기로 기록했습니다."
     }
   ]
 }

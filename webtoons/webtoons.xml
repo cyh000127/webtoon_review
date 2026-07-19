@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-10" count="90">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-19" count="93">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2108,5 +2108,83 @@
     <descriptionFile>webtoons/description/090.txt</descriptionFile>
     <userRating>4</userRating>
     <note>사용자 입력 제목 무직백수계백순은 네이버웹툰 공식 제목 무직백수 계백순으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 완결 상태, 최종 회차, 최종 공개일, 표지를 확인했습니다. queue의 completed 입력 2건을 반영해 237화 완주로 갱신했습니다.</note>
+  </webtoon>
+  <webtoon id="091" inputTitle="시한부를즐겼을뿐이였는데">
+    <title>시한부를 즐겼을 뿐이었는데</title>
+    <author>다락,다나</author>
+    <platform>카카오페이지</platform>
+    <platformId>64150682</platformId>
+    <officialUrl>https://page.kakao.com/content/64150682</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>빙의</genre>
+      <genre>시한부</genre>
+      <genre>가족</genre>
+      <genre>성장</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>시한부였던 주인공이 소설 속 시한부 캐릭터로 빙의해 21년의 삶을 선물처럼 즐기려 한다. 건강, 가족애, 오해와 착각이 섞인 로맨스 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="65" latestEpisodeUpdatedAt="2026-07-09"/>
+    <updateSchedule label="금" source="official">
+      <weekday>금</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="65화" group="ongoing"/>
+    <coverImage>webtoons/covers/091.png</coverImage>
+    <descriptionFile>webtoons/description/091.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 시한부를즐겼을뿐이였는데는 카카오페이지 공식 제목 시한부를 즐겼을 뿐이었는데로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="092" inputTitle="겨울성의아기죄수님">
+    <title>겨울성의 아기 죄수님</title>
+    <author>heeya,류희온</author>
+    <platform>카카오페이지</platform>
+    <platformId>63517874</platformId>
+    <officialUrl>https://page.kakao.com/content/63517874</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+      <genre>성장</genre>
+      <genre>가족</genre>
+      <genre>힐링</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>패망한 왕국의 어린 왕족 클라리스가 18세까지 유예된 사형을 앞두고 북부 겨울성의 죄수로 살아간다. 새 가족과 관계를 만들어가는 힐링 로맨스 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="102" latestEpisodeUpdatedAt="2026-07-13"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="102화" group="ongoing"/>
+    <coverImage>webtoons/covers/092.jpg</coverImage>
+    <descriptionFile>webtoons/description/092.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 겨울성의아기죄수님은 카카오페이지 공식 제목 겨울성의 아기 죄수님으로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="093" inputTitle="입양딸역할을지나치게잘해버렸다">
+    <title>입양딸 역할을 지나치게 잘해버렸다</title>
+    <author>라콰,다나</author>
+    <platform>카카오페이지</platform>
+    <platformId>61324740</platformId>
+    <officialUrl>https://page.kakao.com/content/61324740</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>빙의</genre>
+      <genre>육아</genre>
+      <genre>가족</genre>
+      <genre>착각</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>소설 속 입양딸로 빙의한 주인공이 살아남기 위해 맡은 역할을 성실히 해냈을 뿐인데, 원작 인물들의 과한 집착과 권력 다툼 속에 휘말리는 로맨스 판타지 웹툰이다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="129" latestEpisodeUpdatedAt="2026-07-14"/>
+    <updateSchedule label="수" source="official">
+      <weekday>수</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="50화" group="dropped"/>
+    <coverImage>webtoons/covers/093.jpg</coverImage>
+    <descriptionFile>webtoons/description/093.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 50화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
 </webtoons>
