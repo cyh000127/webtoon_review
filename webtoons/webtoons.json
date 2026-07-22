@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-07-20",
+  "lastUpdatedAt": "2026-07-22",
   "items": [
     {
       "id": "001",
@@ -2963,12 +2963,46 @@
       "updateScheduleSource": "official",
       "latestEpisodeUpdatedAt": "2026-07-14",
       "userReadingStatus": "dropped",
-      "userProgress": "53화",
+      "userProgress": "55화",
       "group": "dropped",
       "coverImage": "webtoons/covers/093.jpg",
       "descriptionFile": "webtoons/description/093.txt",
       "userRating": 4,
-      "note": "사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 53화에서 중도 포기로 기록했습니다."
+      "note": "사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 55화에서 중도 포기로 기록했습니다."
+    },
+    {
+      "id": "094",
+      "inputTitle": "화타가된외과의사",
+      "title": "화타가 된 외과의사",
+      "author": "샤이멜,최병익,박동신",
+      "platform": "카카오페이지",
+      "contentType": "웹툰",
+      "platformId": "58725187",
+      "officialUrl": "https://page.kakao.com/content/58725187",
+      "genres": [
+        "액션",
+        "무협",
+        "의학",
+        "환생",
+        "소설원작"
+      ],
+      "description": "정의로운 성격 때문에 전문의는커녕 목숨까지 잃은 일반외과 전공 3년차 한진수. 천사인가, 악마인가, 아님 알 수 없는 시스템인가. 평소 쌓은 선행 덕분에 부활의 기회를 얻게 된다. 산적 떼에게 죽은 몸으로 부활하게 된 한진수. 그런데 이 몸이 전설의 명의名醫 화타?! 전란이 끊임없는 영웅들의 시대, 혼란한 후한 말. 한진수, 그는 후한 말 명의名醫 화타로서 우뚝 서려 한다……. <삼국지연의> 속 세상에 떨어진 젊은 외과의사가 펼치는 기상천외한 모험이 시작된다!",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 211,
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleLabel": "월",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-07-20",
+      "userReadingStatus": "reading",
+      "userProgress": "107화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/094.png",
+      "descriptionFile": "webtoons/description/094.txt",
+      "userRating": 4,
+      "note": "User input title was normalized to the official Kakao title. Official Kakao Webtoon content page and KakaoPage public metadata were used for title, creators, description, status, episode count, update timing, and cover image."
     }
   ]
 }

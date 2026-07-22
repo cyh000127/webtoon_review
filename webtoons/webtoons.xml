@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-20" count="93">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-22" count="94">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -1935,7 +1935,7 @@
     <userRating>4</userRating>
     <note>네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. queue의 새 진행도 입력을 반영해 userProgress를 169화로 갱신했습니다.</note>
   </webtoon>
-  <webtoon id="084">
+  <webtoon id="084" inputTitle="아카데미가망했다">
     <title>아카데미가 망했다</title>
     <author>BIN,GG,ROHRAN</author>
     <platform>네이버웹툰</platform>
@@ -1960,7 +1960,7 @@
     <userRating>4</userRating>
     <note>사용자 입력 제목 아카데미가망했다는 네이버웹툰 공식 제목 아카데미가 망했다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 18화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
-  <webtoon id="085">
+  <webtoon id="085" inputTitle="이세계싱글대디">
     <title>이세계 싱글대디</title>
     <author>왓챠,W</author>
     <platform>네이버웹툰</platform>
@@ -1985,7 +1985,7 @@
     <userRating>3</userRating>
     <note>사용자 입력 제목 이세계싱글대디는 네이버웹툰 공식 제목 이세계 싱글대디로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 47화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
-  <webtoon id="086">
+  <webtoon id="086" inputTitle="약파는황태자">
     <title>약 파는 황태자</title>
     <author>하강호,히스,문백경</author>
     <platform>네이버웹툰</platform>
@@ -2010,7 +2010,7 @@
     <userRating>4</userRating>
     <note>사용자 입력 제목 약파는황태자는 네이버웹툰 공식 제목 약 파는 황태자로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
   </webtoon>
-  <webtoon id="087">
+  <webtoon id="087" inputTitle="나만보는탑공략집">
     <title>나만 보는 탑 공략집</title>
     <author>사도,X-NAME,쾌조</author>
     <platform>네이버웹툰</platform>
@@ -2035,7 +2035,7 @@
     <userRating>4</userRating>
     <note>사용자 입력 제목 나만보는탑공략집은 네이버웹툰 공식 제목 나만 보는 탑 공략집으로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 80화에서 중도 포기로 기록했습니다.</note>
   </webtoon>
-  <webtoon id="088">
+  <webtoon id="088" inputTitle="아카데미에서살아남기">
     <title>아카데미에서 살아남기</title>
     <author>기린그린,코리타</author>
     <platform>네이버웹툰</platform>
@@ -2060,7 +2060,7 @@
     <userRating>4</userRating>
     <note>사용자 입력 제목 아카데미에서살아남기는 네이버웹툰 공식 제목 아카데미에서 살아남기로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
   </webtoon>
-  <webtoon id="089">
+  <webtoon id="089" inputTitle="아카데미플레이어를죽였다">
     <title>아카데미 플레이어를 죽였다</title>
     <author>기린그린,사람살려.</author>
     <platform>네이버웹툰</platform>
@@ -2085,7 +2085,7 @@
     <userRating>4</userRating>
     <note>사용자 입력 제목 아카데미플레이어를죽였다는 네이버웹툰 공식 제목 아카데미 플레이어를 죽였다로 보정했습니다. 네이버웹툰 공식 페이지와 공식 회차 API로 제목, 작가, 장르, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다.</note>
   </webtoon>
-  <webtoon id="090">
+  <webtoon id="090" inputTitle="무직백수계백순">
     <title>무직백수 계백순</title>
     <author>지발</author>
     <platform>네이버웹툰</platform>
@@ -2181,10 +2181,35 @@
     <updateSchedule label="수" source="official">
       <weekday>수</weekday>
     </updateSchedule>
-    <userReading status="dropped" progress="53화" group="dropped"/>
+    <userReading status="dropped" progress="55화" group="dropped"/>
     <coverImage>webtoons/covers/093.jpg</coverImage>
     <descriptionFile>webtoons/description/093.txt</descriptionFile>
     <userRating>4</userRating>
-    <note>사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 53화에서 중도 포기로 기록했습니다.</note>
+    <note>사용자 입력 제목 입양딸역할을지나치게잘해버렸다는 카카오페이지 공식 제목 입양딸 역할을 지나치게 잘해버렸다로 보정했습니다. 카카오페이지 공식 콘텐츠 개요와 공식 회차 목록 API로 제목, 작가, 장르/키워드, 소개, 연재 상태, 회차 수, 업데이트 요일, 최신 회차 공개일, 표지를 확인했습니다. 사용자는 55화에서 중도 포기로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="094" inputTitle="화타가된외과의사">
+    <title>화타가 된 외과의사</title>
+    <author>샤이멜,최병익,박동신</author>
+    <platform>카카오페이지</platform>
+    <platformId>58725187</platformId>
+    <officialUrl>https://page.kakao.com/content/58725187</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>액션</genre>
+      <genre>무협</genre>
+      <genre>의학</genre>
+      <genre>환생</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>정의로운 성격 때문에 전문의는커녕 목숨까지 잃은 일반외과 전공 3년차 한진수. 천사인가, 악마인가, 아님 알 수 없는 시스템인가. 평소 쌓은 선행 덕분에 부활의 기회를 얻게 된다. 산적 떼에게 죽은 몸으로 부활하게 된 한진수. 그런데 이 몸이 전설의 명의名醫 화타?! 전란이 끊임없는 영웅들의 시대, 혼란한 후한 말. 한진수, 그는 후한 말 명의名醫 화타로서 우뚝 서려 한다……. &lt;삼국지연의&gt; 속 세상에 떨어진 젊은 외과의사가 펼치는 기상천외한 모험이 시작된다!</description>
+    <serialization status="ongoing" label="연재중" episodeCount="211" latestEpisodeUpdatedAt="2026-07-20"/>
+    <updateSchedule label="월" source="official">
+      <weekday>월</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="107화" group="ongoing"/>
+    <coverImage>webtoons/covers/094.png</coverImage>
+    <descriptionFile>webtoons/description/094.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>User input title was normalized to the official Kakao title. Official Kakao Webtoon content page and KakaoPage public metadata were used for title, creators, description, status, episode count, update timing, and cover image.</note>
   </webtoon>
 </webtoons>
