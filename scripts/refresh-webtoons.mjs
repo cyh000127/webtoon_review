@@ -185,6 +185,10 @@ async function refreshNaver(item, weekdayMap) {
   const isCompleted = item.serializationStatus === "completed" || articleData.finished === true;
 
   if (isCompleted) {
+    if (item.serializationStatus !== "completed") {
+      return item;
+    }
+
     return makeScheduleFields(
       {
         ...item,
