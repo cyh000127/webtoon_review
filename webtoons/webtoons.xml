@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-28" count="94">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-28" count="99">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2211,5 +2211,122 @@
     <descriptionFile>webtoons/description/094.txt</descriptionFile>
     <userRating>4</userRating>
     <note>User input title was normalized to the official Kakao title. Official Kakao Webtoon content page and KakaoPage public metadata were used for title, creators, description, status, episode count, update timing, and cover image.</note>
+  </webtoon>
+  <webtoon id="095" inputTitle="사생아공주로살아남기">
+    <title>사생아 공주로 살아남기</title>
+    <author>서결</author>
+    <platform>카카오웹툰</platform>
+    <platformId>2966</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/사생아-공주로-살아남기/2966</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>회귀</genre>
+      <genre>육아</genre>
+      <genre>가족</genre>
+    </genres>
+    <description>적국의 핏줄로 오해받아 여러 번 죽음과 회귀를 겪은 사생아 공주 아샤가 이번 생에는 살아남기 위해 성기사 아버지와 주변 인물들을 이용하며 운명을 바꿔 가는 로맨스 판타지 웹툰.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="125" latestEpisodeUpdatedAt="2026-07-23"/>
+    <updateSchedule label="목" source="latestEpisodeDate">
+      <weekday>목</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="125화" group="ongoing"/>
+    <coverImage>webtoons/covers/095.jpg</coverImage>
+    <descriptionFile>webtoons/description/095.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지에서 제목, 작가, 장르, 소개, 표지를 확인했습니다. 회차 목록 API 접근이 제한되어 공개 작가 소식과 사용자 입력 화수를 기준으로 최신 화수를 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="096">
+    <title>막내 공녀의 총애를 독차지했더니, 모두 내게 집착한다</title>
+    <author>정아, 지몬, 희윤</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4427</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/막내-공녀의-총애를-독차지했더니-모두-내게-집착한다/4427</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>회귀</genre>
+      <genre>육아</genre>
+      <genre>가족</genre>
+    </genres>
+    <description>정보 길드 요원이던 리아가 죽음 뒤 보육원 시절로 회귀하고, 엘라드 공작가의 막내 공녀 다이애나를 돌보면서 공작가 사람들의 애정과 집착을 받게 되는 로맨스 판타지 웹툰.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="62" latestEpisodeUpdatedAt="2026-07-25"/>
+    <updateSchedule label="토" source="latestEpisodeDate">
+      <weekday>토</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="62화" group="ongoing"/>
+    <coverImage>webtoons/covers/096.jpg</coverImage>
+    <descriptionFile>webtoons/description/096.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지에서 제목, 작가, 장르, 소개, 표지를 확인했습니다. 공식 검색 결과와 작가/스튜디오 공개 소식에서 62화 업데이트를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="097">
+    <title>쪽팔려게임</title>
+    <author>봉수, 다이</author>
+    <platform>네이버웹툰</platform>
+    <platformId>847135</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=847135</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>스릴러</genre>
+      <genre>드라마</genre>
+      <genre>학원</genre>
+    </genres>
+    <description>고등학교 2학년 유사랑이 반 친구들의 잔혹한 놀이인 쪽팔려게임에서 반복적으로 벌칙의 대상이 되며, 어긋난 관계와 학교 안 긴장이 드러나는 학원 스릴러 웹툰.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="33" latestEpisodeUpdatedAt="2026-07-28"/>
+    <updateSchedule label="수" source="official">
+      <weekday>수</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="32화" group="ongoing"/>
+    <coverImage>webtoons/covers/097.png</coverImage>
+    <descriptionFile>webtoons/description/097.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 페이지와 공식 article API 기준으로 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="098" inputTitle="개념잡는마법천재">
+    <title>개념 잡는 마법 천재</title>
+    <author>인코, Jiya, 김정글</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4487</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/개념-잡는-마법-천재/4487</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>학원</genre>
+      <genre>판타지</genre>
+      <genre>마법</genre>
+    </genres>
+    <description>모든 것을 잃은 로언이 자신을 돌봐준 폴린을 그리워하던 중 마나를 깨닫고, 다른 사람들의 마나까지 보게 되면서 충격적인 진실과 마주하는 학원 판타지 웹툰.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="28" latestEpisodeUpdatedAt="2026-07-26"/>
+    <updateSchedule label="일" source="official">
+      <weekday>일</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="28화" group="dropped"/>
+    <coverImage>webtoons/covers/098.jpg</coverImage>
+    <descriptionFile>webtoons/description/098.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지에서 제목, 작가, 장르, 소개, 표지를 확인했고, 카카오페이지 공식 검색 결과에서 일 연재를 확인했습니다. 사용자는 28화에서 중도 포기로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="099" inputTitle="구운몽제로">
+    <title>구운몽 제로</title>
+    <author>민송아</author>
+    <platform>네이버웹툰</platform>
+    <platformId>840163</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=840163</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>액션</genre>
+      <genre>이세계</genre>
+    </genres>
+    <description>현대 배경의 이세계로 소환된 스무 살 양소유가 용을 잡고 현실 세계로 돌아가기까지의 여정을 그린, 고전 구운몽의 이름을 빌린 현대 액션 판타지 웹툰.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="60" latestEpisodeUpdatedAt="2026-07-25"/>
+    <updateSchedule label="일" source="official">
+      <weekday>일</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="57화" group="ongoing"/>
+    <coverImage>webtoons/covers/099.png</coverImage>
+    <descriptionFile>webtoons/description/099.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 페이지와 공식 article API 기준으로 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다.</note>
   </webtoon>
 </webtoons>
