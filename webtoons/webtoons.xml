@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-28" count="99">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-30" count="100">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2328,5 +2328,29 @@
     <descriptionFile>webtoons/description/099.txt</descriptionFile>
     <userRating>4</userRating>
     <note>네이버웹툰 공식 페이지와 공식 article API 기준으로 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="100" inputTitle="오작교는싫습니다">
+    <title>오작교는 싫습니다</title>
+    <author>마리씨, 클로버, 살오른 곱등이</author>
+    <platform>카카오웹툰</platform>
+    <platformId>3115</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EC%98%A4%EC%9E%91%EA%B5%90%EB%8A%94-%EC%8B%AB%EC%8A%B5%EB%8B%88%EB%8B%A4/3115</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>환생</genre>
+      <genre>아카데미</genre>
+      <genre>소설원작</genre>
+    </genres>
+    <description>소설 속 조연으로 환생했다. 그것도 피폐 로맨스 소설 [헤스티아의 그놈들] 속 오작교 역할로. 어차피 연애는 물 건너갔고, 빚밖에 없는 가문의 미래는 참담하고! 공무원이 되어 전생에 못 이룬 부귀영화 좀 누려보려고 했더니 원작과 달리 남주들이 이상하다? 내 앞에서 얼굴이 빨개진다? 나한테 먹을 걸 막 준다? &quot;상상해봐라, 슈슈가 누굴 보면서 수줍어하게 생겼나.&quot; &quot;와…… 그럼 진짜 좋겠다.&quot; 코리가 멍하니 하일리를 바라보며 말하자, 이브가 인상을 쓰며 중얼거렸다. &quot;데리고 도망칠까…….&quot; 스완은 양손으로 얼굴을 감싸며 아무 말이 없다. 그저 얼굴만 붉어지더니 귀까지 빨개졌다. 뭐냐? 니들. 왜 여주에게 집착 안 하고 다들 딴짓이냐? 이것들아, 정신 차리라고!!! 평범하게 '돈 많은' 삶을 살고 싶은 슈라이나 웨스트의 역하렘 아카데미 생존기</description>
+    <serialization status="ongoing" label="연재중" episodeCount="113" latestEpisodeUpdatedAt="2026-07-30"/>
+    <updateSchedule label="수" source="official">
+      <weekday>수</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="113화" group="ongoing"/>
+    <coverImage>webtoons/covers/100.png</coverImage>
+    <descriptionFile>webtoons/description/100.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>Kakao Webtoon official content page confirmed title, creators, genre, description, and cover. KakaoPage and public search results confirmed the official content id and episode 113 page; user input was recorded as currently reading episode 113.</note>
   </webtoon>
 </webtoons>
