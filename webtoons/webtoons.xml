@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-07-30" count="100">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-08-03" count="101">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2352,5 +2352,29 @@
     <descriptionFile>webtoons/description/100.txt</descriptionFile>
     <userRating>4</userRating>
     <note>Kakao Webtoon official content page confirmed title, creators, genre, description, and cover. KakaoPage and public search results confirmed the official content id and episode 113 page; user input was recorded as currently reading episode 113.</note>
+  </webtoon>
+  <webtoon id="101" inputTitle="악녀의엔딩은죽음뿐">
+    <title>악역의 엔딩은 죽음뿐</title>
+    <author>수월, 권겨을</author>
+    <platform>카카오웹툰</platform>
+    <platformId>2383</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/악역의-엔딩은-죽음뿐/2383</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>빙의</genre>
+      <genre>역하렘</genre>
+      <genre>생존</genre>
+    </genres>
+    <description>역하렘 공략 게임 속 악역 페넬로페 에카르트로 빙의한 주인공이 극악 난이도의 죽음 엔딩을 피하기 위해 공략 대상들과 위험한 관계를 헤쳐 나가는 로맨스 판타지 웹툰.</description>
+    <serialization status="completed" label="완결" episodeCount="214" latestEpisodeUpdatedAt="2026-07-09"/>
+    <updateSchedule label="완결" source="completed">
+
+    </updateSchedule>
+    <userReading status="finished" progress="214화" group="completed-section"/>
+    <coverImage>webtoons/covers/101.jpg</coverImage>
+    <descriptionFile>webtoons/description/101.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>User input title was normalized to the official Kakao Webtoon title. Official Kakao Webtoon page was used for title, creators, genre, synopsis, and cover image; public official creator/publisher posts identify episode 214 as the main-story finale.</note>
   </webtoon>
 </webtoons>

@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-07-30",
+  "lastUpdatedAt": "2026-08-03",
   "items": [
     {
       "id": "001",
@@ -3198,6 +3198,37 @@
       "descriptionFile": "webtoons/description/100.txt",
       "userRating": 4,
       "note": "Kakao Webtoon official content page confirmed title, creators, genre, description, and cover. KakaoPage and public search results confirmed the official content id and episode 113 page; user input was recorded as currently reading episode 113."
+    },
+    {
+      "id": "101",
+      "inputTitle": "악녀의엔딩은죽음뿐",
+      "title": "악역의 엔딩은 죽음뿐",
+      "author": "수월, 권겨을",
+      "platform": "카카오웹툰",
+      "contentType": "웹툰",
+      "platformId": "2383",
+      "officialUrl": "https://webtoon.kakao.com/content/악역의-엔딩은-죽음뿐/2383",
+      "genres": [
+        "로맨스 판타지",
+        "빙의",
+        "역하렘",
+        "생존"
+      ],
+      "description": "역하렘 공략 게임 속 악역 페넬로페 에카르트로 빙의한 주인공이 극악 난이도의 죽음 엔딩을 피하기 위해 공략 대상들과 위험한 관계를 헤쳐 나가는 로맨스 판타지 웹툰.",
+      "serializationStatus": "completed",
+      "serializationLabel": "완결",
+      "episodeCount": 214,
+      "updateWeekdays": [],
+      "updateScheduleLabel": "완결",
+      "updateScheduleSource": "completed",
+      "latestEpisodeUpdatedAt": "2026-07-09",
+      "userReadingStatus": "finished",
+      "userProgress": "214화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/101.jpg",
+      "descriptionFile": "webtoons/description/101.txt",
+      "userRating": 4,
+      "note": "User input title was normalized to the official Kakao Webtoon title. Official Kakao Webtoon page was used for title, creators, genre, synopsis, and cover image; public official creator/publisher posts identify episode 214 as the main-story finale."
     }
   ]
 }
