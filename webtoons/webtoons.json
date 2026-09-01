@@ -1,6 +1,6 @@
 {
   "collectedAt": "2026-05-25",
-  "lastUpdatedAt": "2026-08-03",
+  "lastUpdatedAt": "2026-09-01",
   "items": [
     {
       "id": "001",
@@ -3229,6 +3229,233 @@
       "descriptionFile": "webtoons/description/101.txt",
       "userRating": 4,
       "note": "User input title was normalized to the official Kakao Webtoon title. Official Kakao Webtoon page was used for title, creators, genre, synopsis, and cover image; public official creator/publisher posts identify episode 214 as the main-story finale."
+    },
+    {
+      "id": "102",
+      "inputTitle": "보스몹답게행동하세요스왈로우씨",
+      "title": "보스 몹답게 행동하세요, 스왈로우 씨!",
+      "author": "욱작가,렐트리",
+      "platform": "카카오페이지",
+      "contentType": "웹툰",
+      "platformId": "63218605",
+      "officialUrl": "https://page.kakao.com/content/63218605",
+      "genres": [
+        "판타지",
+        "던전",
+        "코미디",
+        "액션"
+      ],
+      "description": "바야흐로 도래한 던전 공략의 시대. 사실상 공략이 불가능하다고 여겨지는 최강의 일곱 던전, 태악 7굴. 그중에서도 가장 악명 높은 던전인 태고의 중추 깊은 곳에는 사상 최악의 보스 몬스터 스왈로우가 살고 있다. 인간들의 방문이 끊이지 않는 던전에서 그저 편하게 쉬고 싶은 보스 몬스터의 고군분투기.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 141,
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleLabel": "토",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-08-28",
+      "userReadingStatus": "dropped",
+      "userProgress": "119화",
+      "group": "dropped",
+      "coverImage": "webtoons/covers/102.jpg",
+      "descriptionFile": "webtoons/description/102.txt",
+      "userRating": 4,
+      "note": "카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 소개, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 119화에서 중도 포기로 기록했습니다."
+    },
+    {
+      "id": "103",
+      "inputTitle": "아기다람쥐가다잘해요",
+      "title": "아기 다람쥐가 다 잘해요",
+      "author": "혹등고래,한소영,군청주단",
+      "platform": "카카오웹툰",
+      "contentType": "웹툰",
+      "platformId": "3138",
+      "officialUrl": "https://webtoon.kakao.com/content/%EC%95%84%EA%B8%B0-%EB%8B%A4%EB%9E%8C%EC%A5%90%EA%B0%80-%EB%8B%A4-%EC%9E%98%ED%95%B4%EC%9A%94/3138",
+      "genres": [
+        "로맨스 판타지",
+        "인외",
+        "육아",
+        "힐링"
+      ],
+      "description": "사자 가문에서 태어난 유약한 다람쥐 수인 베아티. 수도 이모집에서 구박받으며 살던 그녀는 유일한 친구이자 약혼자인 2황자에게 죽임을 당한 뒤, 그와 엮이기 전의 어린 시절로 돌아간다. 베아티는 친부 사자공의 영지로 달아나 새로운 삶을 시작하지만, 예상과 달리 가족들의 환영을 받게 된다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 119,
+      "updateWeekdays": [
+        "월"
+      ],
+      "updateScheduleLabel": "월",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-08-30",
+      "userReadingStatus": "finished",
+      "userProgress": "119화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/103.jpg",
+      "descriptionFile": "webtoons/description/103.txt",
+      "userRating": 4,
+      "note": "카카오웹툰 공식 페이지와 카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 소개, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 현재 공개분까지 완독으로 기록했습니다."
+    },
+    {
+      "id": "104",
+      "inputTitle": "쉬고싶은 레이디",
+      "title": "쉬고 싶은 레이디",
+      "author": "솜땀,스튜디오 이너스,최엠제,유인(流人)",
+      "platform": "카카오웹툰",
+      "contentType": "웹툰",
+      "platformId": "2482",
+      "officialUrl": "https://webtoon.kakao.com/content/%EC%89%AC%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EB%A0%88%EC%9D%B4%EB%94%94/2482",
+      "genres": [
+        "로맨스 판타지",
+        "환생",
+        "성장",
+        "힐링"
+      ],
+      "description": "왕, 마법사, 악사, 검사, 부호, 거지, 성녀, 마녀로 수없이 전생을 거듭하며 천년을 살아온 그녀는 53번째 삶에서 처참하고 괴로운 시간을 보냈다. 다시 시작된 54번째 삶에서 그녀는 이번만큼은 게으름뱅이 나무늘보처럼 쉬고 싶다고 결심하지만, 계속되는 사건과 주변 사람들의 관심에서 벗어나지 못한다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 218,
+      "updateWeekdays": [
+        "수"
+      ],
+      "updateScheduleLabel": "수",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-08-25",
+      "userReadingStatus": "reading",
+      "userProgress": "109화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/104.jpg",
+      "descriptionFile": "webtoons/description/104.txt",
+      "userRating": 4,
+      "note": "카카오웹툰 공식 페이지와 카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 소개, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 109화까지 읽는 중으로 기록했습니다."
+    },
+    {
+      "id": "105",
+      "inputTitle": "살아남은로맨스",
+      "title": "살아남은 로맨스",
+      "author": "이연",
+      "platform": "네이버웹툰",
+      "contentType": "웹툰",
+      "platformId": "764129",
+      "officialUrl": "https://comic.naver.com/webtoon/list?titleId=764129",
+      "genres": [
+        "스토리",
+        "판타지"
+      ],
+      "description": "로맨스 소설에 빙의해 행복한 삶을 살던 채린의 눈에는 남자주인공 제하 외에는 모두 검은색 그림자로만 보인다. 그런데 갑자기 소설의 장르가 바뀌고, 살아남으려면 엑스트라들과 손을 잡아야 하는 상황이 펼쳐진다.",
+      "serializationStatus": "completed",
+      "serializationLabel": "완결",
+      "episodeCount": 103,
+      "updateWeekdays": [],
+      "updateScheduleLabel": "완결",
+      "updateScheduleSource": "completed",
+      "latestEpisodeUpdatedAt": "2023-07-29",
+      "userReadingStatus": "finished",
+      "userProgress": "103화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/105.jpg",
+      "descriptionFile": "webtoons/description/105.txt",
+      "userRating": 4,
+      "note": "네이버웹툰 공식 작품 페이지와 공식 article API에서 제목, 작가, 장르, 완결 화수, 최신 공개일, 표지를 확인했습니다."
+    },
+    {
+      "id": "106",
+      "inputTitle": "통각설정꺼놨다니까요?",
+      "title": "통각 설정 꺼놨다니까요?",
+      "author": "스튜디오 이너스,유은우",
+      "platform": "카카오웹툰",
+      "contentType": "웹툰",
+      "platformId": "4126",
+      "officialUrl": "https://webtoon.kakao.com/content/%ED%86%B5%EA%B0%81-%EC%84%A4%EC%A0%95-%EA%BA%BC%EB%86%93%EB%8B%A4%EB%8B%88%EA%B9%8C%EC%9A%94/4126",
+      "genres": [
+        "로맨스 판타지",
+        "게임",
+        "빙의",
+        "생존"
+      ],
+      "description": "통각이 0으로 설정된 가상 현실 게임에서 모든 엔딩을 최초로 클리어한 주인공은 마지막 100회차 플레이를 시작한다. 그런데 갑자기 이상한 병과 시한부 설정이 생기고 공략 캐릭터들이 그녀를 걱정하기 시작한다. 아프지 않은데도 아픈 척을 하게 된 주인공은 인류 평화를 위해 희생하는 고결한 용사를 연기하며 마지막 플레이를 해피엔딩으로 끝내려 한다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중(휴재)",
+      "episodeCount": 47,
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleLabel": "토",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2025-01-03",
+      "userReadingStatus": "finished",
+      "userProgress": "47화",
+      "group": "completed-section",
+      "coverImage": "webtoons/covers/106.jpg",
+      "descriptionFile": "webtoons/description/106.txt",
+      "userRating": 4,
+      "note": "카카오웹툰 공식 페이지와 카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 소개, 휴재 상태, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 시즌1 공개분까지 완독으로 기록했습니다."
+    },
+    {
+      "id": "107",
+      "inputTitle": "던전견문록",
+      "title": "던전 견문록",
+      "author": "손민우,글럼프",
+      "platform": "카카오웹툰",
+      "contentType": "웹툰",
+      "platformId": "3190",
+      "officialUrl": "https://webtoon.kakao.com/content/%EB%8D%98%EC%A0%84-%EA%B2%AC%EB%AC%B8%EB%A1%9D/3190",
+      "genres": [
+        "판타지",
+        "액션",
+        "성장",
+        "던전"
+      ],
+      "description": "미궁에서 태어나 괴수의 젖을 먹고 자란 인류의 후손은 특별한 힘과 강인한 신체를 지녔다. 그중에서도 가장 깊은 미궁에서 태어난 김진우는 가장 비천한 토굴꾼에서 미궁의 왕까지 올라가는 여정을 시작한다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 167,
+      "updateWeekdays": [
+        "토"
+      ],
+      "updateScheduleLabel": "토",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-08-28",
+      "userReadingStatus": "reading",
+      "userProgress": "164화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/107.jpg",
+      "descriptionFile": "webtoons/description/107.txt",
+      "userRating": 4,
+      "note": "카카오웹툰 공식 페이지와 카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 소개, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 164화까지 읽는 중으로 기록했습니다."
+    },
+    {
+      "id": "108",
+      "inputTitle": "해골병사는던전을지키지못했다",
+      "title": "해골병사는 던전을 지키지 못했다",
+      "author": "앤트스튜디오,소소리",
+      "platform": "카카오웹툰",
+      "contentType": "웹툰",
+      "platformId": "2358",
+      "officialUrl": "https://webtoon.kakao.com/content/%ED%95%B4%EA%B3%A8%EB%B3%91%EC%82%AC%EB%8A%94-%EB%8D%98%EC%A0%84%EC%9D%84-%EC%A7%80%ED%82%A4%EC%A7%80-%EB%AA%BB%ED%96%88%EB%8B%A4/2358",
+      "genres": [
+        "판타지",
+        "회귀",
+        "액션",
+        "성장"
+      ],
+      "description": "주인인 서큐버스님을 용사로부터 지키지 못하고 부서진 일개 몬스터 해골병사. 죽음을 맞이한 줄 알았던 그는 20년 전 사령술사에 의해 눈을 뜬 그날로 돌아온다. 남들에게는 보이지 않는 상태창과 죽어도 되살아나는 힘을 이용해 이번에는 던전을 지킬 수 있을지 도전한다.",
+      "serializationStatus": "ongoing",
+      "serializationLabel": "연재중",
+      "episodeCount": 386,
+      "updateWeekdays": [
+        "수"
+      ],
+      "updateScheduleLabel": "수",
+      "updateScheduleSource": "official",
+      "latestEpisodeUpdatedAt": "2026-08-25",
+      "userReadingStatus": "reading",
+      "userProgress": "353화",
+      "group": "ongoing",
+      "coverImage": "webtoons/covers/108.jpg",
+      "descriptionFile": "webtoons/description/108.txt",
+      "userRating": 4,
+      "note": "카카오웹툰 공식 페이지와 카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 소개, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 353화까지 읽는 중으로 기록했습니다."
     }
   ]
 }
