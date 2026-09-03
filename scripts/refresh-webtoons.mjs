@@ -6,6 +6,19 @@ const dryRun = process.argv.includes("--dry-run");
 
 const userAgent =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
+const kakaoPageBffOrigin = "https://bff-page.kakao.com";
+
+const kakaoWebtoonPageSeriesIds = {
+  "2966": "59761866",
+  "4427": "66264838",
+  "4487": "66447366",
+  "3115": "60720041",
+  "3138": "59976402",
+  "2482": "56673674",
+  "4126": "64374821",
+  "3190": "60241259",
+  "2358": "54097394"
+};
 
 const englishDayToKorean = {
   MONDAY: "월",
@@ -52,8 +65,14 @@ async function fetchJson(url) {
   return fetchWithTimeout(url).then((response) => response.json());
 }
 
-async function fetchText(url) {
-  return fetchWithTimeout(url).then((response) => response.text());
+async function fetchKakaoPageJson(path) {
+  return fetchWithTimeout(`${kakaoPageBffOrigin}${path}`, {
+    headers: {
+      accept: "application/json",
+      origin: "https://page.kakao.com",
+      referer: "https://page.kakao.com/"
+    }
+  }).then((response) => response.json());
 }
 
 function getKstDate() {
@@ -225,32 +244,6 @@ async function refreshNaver(item, weekdayMap) {
   );
 }
 
-function parseKakaoNextData(html, seriesId) {
-  const match = html.match(
-    /<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/
-  );
-
-  if (!match) {
-    throw new Error(`${seriesId} 카카오페이지 __NEXT_DATA__를 찾지 못했습니다.`);
-  }
-
-  const data = JSON.parse(match[1]);
-  const queries =
-    data.props?.pageProps?.initialProps?.dehydratedState?.queries ?? [];
-  const overviewQuery = queries.find((query) =>
-    JSON.stringify(query.queryKey ?? []).includes("contentHomeOverview")
-  );
-
-  const content =
-    overviewQuery?.state?.data?.contentHomeOverview?.content;
-
-  if (!content) {
-    throw new Error(`${seriesId} 카카오페이지 작품 개요를 찾지 못했습니다.`);
-  }
-
-  return content;
-}
-
 function parseEpisodeNumber(title) {
   const matches = [...String(title).matchAll(/(\d+)\s*(?:화|편)/g)].map((match) =>
     Number(match[1])
@@ -260,8 +253,8 @@ function parseEpisodeNumber(title) {
 }
 
 async function getKakaoEpisodeCount(seriesId, fallbackCount) {
-  const data = await fetchJson(
-    `https://page.kakao.com/api/gateway/api/v2/content/product/list?series_id=${seriesId}&cursor_index=0&cursor_direction=INIT&window_size=500`
+  const data = await fetchKakaoPageJson(
+    `/api/gateway/api/v2/content/product/list?series_id=${seriesId}&cursor_index=0&cursor_direction=INIT&window_size=500`
   );
   const productTitles = (data.result?.list ?? [])
     .map((entry) => entry.item?.title)
@@ -276,36 +269,31 @@ async function getKakaoEpisodeCount(seriesId, fallbackCount) {
   );
 }
 
-async function refreshKakao(item) {
+async function refreshKakao(item, seriesIdOverride) {
   if (item.serializationStatus === "completed") {
     return makeScheduleFields(item, [], "completed");
   }
 
-  const seriesId = String(item.platformId);
-  const html = await fetchText(`https://page.kakao.com/content/${seriesId}`);
-  const content = parseKakaoNextData(html, seriesId);
-  const latestEpisodeUpdatedAt = normalizeDate(content.lastSlideAddedDate);
-  const isCompleted = item.serializationStatus === "completed" || content.onIssue === "End";
+  const seriesId = String(seriesIdOverride ?? item.platformId);
+  const data = await fetchKakaoPageJson(
+    `/api/gateway/api/v1/content/overview?series_id=${seriesId}`
+  );
+  const content = data.result?.content;
 
-  if (isCompleted) {
-    return makeScheduleFields(
-      {
-        ...item,
-        latestEpisodeUpdatedAt: latestEpisodeUpdatedAt || item.latestEpisodeUpdatedAt
-      },
-      [],
-      "completed"
-    );
+  if (!content) {
+    throw new Error(`${seriesId} 카카오페이지 공식 콘텐츠 개요를 찾지 못했습니다.`);
   }
 
-  const updateWeekdays = splitKoreanWeekdays(content.pubPeriod);
+  const latestEpisodeUpdatedAt = normalizeDate(content.last_slide_added_dt);
+  const updateWeekdays = splitKoreanWeekdays(content.pub_period);
   const episodeCount = await getKakaoEpisodeCount(seriesId, item.episodeCount);
+  const isResting = content.on_issue === "P";
 
   return makeScheduleFields(
     {
       ...item,
       episodeCount,
-      serializationLabel: "연재중",
+      serializationLabel: isResting ? "연재중(휴재)" : "연재중",
       latestEpisodeUpdatedAt: latestEpisodeUpdatedAt || item.latestEpisodeUpdatedAt
     },
     updateWeekdays,
@@ -328,6 +316,14 @@ async function refreshItem(item, naverWeekdayMap) {
 
   if (item.platform === "카카오페이지" && item.platformId) {
     return refreshKakao(item);
+  }
+
+  if (item.platform === "카카오웹툰" && item.platformId) {
+    const seriesId = kakaoWebtoonPageSeriesIds[String(item.platformId)];
+
+    if (seriesId) {
+      return refreshKakao(item, seriesId);
+    }
   }
 
   return refreshFallback(item);
