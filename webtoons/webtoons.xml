@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-09-03" count="110">
+<webtoons collectedAt="2026-05-25" lastUpdatedAt="2026-11-15" count="124">
   <webtoon id="001">
     <title>용사파티 대마법사의 환생</title>
     <author>Potetorusu,정훈鄭薰</author>
@@ -2590,5 +2590,326 @@
     <descriptionFile>webtoons/description/110.txt</descriptionFile>
     <userRating>4</userRating>
     <note>네이버웹툰 공식 작품 페이지와 공식 article API에서 제목, 작가, 장르, 완결 화수, 최신 공개일, 표지를 확인했습니다.</note>
+  </webtoon>
+  <webtoon id="111" inputTitle="집이없어">
+    <title>집이 없어</title>
+    <author>와난</author>
+    <platform>네이버웹툰</platform>
+    <platformId>721433</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=721433</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>스토리</genre>
+      <genre>드라마</genre>
+    </genres>
+    <description>집을 버리고 뛰쳐나간 고해준, 집 없이 텐트 생활하는 문제아 백은영. 악연으로 만난 두 사람은 버려진 옛날 기숙사에서 함께 살게 되는데.. 기숙사도 서로도 싫지만 돌아갈 곳이 없는 두 사람의 힘든 성장 이야기</description>
+    <serialization status="completed" label="완결" episodeCount="270" latestEpisodeUpdatedAt="2024-09-16"/>
+    <updateSchedule label="완결" source="completed"/>
+    <userReading status="finished" progress="270화" group="completed-section"/>
+    <coverImage>webtoons/covers/111.jpg</coverImage>
+    <descriptionFile>webtoons/description/111.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 작품 페이지와 공식 article API에서 제목, 작가, 장르, 완결 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 완결까지 감상한 것으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="112" inputTitle="하남자의탑공략법">
+    <title>하남자의 탑 공략법</title>
+    <author>표표,플랜에이,꾸찌꾸찌</author>
+    <platform>네이버웹툰</platform>
+    <platformId>845508</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=845508</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>스토리</genre>
+      <genre>액션</genre>
+      <genre>탑등반</genre>
+      <genre>먼치킨</genre>
+    </genres>
+    <description>어느 날 지구 곳곳에 정체불명의 검은 탑이 솟아오르며, 극소수 인류의 각성이 시작된다. 하지만 겁 많고 소심한 하남자 봉주혁과는 인연 없는 일일뿐. 오늘도 알바로 고생한 몸뚱이에 라면 한 입 넣어주려는데… [봉주혁님은 각성하셨습니다.] “…으허, X발, 깜짝이야!” 과연 인생 역전의 기회가 찾아온 걸까?!</description>
+    <serialization status="ongoing" label="연재중" episodeCount="55" latestEpisodeUpdatedAt="2026-11-14"/>
+    <updateSchedule label="일" source="official">
+      <weekday>일</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="44화" group="ongoing"/>
+    <coverImage>webtoons/covers/112.jpg</coverImage>
+    <descriptionFile>webtoons/description/112.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 작품 페이지와 공식 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 44화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="113" inputTitle="게임속바바리안으로살아남기">
+    <title>게임 속 바바리안으로 살아남기</title>
+    <author>팀 더 지크,MIDNIGHT STUDIO,정윤강</author>
+    <platform>네이버웹툰</platform>
+    <platformId>808482</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=808482</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>스토리</genre>
+      <genre>판타지</genre>
+      <genre>게임</genre>
+      <genre>생존</genre>
+      <genre>액션</genre>
+    </genres>
+    <description>지금껏 아무도 클리어하지 못한 게임 [던전 앤 스톤]을 9년간 플레이한 끝에 최종 보스 스테이지에 도달한 이한수. 그러나 보스 방에 입장함과 동시에, 튜토리얼 완료라는 멘트와 함께 [던전 앤 스톤] 속 바바리안 ‘비요른 얀델’에 빙의하게 된다. 도시에서 부과하는 막대한 세금을 내지 못하면 ‘하층민’으로 사형당한다. 빙의한 사실을 들키면 ‘악령’이라고 판단되어 살해당한다. 살아남을 수 있는 유일한 길은 미궁에 들어가 목숨을 걸고 싸우는 것뿐. 9년간 쌓아온 공략법과 무식하게 강한 바바리안의 육체로, 반드시 이 게임에서 살아남겠다!</description>
+    <serialization status="ongoing" label="연재중" episodeCount="170" latestEpisodeUpdatedAt="2026-11-11"/>
+    <updateSchedule label="목" source="official">
+      <weekday>목</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="155화" group="ongoing"/>
+    <coverImage>webtoons/covers/113.jpg</coverImage>
+    <descriptionFile>webtoons/description/113.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 작품 페이지와 공식 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 155화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="114" inputTitle="천재대장장이의게임">
+    <title>천재 대장장이의 게임</title>
+    <author>YES WORKS,박민규</author>
+    <platform>카카오페이지</platform>
+    <platformId>67696572</platformId>
+    <officialUrl>https://page.kakao.com/content/67696572</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>게임</genre>
+      <genre>성장</genre>
+      <genre>대장장이</genre>
+    </genres>
+    <description>세상에 남은 마지막 대장장이이자 명장(明匠), 강현수. 대장간의 화재로 손이 망가져 더 이상 제작을 할 수 없게 되는데... 이때 현수에게 찾아온 가상현실 게임 아레스. [수리 불가 아티팩트입니다.] [레벨 제한에 따라 제작할 수 없습니다.] “엥? 난 수작업 대장장이라 할 수 있는데?” 그에겐 그 어떤 시스템 제한도 적용되지 않는다. 파란만장한 천재 대장장이의 게임이 시작된다.</description>
+    <serialization status="ongoing" label="연재중(휴재)" episodeCount="77" latestEpisodeUpdatedAt="2026-10-23"/>
+    <updateSchedule label="토" source="official">
+      <weekday>토</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="25화" group="ongoing"/>
+    <coverImage>webtoons/covers/114.jpg</coverImage>
+    <descriptionFile>webtoons/description/114.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 카카오페이지 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 시즌 휴재 상태, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 25화에서 중도 이탈한 것으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="115" inputTitle="보이스피싱인데인생역전">
+    <title>보이스피싱인데 인생역전</title>
+    <author>왓더헬,장탄</author>
+    <platform>네이버웹툰</platform>
+    <platformId>830144</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=830144</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>스토리</genre>
+      <genre>드라마</genre>
+      <genre>연예계</genre>
+      <genre>복수</genre>
+    </genres>
+    <description>“당신에게 미래를 팝니다!” 5년 전 조직적인 음해로 한 순간에 몰락한 국민배우 강주혁. 고통스럽게 지내던 그에게 어느날 의문의 전화 한 통이 걸려온다. 바로 미래를 예언해 주는 보이스피싱! 연예계 재기와 복수를 위한 위험한 거래가 시작된다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="109" latestEpisodeUpdatedAt="2026-11-12"/>
+    <updateSchedule label="금" source="official">
+      <weekday>금</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="98화" group="ongoing"/>
+    <coverImage>webtoons/covers/115.jpg</coverImage>
+    <descriptionFile>webtoons/description/115.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 작품 페이지와 공식 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 98화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="116" inputTitle="악당들에게키워지는중입니다">
+    <title>악당들에게 키워지는 중입니다</title>
+    <author>율리,지갈,이아송,자은향</author>
+    <platform>카카오웹툰</platform>
+    <platformId>3507</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EC%95%85%EB%8B%B9%EB%93%A4%EC%97%90%EA%B2%8C-%ED%82%A4%EC%9B%8C%EC%A7%80%EB%8A%94-%EC%A4%91%EC%9E%85%EB%8B%88%EB%8B%A4/3507</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+    </genres>
+    <description>즐겨보던 로판 소설의 엑스트라 소녀로 빙의한 지 1년 만에 내가 곧 쫓겨날 신세라는 걸 알게 됐다. 차라리 내 발로 집을 나가겠다고 했더니, “사실은 이 아이가 내 따님입니다. 그렇지, 따님?” 사이코패스 망나니 공자의 눈에 들어 버렸다? ‘놀이 후에 상대한테 준 돈이 섬 하나를 살 정도였다던데?’ 그에게 어울려 주면 일확천금을 얻을 수 있기에 훌륭히 딸 노릇을 하고, 몇 달 뒤 두둑해진 통장과 함께 자의 반 타의 반 집을 나왔다. “내가 떠나라고 할 때까지 계속 내 곁에 있거라.” 그런데, 나를 놀잇감으로 여기던 아빠가 날 찾아와 붙잡는다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="162" latestEpisodeUpdatedAt="2026-10-25"/>
+    <updateSchedule label="월" source="official">
+      <weekday>월</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="134화" group="ongoing"/>
+    <coverImage>webtoons/covers/116.jpg</coverImage>
+    <descriptionFile>webtoons/description/116.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 134화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="117" inputTitle="용사파티때려치웁니다">
+    <title>용사 파티 때려치웁니다</title>
+    <author>Graphictory,Lono,NariaTa</author>
+    <platform>카카오웹툰</platform>
+    <platformId>3915</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EC%9A%A9%EC%82%AC-%ED%8C%8C%ED%8B%B0-%EB%95%8C%EB%A0%A4%EC%B9%98%EC%9B%81%EB%8B%88%EB%8B%A4/3915</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>학원/판타지</genre>
+      <genre>판타지</genre>
+      <genre>전쟁물</genre>
+    </genres>
+    <description>마왕을 무찌르고 세상을 구원하기 위해 모인 최강의 용사파티가 있었다. 하지만 마왕 토벌엔 관심이 없고 편한 전장만 찾는 용사 파티에 환멸을 느낀 잿빛 마법사 라니엘은, 결국 파티를 때려치우고 고향으로 돌아와 스승을 만난다. 그런 그에게 라니엘의 스승인 로셀은 명문 아카데미, 아플리아의 조교수 자리를 권하게 된다. “아니, 이걸 왜 못하지?” “그냥 회로 생성하고 쓰면 되는데?” 하지만 세계관 최강자도 막상 가르침에는 소질이 없는 듯 한데... 어찌저찌 아플리아 아카데미에 취직하게 된 인류 최강 전력. 조교수로 살아가는 먼치킨 마법사의 제2의 인생이 시작된다!</description>
+    <serialization status="ongoing" label="연재중" episodeCount="180" latestEpisodeUpdatedAt="2026-10-28"/>
+    <updateSchedule label="목" source="official">
+      <weekday>목</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="47화" group="ongoing"/>
+    <coverImage>webtoons/covers/117.jpg</coverImage>
+    <descriptionFile>webtoons/description/117.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 47화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="118" inputTitle="용사파티대마법사의환생">
+    <title>용사파티 대마법사의 환생</title>
+    <author>Potetorusu,정훈鄭薰</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4061</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EC%9A%A9%EC%82%AC%ED%8C%8C%ED%8B%B0-%EB%8C%80%EB%A7%88%EB%B2%95%EC%82%AC%EC%9D%98-%ED%99%98%EC%83%9D/4061</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>판타지</genre>
+      <genre>드라마</genre>
+      <genre>환생</genre>
+    </genres>
+    <description>천재마법사 린은 13살 때, 세상을 혼돈에 빠뜨리려는 거악 ‘심연’을 물리치고자 리스타를 위시한 용사파티와 함께 여행을 떠난다. 하지만 싸움은 점점 격렬해지고 마지막 순간에 린의 몸은 ‘심연’의 암독에 당해서 생명이 위태로워진다. “다시 돌아올게”라는 말을 남기고 강제 휴면 상태에 빠졌던 린의 영혼은 300년 후 어느 귀족 소년으로 부활하게 된다. 평화로운 세상에서 제2의 인생을 시작하게 된 린! 하지만 세상 한편에서는 숙명적인 어둠의 무리가 다시 꿈틀대고 있었다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="160" latestEpisodeUpdatedAt="2026-10-25"/>
+    <updateSchedule label="월" source="official">
+      <weekday>월</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="157화" group="ongoing"/>
+    <coverImage>webtoons/covers/118.jpg</coverImage>
+    <descriptionFile>webtoons/description/118.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 157화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="119" inputTitle="이제울어도될까요">
+    <title>이제 울어도 될까요?</title>
+    <author>EXTEN STUDIO,유이란</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4718</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EC%9D%B4%EC%A0%9C-%EC%9A%B8%EC%96%B4%EB%8F%84-%EB%90%A0%EA%B9%8C%EC%9A%94/4718</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+    </genres>
+    <description>형제를 죽이고 황위에 오른 클로이스. 그가 황제가 되려 했던 것은 개인의 욕심이 아닌 사랑하는 아내와 곧 태어날 아이를 위해서였다. 하지만 그의 노력도 헛되이 이기고 돌아온 그를 맞이한 것은 아내와 아이의 시체였다. 그로부터 7년 후. 그는 세상 어떤 일에도 감흥을 느낄 수 없었다. 그러하기에 7년만에 다시 열리는 영재원의 심사에도 관심을 두지 않았다. 한 장의 입학 신청서가 구겨져 바닥에 굴러다니는 것을 보기 전 까지는. “입학 신청서인데 왜 버렸나?” “그것이, 조건이 무척이나 모자란 자가 낸 서류라서…….” 제 아이를 영재원에 넣으려는 대신은 같잖은 변명을 대었다. 단지 구빈원의 아이라는 이유로 검토되지도 못한 채, 쓰레기처럼 내던져진 서류. “이 아이의 입학을 허가한다.” 딱히 관심을 가져서가 아니었다. 그저 멋대로 행동하려 하는 대신들을 향한 경고였을 뿐. 그래서 제가 뽑은 아이의 이름조차도 기억하지 못했는데. “저는 이비 앨든이라고 해요.” 아내와 딸의 무덤 앞에서 만난 아이는 언제나 그가 생각하던 제 딸의 모습을 하고 있었다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="65" latestEpisodeUpdatedAt="2026-10-29"/>
+    <updateSchedule label="금" source="official">
+      <weekday>금</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="61화" group="ongoing"/>
+    <coverImage>webtoons/covers/119.jpg</coverImage>
+    <descriptionFile>webtoons/description/119.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 61화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="120" inputTitle="흑막범고래아기님">
+    <title>흑막 범고래 아기님</title>
+    <author>Q00,Team_제나,도힌,문시현</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4128</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%ED%9D%91%EB%A7%89-%EB%B2%94%EA%B3%A0%EB%9E%98-%EC%95%84%EA%B8%B0%EB%8B%98/4128</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+      <genre>회귀</genre>
+    </genres>
+    <description>“안녕 아저씨!” 어느 날 내 앞에 웬 범고래 꼬맹이가 나타났다. “교육기관이라는 거 어디 있는지 알아? 나 가야 해. 거기.” “길, 한참은 잘못 들었는데.” 아무래도 이건 내 딸인 것 같은데. “뭘 봐 아저씨? 한 입 줘?” 내가 아비인 줄 모르는 것 같다. 4회차 회귀자 칼립소는 반복되는 회귀와 육아물 속 몰살 엔딩을 피하고, 용과 황실을 이용해 살아남으려 한다.</description>
+    <serialization status="ongoing" label="연재중" episodeCount="127" latestEpisodeUpdatedAt="2026-10-25"/>
+    <updateSchedule label="월" source="official">
+      <weekday>월</weekday>
+    </updateSchedule>
+    <userReading status="dropped" progress="44화" group="ongoing"/>
+    <coverImage>webtoons/covers/120.jpg</coverImage>
+    <descriptionFile>webtoons/description/120.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 44화에서 중도 이탈한 것으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="121" inputTitle="운명을보는회사원">
+    <title>운명을 보는 회사원</title>
+    <author>영완(映完),임성욱</author>
+    <platform>네이버웹툰</platform>
+    <platformId>797443</platformId>
+    <officialUrl>https://comic.naver.com/webtoon/list?titleId=797443</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>스토리</genre>
+      <genre>판타지</genre>
+      <genre>오피스</genre>
+    </genres>
+    <description>무당이 되어 세상을 어지럽힐 팔자를 타고난 아이. 욕심을 버리고 신을 받지 않기 위해 평범한 회사원이 되려 한다. 관상과 사주로 운명을 꿰뚫어 보는 최영훈. 과연 평범한 회사원이 될 수 있을까?</description>
+    <serialization status="ongoing" label="연재중(휴재)" episodeCount="191" latestEpisodeUpdatedAt="2026-09-15"/>
+    <updateSchedule label="화" source="latestEpisodeDate">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="188화" group="ongoing"/>
+    <coverImage>webtoons/covers/121.jpg</coverImage>
+    <descriptionFile>webtoons/description/121.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>네이버웹툰 공식 작품 페이지와 공식 article API에서 제목, 작가, 장르, 최신 화수와 공개일을 확인했습니다. 공식 요일 목록에서 휴재 상태로 확인되어 최신 공개일의 요일을 연재 요일로 보수적으로 기록했습니다. 사용자는 188화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="122" inputTitle="힘숨찐어린이가아빠를찾습니다">
+    <title>힘숨찐 어린이가 아빠를 찾습니다</title>
+    <author>글리,김구슬</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4773</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%ED%9E%98%EC%88%A8%EC%B0%90-%EC%96%B4%EB%A6%B0%EC%9D%B4%EA%B0%80-%EC%95%84%EB%B9%A0%EB%A5%BC-%EC%B0%BE%EC%8A%B5%EB%8B%88%EB%8B%A4/4773</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+    </genres>
+    <description>종로구. 네 살의 어느 날, 아빠의 사망 통지서가 날아들었다. 자기가 탈로치움이라는 제국에서 왔고, 최고로 강한 성기사였다던 아빠가 나만 두고 가버렸다. “네가 원한다면 되돌려 줄게. 네가 태어난 곳. 네가 원래 있었어야 할 곳. 그 남자가 살아 있는 곳으로.” 아빠의 유품함에서 나타난 신비한 생명체가 준 마지막 기회. 이제 아빠를 살릴 수 있겠지? 그런데... 마침내 재회한 과거의 아빠가 어딘가 좀 이상하다.</description>
+    <serialization status="ongoing" label="연재중(휴재)" episodeCount="54" latestEpisodeUpdatedAt="2026-10-14"/>
+    <updateSchedule label="목" source="official">
+      <weekday>목</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="54화" group="ongoing"/>
+    <coverImage>webtoons/covers/122.jpg</coverImage>
+    <descriptionFile>webtoons/description/122.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 시즌 휴재 상태, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 54화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="123" inputTitle="아기는악당을키운다">
+    <title>아기는 악당을 키운다</title>
+    <author>연두,리샤</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4736</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EC%95%84%EA%B8%B0%EB%8A%94-%EC%95%85%EB%8B%B9%EC%9D%84-%ED%82%A4%EC%9A%B4%EB%8B%A4/4736</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>육아</genre>
+      <genre>회귀</genre>
+    </genres>
+    <description>세 번의 회귀. 4회차 인생. 운명의 아이로 선택되어 자랐으나 진짜 운명의 아이가 차원이동하여 나타나 그 아이를 위해 희생되는 삶이 반복된다. ‘이 나라는 노답이야. 망명하자.’ 망명 자금을 벌기 위해 입양되기를 택한 르블레인. 거기까진 좋았는데 입양된 곳이 하필이면 악당 가문이었다. 망명하기 전까지 편히 살기 위해 저 악당들을 꼬셔보려고 했는데……. “내 딸이 세상에서 제일 귀여워.” “그 건물을 줘. 내 동생의 화장실로 쓰면 되겠군.” “괜찮아. 르블레인이 때리지 말라고 했지, 죽이지 말라곤 안 했잖아.”</description>
+    <serialization status="ongoing" label="연재중" episodeCount="59" latestEpisodeUpdatedAt="2026-10-26"/>
+    <updateSchedule label="화" source="official">
+      <weekday>화</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="59화" group="ongoing"/>
+    <coverImage>webtoons/covers/123.jpg</coverImage>
+    <descriptionFile>webtoons/description/123.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 연재 요일, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 59화까지 읽는 중으로 기록했습니다.</note>
+  </webtoon>
+  <webtoon id="124" inputTitle="병아리반헌터는효도중">
+    <title>병아리반 헌터는 효도 중!</title>
+    <author>소낙비,밀차</author>
+    <platform>카카오웹툰</platform>
+    <platformId>4382</platformId>
+    <officialUrl>https://webtoon.kakao.com/content/%EB%B3%91%EC%95%84%EB%A6%AC%EB%B0%98-%ED%97%8C%ED%84%B0%EB%8A%94-%ED%9A%A8%EB%8F%84-%EC%A4%91/4382</officialUrl>
+    <contentType>웹툰</contentType>
+    <genres>
+      <genre>로맨스 판타지</genre>
+      <genre>힐링</genre>
+      <genre>헌터</genre>
+    </genres>
+    <description>시스템에 의해 특별한 힘을 가진 각성자들이 생겨나는 세상. 새봄 유치원 병아리반, 그루는 4살에 S급 헌터로 각성한다. 그리고 그와 함께 주어진 퀘스트가 하나 있었으니……. [퀘스트: 아이에게는 든든한 보호자가 필요합니다!] 보호자가 필요한 이유. 그것은 바로 그루에게 엄마, 아빠가 없기 때문이었다. 가족이 없는 그루는 우여곡절 끝에 대한민국 최고의 헌터에게 입양되고, 거기에 더해 새로운 스킬까지 생겨나는데- [새로운 양육자를 찾아 슬롯에 등록해 봅시다!] [아동은 다양한 활동으로 ‘효도 포인트’를 얻어 여러 영역에서 사용 가능합니다.] 양육자들을 모으면 빠른 성장이 가능하다고? ‘엄청나잖아!’ 좋아, S급 양육자들을 모조리 모아 주겠어!</description>
+    <serialization status="ongoing" label="연재중(휴재)" episodeCount="88" latestEpisodeUpdatedAt="2026-10-04"/>
+    <updateSchedule label="월" source="official">
+      <weekday>월</weekday>
+    </updateSchedule>
+    <userReading status="reading" progress="68화" group="ongoing"/>
+    <coverImage>webtoons/covers/124.jpg</coverImage>
+    <descriptionFile>webtoons/description/124.txt</descriptionFile>
+    <userRating>4</userRating>
+    <note>카카오웹툰 공식 페이지와 공식 콘텐츠 API에서 제목, 작가, 장르, 시즌 휴재 상태, 화수, 최신 공개일, 표지를 확인했습니다. 사용자는 68화까지 읽는 중으로 기록했습니다.</note>
   </webtoon>
 </webtoons>
